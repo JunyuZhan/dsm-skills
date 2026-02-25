@@ -24,6 +24,7 @@
 
 ### 🎬 多媒体与娱乐 (Multimedia)
 - [**Photos 进阶技巧 (10技巧)**](multimedia/photos-tricks.md): 人脸识别、条件相册、权限管理。
+- [**Photos 深度优化与迁移 (10技巧)**](multimedia/photos-advanced.md): 人脸识别补丁、Google Photos 迁移、ExifTool 修复。
 - [**Video Station 与影视中心 (10技巧)**](multimedia/video-audio.md): TMDB搜刮修复、DTS解码、字幕插件。
 - [**Download Station 进阶下载 (10技巧)**](download-tools/download-station.md): RSS 自动追剧、搜索插件 DLM、eMule。
 
@@ -32,6 +33,7 @@
 
 ### 🌐 网络与安全 (Network)
 - [**网络与远程访问 (10技巧)**](network/access-security.md): QuickConnect vs DDNS、IPv6、端口转发、VPN Server。
+- [**NAS 安全加固与防火墙策略 (10技巧)**](network/security-hardening.md): GeoIP 阻断、SSH 密钥认证、DoS 防护。
 - [**反向代理与 HTTPS 配置 (10技巧)**](network/reverse-proxy.md): 泛域名证书、WebSocket 支持、访问控制。
 - [**MailPlus Server 邮件服务器 (10技巧)**](communication/mailplus-guide.md): 反垃圾策略、SMTP Relay、DKIM/SPF 配置。
 - [**Synology Chat 机器人集成 (10技巧)**](communication/chat-integration.md): Webhook 推送、运维机器人、Slash Command。
@@ -48,6 +50,7 @@
 
 ### 🐳 Docker 容器 (Docker)
 - [**必备容器推荐 Top 20**](docker-containers/must-have.md): Portainer, Jellyfin, Nastools, Home Assistant 等。
+- [**Docker Compose 常用堆栈模板 (10技巧)**](docker-containers/compose-templates.md): 媒体中心、HA、NPM、AdGuard Home 一键部署。
 - [**Container Manager 网络配置详解 (10技巧)**](docker-containers/network-guide.md): Bridge vs Host vs Macvlan、互通问题。
 
 ### 🏠 家庭自动化 (Home Automation)

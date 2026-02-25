@@ -55,12 +55,14 @@ nav:
     - 硬件选购与维护: hardware-maintenance/hardware-guide.md
   - 多媒体与娱乐:
     - Photos 进阶技巧: multimedia/photos-tricks.md
+    - Photos 深度优化与迁移: multimedia/photos-advanced.md
     - Video Station 影视中心: multimedia/video-audio.md
     - Download Station 下载: download-tools/download-station.md
   - 视频监控:
     - Surveillance Station 指南: surveillance/guide.md
   - 网络与安全:
     - 网络与远程访问: network/access-security.md
+    - 安全加固与防火墙: network/security-hardening.md
     - 反向代理与 HTTPS: network/reverse-proxy.md
     - MailPlus 邮件服务器: communication/mailplus-guide.md
     - Chat 机器人集成: communication/chat-integration.md
@@ -73,6 +75,7 @@ nav:
     - Mac/Windows 集成: platform-specific/os-integration.md
   - Docker 容器:
     - 必备容器推荐 Top 20: docker-containers/must-have.md
+    - 常用 Compose 模板: docker-containers/compose-templates.md
     - Container 网络详解: docker-containers/network-guide.md
   - 家庭自动化:
     - 家庭自动化与 IoT: home-automation/iot-guide.md
