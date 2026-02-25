@@ -61,6 +61,7 @@ nav:
     - Surveillance Station 指南: surveillance/guide.md
   - 网络与安全:
     - 网络与远程访问: network/access-security.md
+    - 反向代理与 HTTPS: network/reverse-proxy.md
     - MailPlus 邮件服务器: communication/mailplus-guide.md
     - Chat 机器人集成: communication/chat-integration.md
   - 生产力与办公:
@@ -72,6 +73,7 @@ nav:
     - Mac/Windows 集成: platform-specific/os-integration.md
   - Docker 容器:
     - 必备容器推荐 Top 20: docker-containers/must-have.md
+    - Container 网络详解: docker-containers/network-guide.md
   - 家庭自动化:
     - 家庭自动化与 IoT: home-automation/iot-guide.md
   - 社群扩展:
@@ -83,6 +85,7 @@ nav:
   - 进阶与自动化:
     - 索引: advanced-skills/README.md
     - 3-2-1 备份策略: advanced-skills/backup-strategy.md
+    - ABB 深度指南: advanced-skills/abb-guide.md
     - 数据迁移与灾难恢复: migration/guide.md
     - 脚本与自动化: advanced-skills/automation.md
     - SSD 缓存配置: advanced-skills/ssd-cache.md

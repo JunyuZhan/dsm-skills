@@ -32,6 +32,7 @@
 
 ### 🌐 网络与安全 (Network)
 - [**网络与远程访问 (10技巧)**](network/access-security.md): QuickConnect vs DDNS、IPv6、端口转发、VPN Server。
+- [**反向代理与 HTTPS 配置 (10技巧)**](network/reverse-proxy.md): 泛域名证书、WebSocket 支持、访问控制。
 - [**MailPlus Server 邮件服务器 (10技巧)**](communication/mailplus-guide.md): 反垃圾策略、SMTP Relay、DKIM/SPF 配置。
 - [**Synology Chat 机器人集成 (10技巧)**](communication/chat-integration.md): Webhook 推送、运维机器人、Slash Command。
 
@@ -47,6 +48,7 @@
 
 ### 🐳 Docker 容器 (Docker)
 - [**必备容器推荐 Top 20**](docker-containers/must-have.md): Portainer, Jellyfin, Nastools, Home Assistant 等。
+- [**Container Manager 网络配置详解 (10技巧)**](docker-containers/network-guide.md): Bridge vs Host vs Macvlan、互通问题。
 
 ### 🏠 家庭自动化 (Home Automation)
 - [**家庭自动化与 IoT 指南 (10技巧)**](home-automation/iot-guide.md): HA Docker vs VMM、MQTT、Homebridge、Scrypted 摄像头接入。
@@ -62,6 +64,7 @@
 
 ### 🛠️ 进阶与自动化 (Advanced)
 - [**3-2-1 备份策略详解**](advanced-skills/backup-strategy.md): Hyper Backup, Active Backup for Business, 快照防护。
+- [**Active Backup for Business 深度指南 (10技巧)**](advanced-skills/abb-guide.md): PC/Server/VM 整机备份、全局重删、VMM 即时还原。
 - [**数据迁移与灾难恢复指南 (10技巧)**](migration/guide.md): 硬盘迁移、Migration Assistant、Hyper Backup 异地恢复。
 - [**脚本与自动化 (10技巧)**](advanced-skills/automation.md): 开机脚本、Docker Compose、SSH 命令。
 - [SSD 缓存配置](advanced-skills/ssd-cache.md): 缓存避坑指南。
