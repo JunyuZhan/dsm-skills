@@ -73,6 +73,7 @@ nav:
   - 基础入门:
     - 索引: basic-skills/README.md
     - 存储管理器深度解析: basic-skills/storage-manager.md
+    - 数据加密与密钥管理: basic-skills/encryption-manager.md
     - 通知中心与日志: basic-skills/notifications-logs.md
     - 系统设置遗珠: basic-skills/system-gems.md
     - 用户主目录服务: basic-skills/user-home.md
@@ -92,6 +93,7 @@ nav:
   - 网络与安全:
     - 网络与远程访问: network/access-security.md
     - 内网穿透与异地组网: network/tunneling-guide.md
+    - 企业级身份认证 (AD): network/directory-server.md
     - 安全加固与防火墙: network/security-hardening.md
     - 反向代理与 HTTPS: network/reverse-proxy.md
     - MailPlus 邮件服务器: communication/mailplus-guide.md
@@ -121,6 +123,7 @@ nav:
     - CLI 终极指南: cli/guide.md
   - 开发者进阶:
     - 开发者指南: developer-guide/dev-tips.md
+    - 自动化开发指南 (API): developer-guide/api-automation.md
   - 进阶与自动化:
     - 索引: advanced-skills/README.md
     - 任务计划与脚本管理: advanced-skills/task-scheduler.md

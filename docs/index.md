@@ -15,6 +15,7 @@
 
 ### 🔰 基础入门 (Basic Skills)
 - [**存储管理器深度解析 (必读)**](basic-skills/storage-manager.md): RAID 选型 (SHR vs RAID5)、Btrfs 优势、数据清洗防腐烂。
+- [**数据加密与密钥管理**](basic-skills/encryption-manager.md): 文件夹加密、物理 U 盘密钥、防盗指南。
 - [**通知中心与日志审计**](basic-skills/notifications-logs.md): 微信/邮件推送配置、Log Center 审计文件删除记录。
 - [**系统设置遗珠 (10技巧)**](basic-skills/system-gems.md): 登录界面美化、LED调节、UPS联动、微信推送等。
 - [用户主目录服务](basic-skills/user-home.md): 个人空间设置。
@@ -38,6 +39,7 @@
 ### 🌐 网络与安全 (Network)
 - [**网络与远程访问 (10技巧)**](network/access-security.md): QuickConnect vs DDNS、IPv6、端口转发、VPN Server。
 - [**内网穿透与异地组网指南**](network/tunneling-guide.md): Tailscale 子网路由、Cloudflare Tunnel、ZeroTier 配置。
+- [**企业级身份认证 (AD 域控)**](network/directory-server.md): Windows 统一登录、GPO 组策略、漫游配置文件。
 - [**NAS 安全加固与防火墙策略 (10技巧)**](network/security-hardening.md): GeoIP 阻断、SSH 密钥认证、DoS 防护。
 - [**反向代理与 HTTPS 配置 (10技巧)**](network/reverse-proxy.md): 泛域名证书、WebSocket 支持、访问控制。
 - [**MailPlus Server 邮件服务器 (10技巧)**](communication/mailplus-guide.md): 反垃圾策略、SMTP Relay、DKIM/SPF 配置。
