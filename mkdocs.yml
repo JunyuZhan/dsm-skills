@@ -89,6 +89,7 @@ nav:
     - Photos 深度优化与迁移: multimedia/photos-advanced.md
     - Video Station 影视中心: multimedia/video-audio.md
     - 硬件解码与转码详解: multimedia/transcoding-guide.md
+    - 私有云游戏串流 (Sunshine): multimedia/game-streaming.md
     - Download Station 下载: download-tools/download-station.md
   - 视频监控:
     - Surveillance Station 指南: surveillance/guide.md
@@ -132,6 +133,7 @@ nav:
   - 开发者进阶:
     - 开发者指南: developer-guide/dev-tips.md
     - 自动化开发指南 (API): developer-guide/api-automation.md
+    - 自动化运维 (Ansible): developer-guide/ansible-guide.md
   - 进阶与自动化:
     - 索引: advanced-skills/README.md
     - 勒索病毒防护与快照锁定: advanced-skills/ransomware-protection.md

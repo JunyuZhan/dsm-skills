@@ -28,6 +28,7 @@
 - [**硬件周边选购指南**](hardware-maintenance/buying-guide.md): UPS 推荐、万兆网卡、ECC 内存、Zigbee 网关。
 
 ### 🎬 多媒体与娱乐 (Multimedia)
+- [**私有云游戏串流 (Sunshine)**](multimedia/game-streaming.md): 4K 低延迟串流、Moonlight 客户端、异地远程唤醒 (WoL)。
 - [**Photos 进阶技巧 (10技巧)**](multimedia/photos-tricks.md): 人脸识别、条件相册、权限管理。
 - [**Photos 深度优化与迁移 (10技巧)**](multimedia/photos-advanced.md): 人脸识别补丁、Google Photos 迁移、ExifTool 修复。
 - [**Video Station 与影视中心 (10技巧)**](multimedia/video-audio.md): TMDB搜刮修复、DTS解码、字幕插件。
@@ -71,7 +72,10 @@
 - [**自建密码库 Vaultwarden (10技巧)**](docker-containers/vaultwarden.md): 数据主权、HTTPS 配置、多端同步。
 - [**Docker Compose 常用堆栈模板 (10技巧)**](docker-containers/compose-templates.md): 媒体中心、HA、NPM、AdGuard Home 一键部署。
 - [**AI 大模型本地部署指南**](docker-containers/local-ai.md): Ollama + Open WebUI 打造私人 ChatGPT，RAG 知识库。
-- [**Docker 网络进阶**](docker-containers/network-guide.md): Macvlan 独立 IP、Traefik 自动发现、Socket 代理安全。
+- [**OpenClaw AI 智能体**](docker-containers/openclaw.md): 部署你的个人 AI 助理，自主执行任务。
+- [**OpenClash 旁路由实战**](docker-containers/openclash.md): Macvlan 网络配置、局域网透明代理。
+- [**游戏服务器搭建 (Palworld/MC)**](docker-containers/game-servers.md): 幻兽帕鲁、Minecraft 开服教程与内存优化。
+- [**Docker 网络进阶**](docker-containers/network-guide.md): Macvlan 独立 IP、Traefik 自动发现、Socket 代理安全.
 
 ### 📦 社群扩展 (Community Extensions)
 - [**社群第三方套件推荐 (10技巧)**](community/packages.md): SynoCommunity、Entware、ffmpeg、Zsh/Fish。
