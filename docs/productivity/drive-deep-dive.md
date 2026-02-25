@@ -5,6 +5,9 @@ Synology Drive 绝不仅仅是一个简单的“文件同步工具”（像 Drop
 ## 1. 版本控制 (Version Control)
 
 这是 Drive 最核心、也是最容易被忽视的功能。
+
+![Synology Drive 同步模式](../images/drive_sync_modes.svg)
+
 *   **痛点**：误删了文件？改乱了文档？想找回 3 天前的版本？
 *   **原理**：Drive 利用 Btrfs 的写时复制 (CoW) 特性，记录文件的每一次修改。
 *   **配置**：

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f8f9fa"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#333">Cloudflare Tunnel Flow</text>
+
+  <!-- Internet -->
+  <g transform="translate(50, 200)">
+    <circle cx="50" cy="50" r="40" fill="#e74c3c"/>
+    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial">Internet</text>
+    <text x="50" y="110" text-anchor="middle" font-family="Arial" font-size="12">User Request</text>
+  </g>
+
+  <!-- Cloudflare Edge -->
+  <g transform="translate(250, 50)">
+    <rect x="0" y="0" width="300" height="400" rx="10" fill="none" stroke="#f39c12" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="150" y="30" text-anchor="middle" font-family="Arial" fill="#f39c12" font-weight="bold">Cloudflare Edge Network</text>
+
+    <!-- DNS -->
+    <rect x="50" y="50" width="200" height="50" rx="5" fill="#f39c12"/>
+    <text x="150" y="80" text-anchor="middle" fill="white" font-family="Arial">DNS (dsm.your.com)</text>
+
+    <!-- Access -->
+    <rect x="50" y="150" width="200" height="50" rx="5" fill="#3498db"/>
+    <text x="150" y="180" text-anchor="middle" fill="white" font-family="Arial">Zero Trust Access</text>
+    <text x="150" y="220" text-anchor="middle" font-family="Arial" font-size="10" fill="#3498db">Authentication (GitHub/Google)</text>
+
+    <!-- Tunnel Server -->
+    <rect x="50" y="250" width="200" height="50" rx="5" fill="#2ecc71"/>
+    <text x="150" y="280" text-anchor="middle" fill="white" font-family="Arial">Tunnel Server</text>
+  </g>
+
+  <!-- NAS -->
+  <g transform="translate(600, 150)">
+    <rect x="0" y="0" width="150" height="200" rx="10" fill="#34495e"/>
+    <text x="75" y="180" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">NAS (Intranet)</text>
+    
+    <!-- cloudflared -->
+    <rect x="25" y="20" width="100" height="60" rx="5" fill="#2ecc71"/>
+    <text x="75" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">cloudflared</text>
+    
+    <!-- DSM -->
+    <rect x="25" y="100" width="100" height="40" rx="5" fill="#95a5a6"/>
+    <text x="75" y="125" text-anchor="middle" fill="white" font-family="Arial" font-size="12">DSM (5000)</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <!-- User -> CF -->
+    <path d="M100,250 L250,250" />
+    
+    <!-- CF Internal -->
+    <path d="M400,100 L400,150" />
+    <path d="M400,200 L400,250" />
+
+    <!-- Tunnel Connection (Reverse) -->
+    <path d="M625,50 L500,275" stroke="#2ecc71" stroke-width="3"/>
+    <text x="580" y="150" text-anchor="middle" font-family="Arial" font-size="12" fill="#2ecc71" transform="rotate(-30 580,150)">Outbound Connection</text>
+    
+    <!-- cloudflared -> DSM -->
+    <path d="M675,80 L675,100" />
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+</svg>
