@@ -21,6 +21,7 @@
 
 ### ⚙️ 硬件与维护 (Hardware & Maintenance)
 - [**硬件选购与维护 (10技巧)**](hardware-maintenance/hardware-guide.md): 硬盘避坑(CMR/SMR)、NVMe 存储池、UPS 配置、静音改造。
+- [**硬件周边选购指南**](hardware-maintenance/buying-guide.md): UPS 推荐、万兆网卡、ECC 内存、Zigbee 网关。
 
 ### 🎬 多媒体与娱乐 (Multimedia)
 - [**Photos 进阶技巧 (10技巧)**](multimedia/photos-tricks.md): 人脸识别、条件相册、权限管理。
@@ -82,6 +83,7 @@
 
 ### 🔧 故障排除 (Troubleshooting)
 - [**常见故障排除 (10技巧)**](troubleshooting/common-issues.md): 忘记密码、无法休眠、Docker下载失败、存储损毁。
+- [**常见故障排查案例集**](troubleshooting/advanced-cases.md): RAID 降级修复、系统分区爆满、僵尸容器处理、循环登录自救。
 
 ### 🎁 其他 (Misc)
 - [**冷知识与隐藏功能 (10技巧)**](misc/hidden-features.md): 快捷键、文件请求、日志报警。

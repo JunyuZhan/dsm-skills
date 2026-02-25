@@ -78,6 +78,7 @@ nav:
     - 内存检查与优化: basic-skills/memory-check.md
   - 硬件与维护:
     - 硬件选购与维护: hardware-maintenance/hardware-guide.md
+    - 硬件周边选购指南: hardware-maintenance/buying-guide.md
   - 多媒体与娱乐:
     - Photos 进阶技巧: multimedia/photos-tricks.md
     - Photos 深度优化与迁移: multimedia/photos-advanced.md
@@ -127,5 +128,6 @@ nav:
     - 跨 NAS 同步: advanced-skills/cross-nas-sync.md
   - 故障排除:
     - 常见故障排除: troubleshooting/common-issues.md
+    - 常见故障排查案例集: troubleshooting/advanced-cases.md
   - 其他:
     - 冷知识与隐藏功能: misc/hidden-features.md
