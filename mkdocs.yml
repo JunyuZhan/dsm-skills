@@ -85,5 +85,7 @@ nav:
     - 跨 NAS 同步: advanced-skills/cross-nas-sync.md
   - 故障排除:
     - 常见故障排除: troubleshooting/common-issues.md
+  - 部署指南:
+    - Cloudflare 部署: deployment.md
   - 其他:
     - 冷知识与隐藏功能: misc/hidden-features.md
