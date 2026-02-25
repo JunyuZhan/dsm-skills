@@ -25,6 +25,7 @@
 
 ### ⚙️ 硬件与维护 (Hardware & Maintenance)
 - [**硬件选购与维护 (10技巧)**](hardware-maintenance/hardware-guide.md): 硬盘避坑(CMR/SMR)、NVMe 存储池、UPS 配置、静音改造。
+- [**NVMe 存储池破解**](advanced-skills/nvme-storage-pool.md): 非官方支持机型启用 NVMe 存储空间 (Volume)。
 - [**硬件周边选购指南**](hardware-maintenance/buying-guide.md): UPS 推荐、万兆网卡、ECC 内存、Zigbee 网关。
 
 ### 🎬 多媒体与娱乐 (Multimedia)
@@ -51,6 +52,8 @@
 
 ### 🚀 生产力与办公 (Productivity)
 - [**Homepage 导航面板**](productivity/homepage.md): 高颜值 Dashboard、Docker 容器状态监控、API 集成。
+- [**Paperless-ngx 无纸化办公**](productivity/paperless-ngx.md): 账单/发票 OCR 自动识别、消费记录分析、全文搜索。
+- [**Synology Drive 深度实战**](productivity/drive-deep-dive.md): 团队协作、版本控制、按需同步、Office 在线编辑。
 - [**生产力工具 (10技巧)**](productivity/drive-office.md): Drive 版本回溯、Office 协作、Note Station 剪藏。
 - [**知识管理与协同工作流 (10技巧)**](productivity/knowledge-workflow.md): Obsidian 同步、Zotero 文献库、Gitea 代码托管、PXE 启动。
 - [**自托管替代方案汇总**](productivity/self-hosted-alternatives.md): 替代 Notion, Google Drive, Google Photos, Spotify。
@@ -79,6 +82,7 @@
 - [**OpenClaw AI 智能体**](docker-containers/openclaw.md): 部署你的个人 AI 助理，自主执行任务。
 - [**OpenClash 旁路由实战**](docker-containers/openclash.md): Macvlan 网络配置、局域网透明代理。
 - [**游戏服务器搭建 (Palworld/MC)**](docker-containers/game-servers.md): 幻兽帕鲁、Minecraft 开服教程与内存优化。
+- [**Traefik 进阶与泛域名**](docker-containers/traefik-advanced.md): 自动发现容器、自动申请泛域名证书、中间件安全防护。
 - [**Docker 网络进阶**](docker-containers/network-guide.md): Macvlan 独立 IP、Traefik 自动发现、Socket 代理安全.
 
 ### 📦 社群扩展 (Community Extensions)
