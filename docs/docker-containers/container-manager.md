@@ -80,4 +80,45 @@
 Container Manager 自带了更新检测功能，但不能自动更新。
 *   **检测**：在 **注册表** 或 **映像** 页面，如果有新版本，会显示“更新可用”。
 *   **手动更新**：点击“更新”，系统会拉取新镜像，并**重建容器**（保留数据）。这是官方最安全的更新方式。
-*   如果你想要全自动，还是得用 Watchtower，或者 Portainer 的 Webhook。
+*   **全自动**：如果你想要像手机 App 一样自动更新，可以使用 [Watchtower](must-have.md#2-watchtower)。
+
+## 6. 空间清理与维护 (Prune)
+
+Docker 用久了，会产生大量“虚悬镜像” (dangling images) 和未使用的卷，占用几十 GB 空间。
+
+1.  **自动清理 (UI)**：
+    *   Container Manager 界面没有“一键清理”按钮。
+    *   你需要手动去 **映像** 列表，删除没有被容器使用的旧镜像（标签为 `<none>` 或旧版本）。
+2.  **深度清理 (SSH)**：
+    *   这是最彻底的方法。
+    *   **清理未使用镜像**：
+        ```bash
+        docker image prune -a
+        ```
+    *   **清理所有未使用资源 (镜像+容器+网络)**：
+        ```bash
+        docker system prune
+        ```
+    *   **警告**：这会删除所有停止的容器！请确保你只是暂时停止它们，而不是还要用。
+3.  **定时任务**：
+    *   可以在 **控制面板** > **任务计划** 中创建一个脚本任务，每周运行一次 `docker image prune -f`（只删除虚悬镜像，安全）。
+
+## 7. 环境变量最佳实践 (.env)
+
+不要把密码直接写在 `docker-compose.yml` 里！
+
+1.  **创建 .env 文件**：
+    *   在项目文件夹下创建一个名为 `.env` 的文本文件。
+    *   内容：
+        ```ini
+        MYSQL_PASSWORD=my_super_secret_password
+        DOMAIN=example.com
+        ```
+2.  **引用变量**：
+    *   在 `docker-compose.yml` 中使用 `${VARIABLE}` 语法。
+    *   ```yaml
+        environment:
+          - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD}
+        ```
+3.  **Container Manager 支持**：
+    *   Container Manager 原生支持读取同目录下的 `.env` 文件。这样你在分享 Compose 配置时，只需要分享 yml 文件，不用担心泄露密码。

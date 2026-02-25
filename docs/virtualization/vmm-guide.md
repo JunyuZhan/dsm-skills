@@ -7,9 +7,15 @@
 - **SSD 缓存**：**强烈建议**在 SSD 存储空间上运行虚拟机。机械硬盘的 IOPS 太低，会导致 Windows 卡顿到无法使用。
 - **VirtIO 驱动**：安装 Windows 时，务必加载 Synology Guest Tool 中的 VirtIO 驱动（硬盘和网卡），性能提升巨大。
 
-## 2. Windows 10/11 优化 (LTSC)
-- **版本选择**：不要装普通的 Home/Pro 版，臃肿且更新频繁。
-- **推荐**：安装 **Windows 10 Enterprise LTSC** 版本。去除了 Cortana、Store、Edge 等全家桶，极其精简稳定，非常适合在 NAS 上长期运行。
+## 2. Windows 10/11 优化 (LTSC & vTPM)
+
+*   **版本选择**：不要装普通的 Home/Pro 版，臃肿且更新频繁。
+*   **推荐**：安装 **Windows 10 Enterprise LTSC** 或 **Windows 11 Enterprise LTSC** (IoT) 版本。去除了 Cortana、Store、Edge 等全家桶，极其精简稳定，非常适合在 NAS 上长期运行。
+*   **Windows 11 支持 (vTPM)**：
+    *   **DSM 7.2+**：VMM 原生支持 **虚拟 TPM (vTPM)**。
+    *   **设置**：在创建虚拟机时，加密选项中勾选“启用虚拟 TPM”。
+    *   **注意**：启用 vTPM 会强制加密虚拟机，这意味着如果密钥丢失（存储在密钥管理器中），虚拟机将无法启动。务必备份密钥！
+    *   **替代方案**：如果不想加密，可以使用 Rufus 制作“去除 TPM 检测”的 Windows 11 安装镜像。
 
 ## 3. 虚拟软路由 (OpenWrt) 深度调优
 
