@@ -69,6 +69,7 @@ nav:
   - 生产力与办公:
     - 生产力工具: productivity/drive-office.md
     - 知识管理与协同工作流: productivity/knowledge-workflow.md
+    - 自托管替代方案汇总: productivity/self-hosted-alternatives.md
   - 虚拟化与建站:
     - VMM 虚拟机实战: virtualization/vmm-guide.md
     - Web Station 建站: web-dev/website-hosting.md
@@ -76,6 +77,8 @@ nav:
     - Mac/Windows 集成: platform-specific/os-integration.md
   - Docker 容器:
     - 必备容器推荐 Top 20: docker-containers/must-have.md
+    - 监控与仪表盘: docker-containers/monitoring.md
+    - 自动化追剧 (Arr Suite): docker-containers/arr-suite.md
     - 自建密码库 Vaultwarden: docker-containers/vaultwarden.md
     - 常用 Compose 模板: docker-containers/compose-templates.md
     - Container 网络详解: docker-containers/network-guide.md
