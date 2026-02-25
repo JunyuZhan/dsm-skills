@@ -144,6 +144,10 @@ nav:
     - Mac 极致优化指南: platform-specific/mac-optimization.md
   - Docker 容器:
     - 必备容器推荐 Top 20: docker-containers/must-have.md
+    - 媒体服务器深度调优 (Plex/Emby): docker-containers/media-server-tuning.md
+    - 下载工具深度调优 (QB/TR): docker-containers/download-tuning.md
+    - 数据库容器深度调优 (PG/MariaDB): docker-containers/database-tuning.md
+    - Docker Compose 最佳实践: docker-containers/compose-best-practices.md
     - AI 大模型本地部署: docker-containers/local-ai.md
     - Dify AI 应用构建: ai-deployment/dify-rag.md
     - OpenClaw AI 智能体: docker-containers/openclaw.md

@@ -92,6 +92,7 @@ services:
     *   Host: `nas-ip`
     *   Port: `8080`
     *   Category: `radarr` (建议分类，方便管理)
+    *   **进阶调优**：为了获得最佳下载速度，请参考 [下载工具深度调优](download-tuning.md)。
 3.  **Root Folders**: 设置你的媒体库路径（如 `/movies`）。
 
 ### 3. 开始使用

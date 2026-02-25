@@ -35,6 +35,7 @@
 - **用途**：媒体服务器三巨头。
 - **推荐理由**：Jellyfin 完全免费开源，支持硬解。Emby/Plex 体验更好但部分功能收费。
 - **镜像**：`nyanmisaka/jellyfin` (特供版，驱动支持更好)
+- **进阶调优**：详见 [媒体服务器深度调优 (Plex/Emby)](media-server-tuning.md)。
 
 ### 7. Nastools / MoviePilot
 - **用途**：自动化观影工具。
@@ -45,6 +46,7 @@
 - **用途**：BT/PT 下载器。
 - **推荐理由**：NAS 必备。配合 Web UI 可以远程管理下载任务。
 - **镜像**：`linuxserver/transmission` 或 `linuxserver/qbittorrent`
+- **进阶调优**：详见 [下载工具深度调优 (QB/TR)](download-tuning.md)。
 
 ### 9. ChineseSubFinder
 - **用途**：中文字幕自动下载器。
