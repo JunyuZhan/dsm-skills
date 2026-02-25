@@ -11,6 +11,10 @@
 
 ## 1. 存储架构与性能调优
 
+**音乐制作存储工作流：**
+
+![Music Production Workflow](../images/music_production_workflow.svg)
+
 ### 文件夹结构建议
 
 ```

@@ -4,6 +4,10 @@ Surveillance Station (SS) 不仅仅是录像机，它还是一个强大的物联
 
 ## 1. CMS (集中化管理系统)
 
+**CMS 架构示意图：**
+
+![CMS Architecture](../images/cms_architecture.svg)
+
 如果你有多个地点的监控（如家、父母家、店铺），不需要分别登录三台 NAS。
 
 1.  **主机 (Host)**：选择性能最强的一台 NAS 作为 CMS 主机。安装 **CMS** 套件（在 SS 内部的应用中心）。

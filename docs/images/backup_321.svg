@@ -1,58 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
-  <defs>
-    <style>
-      .text { font-family: Arial, sans-serif; }
-      .title { font-size: 18px; font-weight: bold; fill: #333; }
-      .label { font-size: 14px; fill: #555; }
-    </style>
-  </defs>
-
-  <rect width="800" height="400" fill="#f8f9fa"/>
-  <text x="400" y="30" text-anchor="middle" class="title">3-2-1 Backup Strategy</text>
-
-  <!-- Data Source -->
-  <g transform="translate(50, 150)">
-    <rect x="0" y="0" width="120" height="100" rx="10" fill="#3498db"/>
-    <text x="60" y="45" text-anchor="middle" fill="white" class="text" font-weight="bold">Primary Data</text>
-    <text x="60" y="70" text-anchor="middle" fill="#ecf0f1" class="label" font-size="12">PC / NAS</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <!-- Background -->
+  <rect width="800" height="300" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">3-2-1 Backup Strategy</text>
+  
+  <!-- 3 Copies -->
+  <g transform="translate(100, 80)">
+    <text x="100" y="0" font-family="Arial" font-size="60" font-weight="bold" fill="#4285f4" text-anchor="middle">3</text>
+    <text x="100" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Copies of Data</text>
+    
+    <rect x="20" y="50" width="50" height="60" rx="5" fill="#fff" stroke="#4285f4" stroke-width="2" />
+    <text x="45" y="85" font-family="Arial" font-size="10" text-anchor="middle">Original</text>
+    
+    <rect x="80" y="50" width="50" height="60" rx="5" fill="#fff" stroke="#4285f4" stroke-width="2" />
+    <text x="105" y="85" font-family="Arial" font-size="10" text-anchor="middle">Copy 1</text>
+    
+    <rect x="140" y="50" width="50" height="60" rx="5" fill="#fff" stroke="#4285f4" stroke-width="2" />
+    <text x="165" y="85" font-family="Arial" font-size="10" text-anchor="middle">Copy 2</text>
   </g>
-
-  <!-- Copy 1 -->
-  <g transform="translate(250, 50)">
-    <rect x="0" y="0" width="120" height="100" rx="10" fill="#2ecc71"/>
-    <text x="60" y="45" text-anchor="middle" fill="white" class="text" font-weight="bold">Copy 1</text>
-    <text x="60" y="70" text-anchor="middle" fill="#ecf0f1" class="label" font-size="12">Local NAS Snapshots</text>
+  
+  <!-- Divider -->
+  <line x1="280" y1="50" x2="280" y2="250" stroke="#ddd" stroke-width="2" />
+  
+  <!-- 2 Media -->
+  <g transform="translate(300, 80)">
+    <text x="100" y="0" font-family="Arial" font-size="60" font-weight="bold" fill="#34a853" text-anchor="middle">2</text>
+    <text x="100" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Different Media</text>
+    
+    <g transform="translate(40, 50)">
+      <rect width="60" height="40" rx="2" fill="#fff" stroke="#34a853" stroke-width="2" />
+      <text x="30" y="25" font-family="Arial" font-size="10" text-anchor="middle">NAS HDD</text>
+    </g>
+    
+    <g transform="translate(110, 50)">
+      <rect width="40" height="60" rx="2" fill="#fff" stroke="#34a853" stroke-width="2" />
+      <text x="20" y="35" font-family="Arial" font-size="10" text-anchor="middle">USB</text>
+    </g>
   </g>
-
-  <!-- Copy 2 -->
-  <g transform="translate(250, 250)">
-    <rect x="0" y="0" width="120" height="100" rx="10" fill="#f1c40f"/>
-    <text x="60" y="45" text-anchor="middle" fill="white" class="text" font-weight="bold">Copy 2</text>
-    <text x="60" y="70" text-anchor="middle" fill="#fff" class="label" font-size="12">USB Drive (Offline)</text>
+  
+  <!-- Divider -->
+  <line x1="520" y1="50" x2="520" y2="250" stroke="#ddd" stroke-width="2" />
+  
+  <!-- 1 Offsite -->
+  <g transform="translate(540, 80)">
+    <text x="100" y="0" font-family="Arial" font-size="60" font-weight="bold" fill="#ea4335" text-anchor="middle">1</text>
+    <text x="100" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#333" text-anchor="middle">Offsite Copy</text>
+    
+    <cloud transform="translate(60, 40) scale(0.8)" />
+    <ellipse cx="100" cy="70" rx="50" ry="30" fill="#fff" stroke="#ea4335" stroke-width="2" />
+    <text x="100" y="75" font-family="Arial" font-size="12" fill="#ea4335" text-anchor="middle">Cloud / Remote</text>
   </g>
-
-  <!-- Offsite -->
-  <g transform="translate(550, 150)">
-    <rect x="0" y="0" width="120" height="100" rx="10" fill="#9b59b6"/>
-    <text x="60" y="45" text-anchor="middle" fill="white" class="text" font-weight="bold">Offsite Copy</text>
-    <text x="60" y="70" text-anchor="middle" fill="#ecf0f1" class="label" font-size="12">Cloud / Remote NAS</text>
-  </g>
-
-  <!-- Arrows -->
-  <g stroke="#7f8c8d" stroke-width="2" fill="none" marker-end="url(#arrow)">
-    <!-- Source to Copy 1 -->
-    <path d="M170,180 L250,120" />
-    <!-- Source to Copy 2 -->
-    <path d="M170,220 L250,280" />
-    <!-- Source to Offsite -->
-    <path d="M170,200 L550,200" stroke-dasharray="5,5"/>
-  </g>
-
-  <text x="400" y="215" text-anchor="middle" class="label" fill="#7f8c8d">Encrypted Transfer</text>
-
-  <defs>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
-      <path d="M0,0 L0,6 L9,3 z" fill="#7f8c8d" />
-    </marker>
-  </defs>
+  
 </svg>

@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Home Lab Network Topology</text>
+  
+  <!-- Internet -->
+  <g transform="translate(350, 50)">
+    <cloud transform="scale(0.5)" /> <!-- Placeholder shape -->
+    <ellipse cx="50" cy="30" rx="40" ry="20" fill="#ddd" stroke="#999" />
+    <text x="50" y="35" font-family="Arial" font-size="12" text-anchor="middle">Internet</text>
+  </g>
+  
+  <!-- Router (OpenWrt) -->
+  <g transform="translate(320, 120)">
+    <rect width="160" height="60" rx="5" fill="#fff" stroke="#ea4335" stroke-width="3" />
+    <text x="80" y="35" font-family="Arial" font-size="14" font-weight="bold" fill="#ea4335" text-anchor="middle">OpenWrt / Router</text>
+  </g>
+  
+  <!-- Connection -->
+  <line x1="400" y1="100" x2="400" y2="120" stroke="#333" stroke-width="2" />
+  
+  <!-- Switch -->
+  <g transform="translate(320, 220)">
+    <rect width="160" height="40" rx="2" fill="#333" />
+    <text x="80" y="25" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">Managed Switch</text>
+  </g>
+  
+  <!-- Connection -->
+  <line x1="400" y1="180" x2="400" y2="220" stroke="#333" stroke-width="2" />
+  
+  <!-- VLANs -->
+  
+  <!-- VLAN 1 -->
+  <g transform="translate(100, 300)">
+    <rect width="180" height="150" rx="10" fill="#fff" stroke="#4285f4" stroke-width="2" />
+    <text x="90" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#4285f4" text-anchor="middle">VLAN 1 (Trusted)</text>
+    
+    <!-- NAS -->
+    <rect x="40" y="50" width="100" height="80" rx="5" fill="#e8f0fe" stroke="#4285f4" />
+    <text x="90" y="80" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">NAS</text>
+    <text x="90" y="100" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Docker / DNS</text>
+  </g>
+  
+  <!-- VLAN 10 -->
+  <g transform="translate(310, 300)">
+    <rect width="180" height="150" rx="10" fill="#fff" stroke="#fbbc05" stroke-width="2" />
+    <text x="90" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#fbbc05" text-anchor="middle">VLAN 10 (IoT)</text>
+    
+    <circle cx="50" cy="70" r="15" fill="#fce8b2" />
+    <circle cx="90" cy="70" r="15" fill="#fce8b2" />
+    <circle cx="130" cy="70" r="15" fill="#fce8b2" />
+    <text x="90" y="110" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Smart Home</text>
+    <text x="90" y="130" font-family="Arial" font-size="10" fill="#ea4335" text-anchor="middle">No Internet Access</text>
+  </g>
+  
+  <!-- VLAN 20 -->
+  <g transform="translate(520, 300)">
+    <rect width="180" height="150" rx="10" fill="#fff" stroke="#34a853" stroke-width="2" />
+    <text x="90" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#34a853" text-anchor="middle">VLAN 20 (Guest)</text>
+    <text x="90" y="80" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Wifi Clients</text>
+    <text x="90" y="100" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Isolated</text>
+  </g>
+  
+  <!-- Connections -->
+  <line x1="400" y1="260" x2="190" y2="300" stroke="#4285f4" stroke-width="2" />
+  <line x1="400" y1="260" x2="400" y2="300" stroke="#fbbc05" stroke-width="2" />
+  <line x1="400" y1="260" x2="610" y2="300" stroke="#34a853" stroke-width="2" />
+  
+</svg>

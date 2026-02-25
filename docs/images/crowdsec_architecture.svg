@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">CrowdSec Defense Architecture</text>
+
+  <!-- Attacker (Left) -->
+  <g transform="translate(50, 150)">
+    <circle cx="40" cy="40" r="30" fill="#fff" stroke="#dc3545" stroke-width="2"/>
+    <text x="40" y="90" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#dc3545">Attacker</text>
+    <text x="40" y="110" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Malicious IP</text>
+  </g>
+
+  <!-- Firewall (Bouncer) -->
+  <g transform="translate(200, 100)">
+    <rect x="0" y="0" width="50" height="200" rx="5" fill="#dc3545"/>
+    <text x="25" y="100" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#fff" transform="rotate(-90, 25, 100)">Firewall Bouncer</text>
+  </g>
+
+  <!-- Nginx Proxy Manager (Center) -->
+  <g transform="translate(300, 100)">
+    <rect x="0" y="0" width="150" height="200" rx="5" fill="#343a40"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#fff">NPM</text>
+    <text x="75" y="50" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#adb5bd">Reverse Proxy</text>
+    
+    <!-- Logs -->
+    <rect x="20" y="150" width="110" height="30" rx="2" fill="#fff"/>
+    <text x="75" y="170" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">access.log</text>
+  </g>
+
+  <!-- CrowdSec Engine (Right) -->
+  <g transform="translate(550, 100)">
+    <rect x="0" y="0" width="200" height="200" rx="10" fill="#e9ecef" stroke="#007bff" stroke-width="2"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#007bff">CrowdSec Agent</text>
+    
+    <!-- Parser -->
+    <rect x="30" y="50" width="140" height="40" rx="5" fill="#fff" stroke="#333" stroke-width="1"/>
+    <text x="100" y="75" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Log Parser</text>
+    
+    <!-- Decision -->
+    <rect x="30" y="110" width="140" height="40" rx="5" fill="#fff" stroke="#28a745" stroke-width="2"/>
+    <text x="100" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#28a745">Decision Engine</text>
+  </g>
+
+  <!-- Community Blocklist (Top Right) -->
+  <g transform="translate(600, 20)">
+    <cloud transform="scale(2)" fill="#e9ecef" stroke="#333"/>
+    <text x="50" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold">Community Blocklist</text>
+  </g>
+
+  <!-- Connections -->
+  <!-- Attack -->
+  <line x1="90" y1="180" x2="190" y2="180" stroke="#dc3545" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <text x="140" y="170" font-family="Arial, sans-serif" font-size="12" fill="#dc3545">Attack!</text>
+
+  <!-- Log Reading -->
+  <path d="M 450 165 L 550 165" fill="none" stroke="#333" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <text x="500" y="155" font-family="Arial, sans-serif" font-size="10" fill="#666">Read Logs</text>
+
+  <!-- Ban Command -->
+  <path d="M 650 150 Q 650 350 225 300" fill="none" stroke="#dc3545" stroke-width="2" marker-end="url(#arrow-red)"/>
+  <text x="450" y="330" font-family="Arial, sans-serif" font-size="12" fill="#dc3545">Ban Command (via API)</text>
+
+  <!-- Sync List -->
+  <line x1="650" y1="60" x2="650" y2="100" stroke="#007bff" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#dc3545" />
+    </marker>
+  </defs>
+
+</svg>

@@ -6,6 +6,10 @@
 
 **acme.sh** 是一个纯 Shell 脚本实现的 ACME 客户端，轻量、强大。配合 **synology-deploy** 钩子，可以实现：**自动申请泛域名证书 -> 自动部署到 DSM -> 自动重启 Web 服务**，全程无需人工干预。
 
+**自动化流程示意图：**
+
+![acme.sh Automation Flow](../images/acme_flow.svg)
+
 ## 1. 方案选择：Docker vs 原生
 
 虽然 acme.sh 可以直接跑在 SSH 里，但为了环境隔离和升级方便，**强烈推荐使用 Docker**。

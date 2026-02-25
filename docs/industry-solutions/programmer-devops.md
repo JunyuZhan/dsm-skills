@@ -6,6 +6,10 @@
 
 ## 1. 代码托管与 CI/CD：Gitea + Actions
 
+**CI/CD 流水线架构图：**
+
+![CI/CD Pipeline](../images/cicd_pipeline.svg)
+
 Gitea 不仅是 Git 仓库，配合 Actions 可以实现类似 GitHub Actions 的自动化构建。
 
 ### 1.1 Gitea + Runner 部署 (Docker Compose)

@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Defense in Depth: NAS Security Architecture</text>
+  
+  <!-- Layer 1: Perimeter -->
+  <g transform="translate(100, 400)">
+    <rect width="600" height="60" rx="10" fill="#ea4335" stroke="#c5221f" stroke-width="2" />
+    <text x="300" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">Layer 1: Perimeter (Firewall & Network)</text>
+    <text x="150" y="35" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">GeoIP Block</text>
+    <text x="450" y="35" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">Port Forwarding Limit</text>
+  </g>
+  
+  <!-- Arrow Up -->
+  <path d="M400 400 L400 360" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Layer 2: Access -->
+  <g transform="translate(100, 300)">
+    <rect width="600" height="60" rx="10" fill="#fbbc05" stroke="#ea4335" stroke-width="2" />
+    <text x="300" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">Layer 2: Access (Reverse Proxy & HTTPS)</text>
+    <text x="150" y="35" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">TLS 1.2/1.3</text>
+    <text x="450" y="35" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">HSTS Preload</text>
+  </g>
+  
+  <!-- Arrow Up -->
+  <path d="M400 300 L400 260" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Layer 3: Identity -->
+  <g transform="translate(100, 200)">
+    <rect width="600" height="60" rx="10" fill="#34a853" stroke="#0d652d" stroke-width="2" />
+    <text x="300" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">Layer 3: Identity (Authentication)</text>
+    <text x="150" y="35" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">2FA / MFA</text>
+    <text x="450" y="35" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">Auto Block</text>
+  </g>
+  
+  <!-- Arrow Up -->
+  <path d="M400 200 L400 160" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Layer 4: Data -->
+  <g transform="translate(100, 100)">
+    <rect width="600" height="60" rx="10" fill="#4285f4" stroke="#185abc" stroke-width="2" />
+    <text x="300" y="35" font-family="Arial" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">Layer 4: Data & Application</text>
+    <text x="150" y="35" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">Encrypted Folders</text>
+    <text x="450" y="35" font-family="Arial" font-size="12" fill="#fff" text-anchor="middle">WORM / Snapshot</text>
+  </g>
+  
+  <!-- Attackers -->
+  <g transform="translate(50, 450)">
+    <circle cx="30" cy="30" r="20" fill="#333" />
+    <text x="30" y="35" font-family="Arial" font-size="10" fill="#fff" text-anchor="middle">Hacker</text>
+  </g>
+  
+  <path d="M80 450 L100 430" stroke="#ea4335" stroke-width="2" marker-end="url(#arrow-red)" />
+  
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666" />
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ea4335" />
+    </marker>
+  </defs>
+</svg>

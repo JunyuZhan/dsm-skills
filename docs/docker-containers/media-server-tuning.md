@@ -4,6 +4,10 @@
 
 ## 1. 硬件转码 (Hardware Transcoding)
 
+**硬件转码流程示意图：**
+
+![Transcoding Flow](../images/transcode_flow.svg)
+
 这是最核心的优化。利用核显 (iGPU) 解码视频，解放 CPU。
 
 ### A. 驱动映射 (Docker)

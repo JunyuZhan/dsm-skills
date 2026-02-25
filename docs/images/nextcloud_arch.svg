@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">Nextcloud High Performance Architecture</text>
+
+  <!-- Reverse Proxy (Nginx) -->
+  <g transform="translate(50, 150)">
+    <rect x="0" y="0" width="120" height="80" rx="5" fill="#343a40"/>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#fff" font-weight="bold">Reverse Proxy</text>
+    <text x="60" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#adb5bd">HTTPS / 443</text>
+  </g>
+
+  <!-- Nextcloud Container -->
+  <g transform="translate(300, 100)">
+    <rect x="0" y="0" width="200" height="180" rx="10" fill="#e9ecef" stroke="#007bff" stroke-width="2"/>
+    <text x="100" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#007bff">Nextcloud App</text>
+    
+    <!-- PHP-FPM -->
+    <rect x="30" y="50" width="140" height="40" rx="5" fill="#fff" stroke="#333" stroke-width="1"/>
+    <text x="100" y="75" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">PHP-FPM</text>
+    
+    <!-- Cron -->
+    <rect x="30" y="110" width="140" height="40" rx="5" fill="#fff" stroke="#333" stroke-width="1"/>
+    <text x="100" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">System Cron</text>
+  </g>
+
+  <!-- Redis (Cache) -->
+  <g transform="translate(600, 50)">
+    <rect x="0" y="0" width="120" height="80" rx="5" fill="#fff" stroke="#dc3545" stroke-width="2"/>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#dc3545">Redis</text>
+    <text x="60" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Locking / Cache</text>
+  </g>
+
+  <!-- Database -->
+  <g transform="translate(600, 250)">
+    <rect x="0" y="0" width="120" height="80" rx="5" fill="#fff" stroke="#28a745" stroke-width="2"/>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" font-weight="bold" fill="#28a745">PostgreSQL</text>
+    <text x="60" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">Metadata</text>
+  </g>
+
+  <!-- Host Cron -->
+  <g transform="translate(100, 320)">
+    <rect x="0" y="0" width="150" height="50" rx="5" fill="#fff" stroke="#666" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="75" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="middle">Host Cron Trigger</text>
+  </g>
+
+  <!-- Connections -->
+  <!-- Proxy to App -->
+  <line x1="170" y1="190" x2="300" y2="190" stroke="#333" stroke-width="3"/>
+
+  <!-- App to Redis -->
+  <path d="M 500 140 Q 550 140 600 90" fill="none" stroke="#dc3545" stroke-width="2"/>
+  <text x="560" y="110" font-family="Arial, sans-serif" font-size="10" fill="#dc3545">File Locks</text>
+
+  <!-- App to DB -->
+  <path d="M 500 240 Q 550 240 600 290" fill="none" stroke="#28a745" stroke-width="2"/>
+  <text x="560" y="270" font-family="Arial, sans-serif" font-size="10" fill="#28a745">SQL Queries</text>
+
+  <!-- Cron Trigger -->
+  <path d="M 175 320 Q 200 250 330 150" fill="none" stroke="#666" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)"/>
+  <text x="250" y="280" font-family="Arial, sans-serif" font-size="10" fill="#666">docker exec</text>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666" />
+    </marker>
+  </defs>
+
+</svg>

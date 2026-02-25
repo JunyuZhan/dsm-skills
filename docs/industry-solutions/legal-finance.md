@@ -20,6 +20,11 @@
     *   **保留期限**：例如 3 年（根据税务/法律法规要求）。
 
 ### 1.2 验证 WORM 是否生效
+
+**WORM 生命周期示意图：**
+
+![WORM Lifecycle](../images/worm_lifecycle.svg)
+
 上传一个测试文件 `contract_test.pdf`，等待锁定时间后：
 *   尝试重命名 -> **失败**。
 *   尝试删除 -> **失败**。
@@ -98,40 +103,50 @@ Paperless 不仅仅是存储，还能“自动分类”。
 2.  **场景 1：自动归档发票**
     *   **触发器**：内容包含 "增值税专用发票" 或 "Invoice"。
     *   **动作**：
-        *   分配标签：`Invoice`, `Finance`。
-        *   分配对应人：`Accountant_A`。
-        *   设置存储路径：`/2024/Invoices/{created_year}/{correspondent}`。
+        *   **Assign tags**: "Invoices" (自动打标签)
+        *   **Assign correspondent**: 从内容中自动提取供应商名称 (使用正则表达式匹配)
+        *   **Assign storage path**: `2024/Invoices` (自动归档到对应年份文件夹)
+        *   **Owner**: 财务经理 (设置文档归属人)
+
 3.  **场景 2：合同到期提醒**
-    *   虽然 Paperless 本身没有强提醒，但可以通过 Webhook 触发外部通知。
+    *   Paperless 可以识别日期。设置一个视图，筛选 "Expiration Date" 在未来 30 天内的合同。
+    *   配合 Webhook 可以触发外部通知（如发送到 Slack/钉钉）。
 
 ### 2.3 物理扫描仪联动
 *   将你的网络扫描仪（如 Brother, Epson）的 FTP/SMB 目标指向 `/volume1/scan_input`。
 *   **效果**：扫描仪按下“扫描”键 -> 文件进入 NAS -> Paperless 自动 OCR 识别 -> 自动归档。全过程无需电脑介入。
 
-## 3. 私有化电子签章：DocuSeal
+## 3. 电子签章系统：自建 DocuSeal
 
-国内的电子签章服务（如 e签宝）按次收费且数据在云端。DocuSeal 是开源的 DocuSign 替代品。
+传统的打印-签字-扫描流程效率低下且不环保。**DocuSeal** 是一个开源的 DocuSign 替代品，允许你在 NAS 上私有化部署电子签章平台。
 
-### 3.1 部署
+### 3.1 Docker Compose 部署
+
 ```yaml
 version: '3'
 services:
   docuseal:
     image: docuseal/docuseal:latest
+    container_name: docuseal
+    restart: unless-stopped
     ports:
       - "3000:3000"
     volumes:
-      - docuseal_data:/data
+      - ./docuseal_data:/data
     environment:
-      - SIGNING_SECRET=your_long_secret_key
+      - FORCE_SSL=false # 如果反代已处理SSL，设为false
+      # - SMTP_HOST=smtp.gmail.com # 配置邮件发送
 ```
 
-### 3.2 使用流程
-1.  上传 PDF 合同。
-2.  拖拽设置“签名区”、“日期区”。
-3.  输入客户邮箱发送。
-4.  客户在手机上打开链接，手写签名。
-5.  双方收到签署完成的 PDF（附带审计日志）。
+### 3.2 签章工作流
+1.  **上传合同**：将 PDF 拖入 DocuSeal。
+2.  **指定签署人**：输入客户邮箱（或内部员工）。
+3.  **放置字段**：在 PDF 上拖拽 "签名"、"日期"、"文本框" 位置。
+4.  **发送**：系统自动发邮件给签署人。
+5.  **签署与归档**：
+    *   签署人点击链接 -> 手写签名/输入名字 -> 确认。
+    *   签署完成的文件自动保存回 NAS 映射的 `docuseal_data` 目录。
+    *   配合 Paperless，可以将签署好的合同自动归档。
 
 ## 4. 审计追踪与日志 (Log Center)
 
@@ -143,9 +158,18 @@ services:
 
 ### 4.2 集中审计
 1.  打开 **日志中心**。
-2.  **搜索**：输入文件名，查看所有操作记录。
-3.  **归档**：将日志定期归档到 WORM 文件夹，防止日志被篡改。
+2.  在“日志搜索”中，你可以过滤特定用户（如 `user_a`）在特定时间段的所有操作。
+3.  **导出报表**：定期导出 HTML/CSV 格式的审计日志，作为合规性备案。
 
-## 5. 总结
+---
 
-通过 WORM 技术锁定原始证据，Paperless-ngx 自动化处理票据，DocuSeal 完成电子签约，群晖 NAS 为法律与财务人员构建了一个**闭环的、合规的、私有的**数据处理平台。
+**总结**
+
+| 需求 | 解决方案 | 核心价值 |
+| :--- | :--- | :--- |
+| **合规存储** | **WORM** (WriteOnce) | 防止篡改，满足审计法规 |
+| **文档管理** | **Paperless-ngx** | OCR 识别，全文检索，自动分类 |
+| **合同签署** | **DocuSeal** | 无纸化，流程可追踪 |
+| **审计追踪** | **Log Center** | 记录所有操作，满足合规审查 |
+
+通过这套组合拳，NAS 不再只是硬盘盒，而是法律与财务部门的**数字化中台**。

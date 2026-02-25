@@ -29,6 +29,10 @@
 
 ## 2. 作业收发与管理
 
+**作业收发流程示意图：**
+
+![Homework Flow](../images/homework_flow.svg)
+
 收几百份电子版作业，微信/QQ 会过期且混乱。
 
 ### 2.1 创建收作业链接 (File Station)

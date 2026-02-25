@@ -6,6 +6,10 @@
 
 ## 1. 架构：Nginx Proxy Manager + CrowdSec
 
+**CrowdSec 防御架构图：**
+
+![CrowdSec Architecture](../images/crowdsec_architecture.svg)
+
 最常见的场景是：所有流量通过 Nginx Proxy Manager (NPM) 进入，我们要在 NPM 层面拦截恶意 IP。
 
 ### 部署 CrowdSec (Docker Compose)

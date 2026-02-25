@@ -14,6 +14,10 @@
 
 ## 1. 网络与安全基石
 
+**Home Lab 网络拓扑图：**
+
+![Home Lab Topology](../images/homelab_topology.svg)
+
 ### DNS 过滤与本地解析 (AdGuard Home)
 不要依赖 ISP 的 DNS，保护隐私并去除广告。
 *   **部署模式**：推荐 **Host 网络模式** 或 **Macvlan**，让 AdGuard Home 获取真实客户端 IP。

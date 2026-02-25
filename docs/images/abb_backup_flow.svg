@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">SMB Backup Strategy (ABB)</text>
+  
+  <!-- Source Devices -->
+  <g transform="translate(50, 100)">
+    <rect width="180" height="200" rx="10" fill="#fff" stroke="#999" stroke-width="2" stroke-dasharray="5,5" />
+    <text x="90" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">Employees</text>
+    
+    <!-- PC 1 -->
+    <rect x="40" y="50" width="100" height="60" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="90" y="85" font-family="Arial" font-size="12" text-anchor="middle">Sales PC</text>
+    
+    <!-- PC 2 -->
+    <rect x="40" y="130" width="100" height="60" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="90" y="165" font-family="Arial" font-size="12" text-anchor="middle">HR Laptop</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M230 200 L330 200" stroke="#34a853" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- NAS ABB -->
+  <g transform="translate(330, 100)">
+    <rect width="200" height="200" rx="10" fill="#fff" stroke="#34a853" stroke-width="3" />
+    <text x="100" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#34a853" text-anchor="middle">Active Backup</text>
+    <text x="100" y="50" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Centralized Mgmt</text>
+    
+    <!-- Features -->
+    <rect x="30" y="80" width="140" height="40" rx="5" fill="#e6f4ea" />
+    <text x="100" y="105" font-family="Arial" font-size="12" fill="#34a853" text-anchor="middle">Global Dedupe</text>
+    
+    <rect x="30" y="140" width="140" height="40" rx="5" fill="#e6f4ea" />
+    <text x="100" y="165" font-family="Arial" font-size="12" fill="#34a853" text-anchor="middle">Incremental</text>
+  </g>
+  
+  <!-- Snapshot -->
+  <path d="M530 200 L600 200" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Disaster Recovery -->
+  <g transform="translate(600, 100)">
+    <rect width="150" height="200" rx="10" fill="#fff" stroke="#ea4335" stroke-width="2" />
+    <text x="75" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#ea4335" text-anchor="middle">Protection</text>
+    
+    <rect x="25" y="60" width="100" height="50" rx="5" fill="#fce8e6" />
+    <text x="75" y="85" font-family="Arial" font-size="12" fill="#ea4335" text-anchor="middle">Snapshot</text>
+    <text x="75" y="100" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">(Ransomware)</text>
+    
+    <rect x="25" y="130" width="100" height="50" rx="5" fill="#fce8e6" />
+    <text x="75" y="155" font-family="Arial" font-size="12" fill="#ea4335" text-anchor="middle">Hyper Backup</text>
+    <text x="75" y="170" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">(Offsite)</text>
+  </g>
+  
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#34a853" />
+    </marker>
+  </defs>
+</svg>

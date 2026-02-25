@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">Revit Server & SMB Collaboration Architecture</text>
+  
+  <!-- 10GbE Switch -->
+  <rect x="250" y="220" width="300" height="60" rx="10" fill="#343a40" stroke="#212529" stroke-width="2"/>
+  <text x="400" y="255" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#fff">10GbE Switch / Network Core</text>
+
+  <!-- NAS Unit -->
+  <g transform="translate(300, 320)">
+    <rect x="0" y="0" width="200" height="140" rx="10" fill="#e9ecef" stroke="#ced4da" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#495057">Synology NAS</text>
+    
+    <!-- VMM Container inside NAS -->
+    <rect x="20" y="40" width="160" height="80" rx="5" fill="#fff" stroke="#6c757d" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="100" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#6c757d">Virtual Machine Manager</text>
+    
+    <!-- Windows Server / Revit Server -->
+    <rect x="35" y="75" width="130" height="35" rx="3" fill="#007bff" opacity="0.1"/>
+    <rect x="35" y="75" width="130" height="35" rx="3" fill="none" stroke="#007bff" stroke-width="2"/>
+    <text x="100" y="98" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" font-weight="bold" fill="#007bff">Revit Server (Win)</text>
+  </g>
+
+  <!-- Clients -->
+  <!-- Client 1 -->
+  <g transform="translate(100, 100)">
+    <rect x="0" y="0" width="120" height="80" rx="5" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Workstation A</text>
+    <text x="60" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">(Revit User)</text>
+  </g>
+
+  <!-- Client 2 -->
+  <g transform="translate(580, 100)">
+    <rect x="0" y="0" width="120" height="80" rx="5" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">Workstation B</text>
+    <text x="60" y="65" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#666">(CAD/BIM User)</text>
+  </g>
+
+  <!-- Connections -->
+  <!-- Client 1 to Switch -->
+  <line x1="160" y1="180" x2="300" y2="220" stroke="#007bff" stroke-width="3"/>
+  <text x="210" y="200" font-family="Arial, sans-serif" font-size="12" fill="#007bff">RVT Protocol</text>
+
+  <!-- Client 2 to Switch -->
+  <line x1="640" y1="180" x2="500" y2="220" stroke="#28a745" stroke-width="3"/>
+  <text x="590" y="200" font-family="Arial, sans-serif" font-size="12" fill="#28a745">SMB 3.0</text>
+
+  <!-- Switch to NAS -->
+  <line x1="400" y1="280" x2="400" y2="320" stroke="#333" stroke-width="4"/>
+  <text x="410" y="305" font-family="Arial, sans-serif" font-size="12" fill="#333">10GbE Link</text>
+
+  <!-- Legend -->
+  <g transform="translate(50, 450)">
+    <circle cx="10" cy="10" r="5" fill="#007bff"/>
+    <text x="25" y="15" font-family="Arial, sans-serif" font-size="12">Revit Server Traffic</text>
+    <circle cx="150" cy="10" r="5" fill="#28a745"/>
+    <text x="165" y="15" font-family="Arial, sans-serif" font-size="12">File Sharing (SMB)</text>
+  </g>
+
+</svg>

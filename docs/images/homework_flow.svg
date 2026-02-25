@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Digital Homework Workflow</text>
+  
+  <!-- Teacher Phase 1 -->
+  <g transform="translate(50, 150)">
+    <circle cx="40" cy="40" r="30" fill="#4285f4" />
+    <text x="40" y="45" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Teacher</text>
+    <text x="40" y="85" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">1. Create Link</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M130 190 L180 190" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- NAS File Request -->
+  <g transform="translate(180, 130)">
+    <rect width="140" height="120" rx="10" fill="#fff" stroke="#34a853" stroke-width="3" />
+    <text x="70" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#34a853" text-anchor="middle">File Station</text>
+    <text x="70" y="55" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">File Request</text>
+    <text x="70" y="75" font-family="Arial" font-size="10" fill="#999" text-anchor="middle">Password Protected</text>
+    <text x="70" y="95" font-family="Arial" font-size="10" fill="#999" text-anchor="middle">Deadline Set</text>
+  </g>
+  
+  <!-- Students -->
+  <g transform="translate(380, 50)">
+    <circle cx="30" cy="30" r="20" fill="#fbbc05" />
+    <text x="30" y="35" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Stu A</text>
+  </g>
+  <g transform="translate(380, 150)">
+    <circle cx="30" cy="30" r="20" fill="#fbbc05" />
+    <text x="30" y="35" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Stu B</text>
+  </g>
+  <g transform="translate(380, 250)">
+    <circle cx="30" cy="30" r="20" fill="#fbbc05" />
+    <text x="30" y="35" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Stu C</text>
+  </g>
+  
+  <!-- Arrows from Students -->
+  <path d="M350 80 L320 130" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M350 180 L320 180" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  <path d="M350 280 L320 230" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- NAS Storage -->
+  <g transform="translate(500, 130)">
+    <rect width="120" height="120" rx="10" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="60" y="30" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Homework Folder</text>
+    <path d="M30 50 L90 50" stroke="#ddd" stroke-width="2" />
+    <text x="60" y="70" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Auto Rename</text>
+    <text x="60" y="90" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Name_File.docx</text>
+  </g>
+  
+  <!-- Arrow to Storage -->
+  <path d="M320 190 L500 190" stroke="#666" stroke-width="2" stroke-dasharray="5,5" />
+  
+  <!-- Teacher Grading -->
+  <g transform="translate(660, 150)">
+    <rect width="100" height="80" rx="5" fill="#fff" stroke="#ea4335" stroke-width="2" />
+    <text x="50" y="30" font-family="Arial" font-size="12" font-weight="bold" fill="#ea4335" text-anchor="middle">Grading</text>
+    <text x="50" y="50" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">iPad / PC</text>
+    <text x="50" y="70" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Annotate PDF</text>
+  </g>
+  
+  <!-- Arrow Grading -->
+  <path d="M620 190 L660 190" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666" />
+    </marker>
+  </defs>
+</svg>

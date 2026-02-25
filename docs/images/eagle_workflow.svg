@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Eagle Asset Management Workflow</text>
+  
+  <!-- Local PC -->
+  <g transform="translate(100, 150)">
+    <rect width="160" height="120" rx="10" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="80" y="30" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Designer PC/Mac</text>
+    <path d="M30 50 L130 50" stroke="#ddd" stroke-width="2" />
+    <text x="80" y="70" font-family="Arial" font-size="12" fill="#4285f4" text-anchor="middle">Eagle App</text>
+    <text x="80" y="90" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Local Library (SSD)</text>
+    <text x="80" y="110" font-family="Arial" font-size="12" fill="#34a853" text-anchor="middle">Resilio Client</text>
+  </g>
+  
+  <!-- Sync Arrow -->
+  <path d="M260 190 L540 190" stroke="#34a853" stroke-width="4" stroke-dasharray="5,5" marker-end="url(#arrow)" marker-start="url(#arrow)" />
+  <rect x="350" y="170" width="100" height="40" fill="#f8f9fa" />
+  <text x="400" y="195" font-family="Arial" font-size="12" fill="#34a853" text-anchor="middle">Real-time Sync</text>
+  
+  <!-- NAS -->
+  <g transform="translate(540, 150)">
+    <rect width="160" height="120" rx="10" fill="#fff" stroke="#4285f4" stroke-width="3" />
+    <text x="80" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#4285f4" text-anchor="middle">Synology NAS</text>
+    <path d="M30 50 L130 50" stroke="#ddd" stroke-width="2" />
+    <text x="80" y="70" font-family="Arial" font-size="12" fill="#34a853" text-anchor="middle">Resilio Docker</text>
+    <text x="80" y="90" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Backup Library</text>
+    <text x="80" y="110" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Version History</text>
+  </g>
+  
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#34a853" />
+    </marker>
+  </defs>
+</svg>

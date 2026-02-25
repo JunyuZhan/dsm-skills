@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <!-- Background -->
+  <rect width="800" height="300" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">SMB Multichannel Architecture</text>
+  
+  <!-- Mac -->
+  <g transform="translate(100, 100)">
+    <rect width="120" height="100" rx="10" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="60" y="30" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Mac / PC</text>
+    <rect x="20" y="80" width="30" height="10" fill="#666" />
+    <rect x="70" y="80" width="30" height="10" fill="#666" />
+    <text x="60" y="60" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Dual 1GbE</text>
+  </g>
+  
+  <!-- Switch -->
+  <g transform="translate(350, 100)">
+    <rect width="100" height="100" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="50" y="55" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Switch</text>
+  </g>
+  
+  <!-- NAS -->
+  <g transform="translate(580, 100)">
+    <rect width="120" height="100" rx="10" fill="#fff" stroke="#4285f4" stroke-width="3" />
+    <text x="60" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#4285f4" text-anchor="middle">Synology NAS</text>
+    <rect x="20" y="80" width="30" height="10" fill="#666" />
+    <rect x="70" y="80" width="30" height="10" fill="#666" />
+    <text x="60" y="60" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Dual 1GbE</text>
+  </g>
+  
+  <!-- Connections -->
+  <!-- Link 1 -->
+  <path d="M150 150 L350 130" stroke="#34a853" stroke-width="4" />
+  <path d="M450 130 L600 150" stroke="#34a853" stroke-width="4" />
+  
+  <!-- Link 2 -->
+  <path d="M150 180 L350 170" stroke="#34a853" stroke-width="4" />
+  <path d="M450 170 L600 180" stroke="#34a853" stroke-width="4" />
+  
+  <!-- Speed Label -->
+  <text x="400" y="250" font-family="Arial" font-size="16" font-weight="bold" fill="#34a853" text-anchor="middle">Total Speed: 2GbE (200MB/s)</text>
+  
+</svg>

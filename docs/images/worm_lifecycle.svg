@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300">
+  <!-- Background -->
+  <rect width="800" height="300" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">WORM (Write Once, Read Many) Lifecycle</text>
+  
+  <!-- Timeline Line -->
+  <line x1="100" y1="150" x2="700" y2="150" stroke="#999" stroke-width="4" />
+  
+  <!-- Phase 1: Creation -->
+  <circle cx="150" cy="150" r="10" fill="#4285f4" />
+  <g transform="translate(100, 180)">
+    <rect width="100" height="60" rx="5" fill="#fff" stroke="#4285f4" stroke-width="2" />
+    <text x="50" y="25" font-family="Arial" font-size="12" font-weight="bold" fill="#4285f4" text-anchor="middle">Creation</text>
+    <text x="50" y="45" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">File Upload</text>
+  </g>
+  
+  <!-- Phase 2: Locking -->
+  <circle cx="300" cy="150" r="10" fill="#fbbc05" />
+  <g transform="translate(250, 80)">
+    <rect width="100" height="60" rx="5" fill="#fff" stroke="#fbbc05" stroke-width="2" />
+    <text x="50" y="25" font-family="Arial" font-size="12" font-weight="bold" fill="#fbbc05" text-anchor="middle">Auto Lock</text>
+    <text x="50" y="45" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Timer Starts</text>
+  </g>
+  
+  <!-- Phase 3: Retention -->
+  <rect x="300" y="146" width="250" height="8" fill="#ea4335" opacity="0.5" />
+  <text x="425" y="140" font-family="Arial" font-size="12" fill="#ea4335" font-weight="bold" text-anchor="middle">Retention Period (e.g., 5 Years)</text>
+  <text x="425" y="170" font-family="Arial" font-size="10" fill="#ea4335" text-anchor="middle">No Delete / No Modify</text>
+  
+  <!-- Phase 4: Expiry -->
+  <circle cx="550" cy="150" r="10" fill="#34a853" />
+  <g transform="translate(500, 180)">
+    <rect width="100" height="60" rx="5" fill="#fff" stroke="#34a853" stroke-width="2" />
+    <text x="50" y="25" font-family="Arial" font-size="12" font-weight="bold" fill="#34a853" text-anchor="middle">Expiry</text>
+    <text x="50" y="45" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Lock Released</text>
+  </g>
+  
+  <!-- Phase 5: Disposal -->
+  <circle cx="650" cy="150" r="10" fill="#666" />
+  <g transform="translate(600, 80)">
+    <rect width="100" height="60" rx="5" fill="#fff" stroke="#666" stroke-width="2" />
+    <text x="50" y="25" font-family="Arial" font-size="12" font-weight="bold" fill="#666" text-anchor="middle">Disposal</text>
+    <text x="50" y="45" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Archive/Delete</text>
+  </g>
+  
+</svg>

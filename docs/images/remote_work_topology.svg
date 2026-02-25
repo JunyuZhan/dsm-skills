@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Remote Work Topology (Tailscale)</text>
+  
+  <!-- Location: Cafe/Hotel -->
+  <g transform="translate(50, 150)">
+    <rect width="160" height="150" rx="10" fill="#fff" stroke="#999" stroke-width="2" stroke-dasharray="5,5" />
+    <text x="80" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#666" text-anchor="middle">Cafe / Hotel</text>
+    
+    <!-- Laptop -->
+    <rect x="30" y="50" width="100" height="60" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="80" y="85" font-family="Arial" font-size="12" font-weight="bold" text-anchor="middle">Laptop</text>
+    <circle cx="120" cy="50" r="8" fill="#34a853" /> <!-- Tailscale Active -->
+    
+    <!-- Phone -->
+    <rect x="50" y="120" width="40" height="60" rx="5" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="70" y="155" font-family="Arial" font-size="10" text-anchor="middle">Phone</text>
+  </g>
+  
+  <!-- Internet / Tunnel -->
+  <path d="M210 200 L500 200" stroke="#34a853" stroke-width="4" />
+  <rect x="300" y="180" width="120" height="40" fill="#fff" stroke="#34a853" stroke-width="2" />
+  <text x="360" y="205" font-family="Arial" font-size="12" fill="#34a853" text-anchor="middle">Tailscale VPN</text>
+  
+  <!-- Location: Home -->
+  <g transform="translate(500, 100)">
+    <rect width="250" height="200" rx="10" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="125" y="30" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Home Network</text>
+    
+    <!-- NAS -->
+    <g transform="translate(50, 50)">
+      <rect width="100" height="120" rx="10" fill="#fff" stroke="#4285f4" stroke-width="3" />
+      <text x="50" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#4285f4" text-anchor="middle">NAS</text>
+      <text x="50" y="60" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Subnet Router</text>
+      <text x="50" y="80" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Exit Node</text>
+    </g>
+    
+    <!-- Other Device -->
+    <rect x="180" y="80" width="50" height="50" rx="5" fill="#ddd" stroke="#999" />
+    <text x="205" y="110" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">PC</text>
+  </g>
+  
+  <!-- Exit Node Flow -->
+  <path d="M600 170 L700 350" stroke="#ea4335" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow-red)" />
+  <text x="700" y="370" font-family="Arial" font-size="12" fill="#ea4335" text-anchor="middle">Secure Internet Access</text>
+
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ea4335" />
+    </marker>
+  </defs>
+</svg>

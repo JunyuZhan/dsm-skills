@@ -5,6 +5,10 @@
 
 ## 1. 架构设计
 
+**故障转移流程图：**
+
+![Snapshot Replication](../images/snapshot_replication.svg)
+
 *   **主 NAS (Source)**：运行业务（SMB, Docker, VMM）。
 *   **备 NAS (Destination)**：位于异地（或楼下机房），只负责接收数据。
 *   **要求**：

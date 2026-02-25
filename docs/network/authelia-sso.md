@@ -6,6 +6,10 @@
 
 ## 1. 架构原理
 
+**SSO 登录流程示意图：**
+
+![Authelia SSO Flow](../images/authelia_flow.svg)
+
 ```mermaid
 graph LR
     User --> Nginx[反向代理 (Nginx)]

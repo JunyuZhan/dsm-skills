@@ -17,6 +17,11 @@
 在星巴克或酒店 Wi-Fi 下，如何快速连接家里的 NAS？
 
 ### 方案 A：Tailscale (零配置组网 - 强烈推荐)
+
+**远程办公网络拓扑图：**
+
+![Remote Work Topology](../images/remote_work_topology.svg)
+
 *   **原理**：基于 WireGuard 的网状网络，无需公网 IP，穿透率极高。
 *   **部署**：
     1.  在套件中心安装 Tailscale。

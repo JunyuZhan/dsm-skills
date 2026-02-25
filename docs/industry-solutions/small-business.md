@@ -34,6 +34,11 @@
 ## 2. 勒索病毒防御与数据安全
 
 ### Active Backup for Business (ABB)
+
+**企业备份策略架构图：**
+
+![SMB Backup Strategy](../images/abb_backup_flow.svg)
+
 免费的企业级备份神器。
 *   **整机备份**：一键备份员工 Windows 电脑系统盘。电脑坏了？插上恢复 U 盘，1 小时还原整个系统。
 *   **文件服务器备份**：备份公司其他 Linux/Windows 服务器。

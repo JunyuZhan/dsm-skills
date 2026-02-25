@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">CI/CD Pipeline: Gitea + Actions + Docker</text>
+  
+  <!-- Developer -->
+  <g transform="translate(50, 150)">
+    <circle cx="40" cy="40" r="30" fill="#4285f4" />
+    <text x="40" y="45" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Dev</text>
+    <text x="40" y="85" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Git Push</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M130 190 L190 190" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Gitea -->
+  <g transform="translate(200, 130)">
+    <rect width="100" height="120" rx="10" fill="#fff" stroke="#60b54e" stroke-width="3" />
+    <text x="50" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#60b54e" text-anchor="middle">Gitea</text>
+    <path d="M20 50 L80 50" stroke="#ddd" stroke-width="2" />
+    <text x="50" y="70" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Repo</text>
+    <text x="50" y="90" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Webhook</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M310 190 L370 190" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Runner -->
+  <g transform="translate(380, 130)">
+    <rect width="120" height="120" rx="10" fill="#fff" stroke="#fbbc05" stroke-width="3" />
+    <text x="60" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#fbbc05" text-anchor="middle">Gitea Runner</text>
+    <path d="M20 50 L100 50" stroke="#ddd" stroke-width="2" />
+    <text x="60" y="70" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">1. Checkout</text>
+    <text x="60" y="90" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">2. Build Docker</text>
+    <text x="60" y="110" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">3. Push Image</text>
+  </g>
+  
+  <!-- Arrow 3 -->
+  <path d="M510 190 L570 190" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Production -->
+  <g transform="translate(580, 130)">
+    <rect width="120" height="120" rx="10" fill="#fff" stroke="#ea4335" stroke-width="3" />
+    <text x="60" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#ea4335" text-anchor="middle">Production</text>
+    <path d="M20 50 L100 50" stroke="#ddd" stroke-width="2" />
+    <text x="60" y="70" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Portainer /</text>
+    <text x="60" y="90" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Container Mgr</text>
+    <text x="60" y="110" font-family="Arial" font-size="12" fill="#2ecc71" text-anchor="middle">Running</text>
+  </g>
+  
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666" />
+    </marker>
+  </defs>
+</svg>

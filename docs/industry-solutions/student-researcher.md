@@ -6,6 +6,10 @@
 
 ## 1. 文献管理终极方案：Zotero + ZotFile + WebDAV
 
+**Zotero 同步流示意图：**
+
+![Zotero Workflow](../images/zotero_workflow.svg)
+
 Zotero 官方云空间很小，且大文件同步慢。利用 NAS，我们可以实现“元数据云同步 + 附件 NAS 存储”的完美组合。
 
 ### 1.1 NAS 端准备 (WebDAV)

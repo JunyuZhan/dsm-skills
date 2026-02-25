@@ -2,6 +2,10 @@
 
 基础的安全设置（如 2FA、HTTPS）只是第一道防线。为了应对互联网上无休止的扫描和攻击，你需要构建更严密的防御体系。
 
+**纵深防御架构图：**
+
+![Security Architecture](../images/security_architecture.svg)
+
 ## 1. 防火墙策略：GeoIP 地理阻断
 
 **原理**：绝大多数恶意扫描来自特定国家。如果你不出国，完全可以屏蔽海外 IP。

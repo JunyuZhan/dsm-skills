@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Zotero + NAS Workflow</text>
+  
+  <!-- PC -->
+  <g transform="translate(50, 150)">
+    <rect width="140" height="100" rx="10" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="70" y="30" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">PC / Mac</text>
+    <text x="70" y="55" font-family="Arial" font-size="12" fill="#ea4335" text-anchor="middle">Zotero App</text>
+    <text x="70" y="75" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">+ ZotFile Plugin</text>
+  </g>
+  
+  <!-- NAS -->
+  <g transform="translate(350, 100)">
+    <rect width="160" height="200" rx="10" fill="#fff" stroke="#4285f4" stroke-width="3" />
+    <text x="80" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#4285f4" text-anchor="middle">Synology NAS</text>
+    
+    <!-- WebDAV Service -->
+    <rect x="30" y="50" width="100" height="40" rx="5" fill="#e8f0fe" stroke="#4285f4" />
+    <text x="80" y="75" font-family="Arial" font-size="12" fill="#4285f4" text-anchor="middle">WebDAV Server</text>
+    
+    <!-- Storage -->
+    <rect x="30" y="110" width="100" height="60" rx="5" fill="#f1f3f4" stroke="#999" />
+    <text x="80" y="135" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">/Zotero_Data</text>
+    <text x="80" y="155" font-family="Arial" font-size="10" fill="#999" text-anchor="middle">PDF Attachments</text>
+  </g>
+  
+  <!-- iPad -->
+  <g transform="translate(650, 150)">
+    <rect width="100" height="120" rx="10" fill="#fff" stroke="#333" stroke-width="2" />
+    <text x="50" y="30" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">iPad</text>
+    <text x="50" y="55" font-family="Arial" font-size="12" fill="#ea4335" text-anchor="middle">Zotero App</text>
+    <text x="50" y="80" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Annotate PDF</text>
+  </g>
+  
+  <!-- Connections -->
+  <!-- PC to WebDAV -->
+  <path d="M190 180 L350 180" stroke="#4285f4" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="270" y="170" font-family="Arial" font-size="10" fill="#4285f4" text-anchor="middle">WebDAV / SMB</text>
+  
+  <!-- iPad to WebDAV -->
+  <path d="M650 180 L510 180" stroke="#4285f4" stroke-width="2" marker-end="url(#arrow)" />
+  <text x="580" y="170" font-family="Arial" font-size="10" fill="#4285f4" text-anchor="middle">WebDAV Sync</text>
+  
+  <!-- Zotero Cloud (Metadata only) -->
+  <cloud transform="translate(350, 20)" /> 
+  <!-- Using simple text for cloud to save space -->
+  <text x="430" y="50" font-family="Arial" font-size="12" fill="#999" text-anchor="middle">Zotero Cloud (Metadata)</text>
+  <path d="M120 150 L350 50" stroke="#999" stroke-width="1" stroke-dasharray="2,2" />
+  <path d="M700 150 L500 50" stroke="#999" stroke-width="1" stroke-dasharray="2,2" />
+
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4285f4" />
+    </marker>
+  </defs>
+</svg>
