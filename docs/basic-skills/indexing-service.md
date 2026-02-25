@@ -30,7 +30,13 @@
     ```bash
     synoindex -R /volume1/video/movie
     ```
-    *   **注意**：DSM 7.x 中 `synoindex` 命令有时不灵，推荐使用 `synofoto-bin-index-tool` (针对 Photos) 或重启 Video Station 套件。
+    *   **注意**：DSM 7.x 中 `synoindex` 命令功能已被削弱，对于 Photos 或 Video Station 可能无效。
+    *   **替代方案 (针对 Photos)**：
+        ```bash
+        /var/packages/SynologyPhotos/target/usr/bin/synofoto-bin-index-tool -t basic_reindex -i /volume1/photo
+        ```
+    *   **替代方案 (针对 Video Station)**：
+        进入 Video Station > 设置 > 库 > 选择文件夹 > 点击“重新索引所有文件”。
 3.  **自动化脚本**：
     如果你用 Docker 下载，可以在下载完成脚本中加入 `curl` 命令调用群晖 API，或者简单的 `touch` 一下父文件夹，有时能触发监控。
 4.  **inotify 限制**：Linux 内核默认的 `inotify` 监控数量有限（通常 8192）。如果你的文件夹层级太深或文件太多，系统监控不过来。
