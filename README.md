@@ -2,7 +2,7 @@
 
 欢迎来到群晖 DSM 7.x 技巧大全项目。本项目旨在收集和分享关于群晖 NAS 系统 DSM 7.x 版本的各种实用技巧，帮助用户更好地使用群晖设备。
 
-**当前已收录 130+ 个实用技巧！**
+**当前已收录 170+ 个实用技巧！**
 
 ## 目录索引
 
@@ -15,12 +15,15 @@
 ### 🎬 多媒体与娱乐 (Multimedia)
 - [**Photos 进阶技巧 (10技巧)**](multimedia/photos-tricks.md): 人脸识别、条件相册、权限管理。
 - [**Video Station 与影视中心 (10技巧)**](multimedia/video-audio.md): TMDB搜刮修复、DTS解码、字幕插件。
+- [**Download Station 进阶下载 (10技巧)**](download-tools/download-station.md): RSS 自动追剧、搜索插件 DLM、eMule。
 
 ### 👁️ 视频监控 (Surveillance)
 - [**Surveillance Station 监控指南 (10技巧)**](surveillance/guide.md): 免费授权迁移、H.265 省空间、智能动作侦测、Home Mode。
 
 ### 🌐 网络与安全 (Network)
 - [**网络与远程访问 (10技巧)**](network/access-security.md): QuickConnect vs DDNS、IPv6、端口转发、VPN Server。
+- [**MailPlus Server 邮件服务器 (10技巧)**](communication/mailplus-guide.md): 反垃圾策略、SMTP Relay、DKIM/SPF 配置。
+- [**Synology Chat 机器人集成 (10技巧)**](communication/chat-integration.md): Webhook 推送、运维机器人、Slash Command。
 
 ### 🚀 生产力与办公 (Productivity)
 - [**生产力工具 (10技巧)**](productivity/drive-office.md): Drive 版本回溯、Office 协作、Note Station 剪藏。
@@ -28,6 +31,9 @@
 ### 💻 虚拟化与建站 (Virtualization & Web)
 - [**Virtual Machine Manager 实战 (10技巧)**](virtualization/vmm-guide.md): Windows LTSC 优化、OpenWrt 软路由、USB 直通。
 - [**Web Station 建站指南 (10技巧)**](web-dev/website-hosting.md): PHP 优化、WordPress 加速、Node.js 部署。
+
+### 🖥️ 系统深度集成 (OS Integration)
+- [**Mac/Windows 深度集成技巧 (10技巧)**](platform-specific/os-integration.md): Time Machine 优化、Spotlight 索引、iSCSI 游戏库、AD 域控。
 
 ### 🐳 Docker 容器 (Docker)
 - [**必备容器推荐 Top 20**](docker-containers/must-have.md): Portainer, Jellyfin, Nastools, Home Assistant 等。
