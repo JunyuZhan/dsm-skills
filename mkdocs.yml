@@ -1,11 +1,11 @@
 site_name: 群晖 DSM 7.x 技巧大全
 site_url: https://dsmskills.albertzhan.top/
 site_description: 群晖 DSM 7.x 深度技巧大全，收录 200+ 个实用技巧，涵盖基础入门、Docker 容器、网络安全、自动化运维、多媒体中心等全方位指南。助你从小白进阶为 NAS 专家。
-site_author: Albert Zhan
+site_author: Junyu Zhan
 repo_url: https://github.com/JunyuZhan/dsm-skills
 repo_name: JunyuZhan/dsm-skills
 edit_uri: edit/main/docs/
-copyright: Copyright &copy; 2024 Albert Zhan
+copyright: Copyright &copy; 2024 Junyu Zhan
 
 theme:
   name: material
@@ -114,6 +114,9 @@ nav:
   - Docker 容器:
     - 必备容器推荐 Top 20: docker-containers/must-have.md
     - AI 大模型本地部署: docker-containers/local-ai.md
+    - OpenClaw AI 智能体: docker-containers/openclaw.md
+    - OpenClash 旁路由模式: docker-containers/openclash.md
+    - 游戏服务器 (Palworld/MC): docker-containers/game-servers.md
     - 监控与仪表盘: docker-containers/monitoring.md
     - 自动化追剧 (Arr Suite): docker-containers/arr-suite.md
     - Docker 网络进阶: docker-containers/network-guide.md
