@@ -98,6 +98,9 @@ nav:
   - 网络与安全:
     - 网络与远程访问: network/access-security.md
     - 内网穿透与异地组网指南: network/tunneling-guide.md
+    - Tailscale 深度实战: network/tailscale-derp.md
+    - Cloudflare Tunnel 深度实战: network/cloudflare-tunnel.md
+    - ZeroTier 深度实战: network/zerotier-moon.md
     - FRP 自建内网穿透: network/frp-guide.md
     - 企业级身份认证 (AD): network/directory-server.md
     - 安全加固与防火墙: network/security-hardening.md
