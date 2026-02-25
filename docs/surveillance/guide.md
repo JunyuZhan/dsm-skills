@@ -18,16 +18,44 @@ Surveillance Station 是 Synology 最强大的套件之一，它能将你的 NAS
 - **智能动态帧率**：设置在画面静止时降低帧率（如 5fps），画面有动作时恢复高帧率（如 25fps）。
 - **仅侦测录像**：只在检测到运动时才录像，全天 24 小时录像非常浪费空间且检索困难。
 
-## 4. 智能动作侦测 (Smart Motion Detection)
-- **技巧**：不要使用摄像头自带的侦测（通常误报率高，树叶动一下也报警）。
-- **建议**：使用 Surveillance Station 自带的算法。
-- **进阶**：如果你有 DVA 系列 NVR 或高性能 NAS，可以使用 **深度学习** 算法（人脸识别、车牌识别）。
+## 4. 智能动作侦测 (Smart Motion Detection) 进阶
+- **痛点**：传统移动侦测误报率极高，风吹草动、光线变化都会触发录像，导致一天几百条无效报警。
+- **解决方案**：
+    1.  **AI 摄像机联动**：
+        - 如果你的摄像头本身支持 AI 人形/车辆检测（如海康威视智谱系列），在 SS 中添加摄像头时，**事件检测源** 选择 "By Camera" (由摄像机)。这样 SS 只会接收摄像头处理过的高精度报警。
+    2.  **SS 本地算法**：
+        - 如果是普通摄像头，在 SS 中启用 **Advanced Event (高级事件)**。虽然不如专业 AI 准，但比像素对比法好很多。
+    3.  **第三方 AI 插件 (Scrypted / Frigate)**：
+        - **进阶玩法**：在 Docker 中部署 Scrypted 或 Frigate，将摄像头流推给它们进行 AI 分析（支持 Apple HomeKit Secure Video），只把精准的事件录像回传给 SS 或 Home Assistant。
 
-## 5. Home Mode (居家模式)
+## 5. Home Assistant 深度集成
+- **场景**：当摄像头检测到有人时，自动开灯；或者离家模式下有人闯入，自动播放警报音。
+- **步骤**：
+    1.  在 Home Assistant 中安装 **Synology DSM** 集成。
+    2.  输入 NAS IP、端口、用户名（建议新建专用账号）、密码。
+    3.  勾选 "Surveillance Station"。
+    4.  **自动化示例**：
+        ```yaml
+        trigger:
+          platform: state
+          entity_id: binary_sensor.camera_motion
+          to: 'on'
+        condition:
+          condition: state
+          entity_id: group.family
+          state: 'not_home'
+        action:
+          service: notify.mobile_app
+          data:
+            message: "有人闯入！"
+        ```
+
+## 6. Home Mode (居家模式)
 - **场景**：你在家时不想被摄像头一直盯着，或者不想一直收到报警推送。
 - **技巧**：
     - 设置 **Geofence (地理围栏)**：当你的手机连接家里 Wi-Fi 或进入 GPS 范围时，自动进入 Home Mode。
     - **规则**：在 Home Mode 下，可以设置停止录像、关闭通知，或者降低录像分辨率。
+    - **联动 HA**：通过 Home Assistant 的位置追踪来自动切换 SS 的 Home Mode，比 DS cam 自带的围栏更省电、更准。
 
 ## 6. 延时摄影 (Time Lapse)
 - **功能**：Surveillance Station 自带“智能延时”功能。
