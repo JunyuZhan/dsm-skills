@@ -32,6 +32,7 @@
 - [**私有云游戏串流 (Sunshine)**](multimedia/game-streaming.md): 4K 低延迟串流、Moonlight 客户端、异地远程唤醒 (WoL)。
 - [**Immich AI 智能相册**](multimedia/immich-photos.md): Google Photos 完美替代、AI 人脸/物体识别、地图模式。
 - [**MoviePilot 自动化追剧**](multimedia/moviepilot.md): 中文环境优化、微信/Telegram 推送、一站式媒体管理。
+- [**Tautulli 媒体监控**](multimedia/tautulli-monitoring.md): Plex/Jellyfin 播放统计、实时转码监控、Telegram 通知。
 - [**Photos 进阶技巧 (10技巧)**](multimedia/photos-tricks.md): 人脸识别、条件相册、权限管理。
 - [**Photos 深度优化与迁移 (10技巧)**](multimedia/photos-advanced.md): 人脸识别补丁、Google Photos 迁移、ExifTool 修复。
 - [**Video Station 与影视中心 (10技巧)**](multimedia/video-audio.md): TMDB搜刮修复、DTS解码、字幕插件。
@@ -74,6 +75,7 @@
 - [**Mac/Windows 集成 (10技巧)**](platform-specific/os-integration.md): 映射网络驱动器、iSCSI 挂载游戏盘、NFS 权限。
 
 ### 🤖 家庭自动化 (Home Automation)
+- [**米家接入 HomeKit 深度桥接**](home-automation/homekit-bridge.md): YAML 过滤无用实体、伪装设备类型、虚拟开关触发场景。
 - [**Home Assistant 深度实战**](home-automation/ha-deep-dive.md): HACS 插件、米家/HomeKit 双向桥接、自动化脚本。
 - [**家庭自动化与 IoT (10技巧)**](home-automation/iot-guide.md): 智能家居网关、HomeBridge、Node-RED。
 
@@ -102,6 +104,7 @@
 - [**CLI 终极指南 (10技巧)**](cli/guide.md): Root 权限、synopkg、synosystemctl、磁盘分析。
 
 ### 🧑‍💻 开发者进阶 (Developer)
+- [**Ansible NAS 自动化运维**](developer-guide/ansible-nas-automation.md): 批量更新 Docker、自动分发证书、磁盘监控报警。
 - [**自动化运维 (Ansible) 入门**](developer-guide/ansible-guide.md): 批量管理设备、Playbook 编写、Docker 批量部署。
 - [**DSM 自动化开发指南 (API)**](developer-guide/api-automation.md): Python 调用群晖 Web API、抓包逆向、脚本实战。
 - [**开发者指南 (10技巧)**](developer-guide/dev-tips.md): SSH 密钥登录、Git Server、Python 环境、Crontab.

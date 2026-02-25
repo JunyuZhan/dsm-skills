@@ -91,6 +91,7 @@ nav:
     - Immich AI 智能相册: multimedia/immich-photos.md
     - Video Station 影视中心: multimedia/video-audio.md
     - MoviePilot 自动化追剧: multimedia/moviepilot.md
+    - Tautulli 媒体监控: multimedia/tautulli-monitoring.md
     - 硬件解码与转码详解: multimedia/transcoding-guide.md
     - Download Station 下载: download-tools/download-station.md
   - 视频监控:
@@ -140,6 +141,7 @@ nav:
   - 家庭自动化:
     - 家庭自动化与 IoT: home-automation/iot-guide.md
     - Home Assistant 深度实战: home-automation/ha-deep-dive.md
+    - 米家接入 HomeKit 深度桥接: home-automation/homekit-bridge.md
   - 社群扩展:
     - 社群第三方套件推荐: community/packages.md
     - 第三方社群套件源推荐: community/third-party-repos.md
@@ -150,6 +152,8 @@ nav:
   - 开发者进阶:
     - 开发者指南: developer-guide/dev-tips.md
     - 自动化开发指南 (API): developer-guide/api-automation.md
+    - Ansible NAS 自动化运维: developer-guide/ansible-nas-automation.md
+    - Ansible 自动化运维入门: developer-guide/ansible-guide.md
   - 进阶与自动化:
     - 索引: advanced-skills/README.md
     - Kubernetes (K3s) 集群: advanced-skills/k3s-cluster.md
