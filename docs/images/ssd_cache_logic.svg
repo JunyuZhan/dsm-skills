@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9fa"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#333">SSD Cache Logic</text>
+
+  <!-- User -->
+  <g transform="translate(50, 150)">
+    <circle cx="50" cy="50" r="40" fill="#34495e"/>
+    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial">User</text>
+  </g>
+
+  <!-- SSD Cache -->
+  <g transform="translate(250, 100)">
+    <rect x="0" y="0" width="150" height="200" rx="10" fill="#2ecc71"/>
+    <text x="75" y="100" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">SSD Cache</text>
+    <text x="75" y="120" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="12">Hot Data</text>
+  </g>
+
+  <!-- HDD -->
+  <g transform="translate(550, 100)">
+    <rect x="0" y="0" width="150" height="200" rx="10" fill="#95a5a6"/>
+    <text x="75" y="100" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">HDD Array</text>
+    <text x="75" y="120" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="12">Cold Data</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <!-- Read Hit -->
+    <path d="M100,180 L250,180" stroke="#2ecc71"/>
+    <text x="175" y="170" text-anchor="middle" font-family="Arial" font-size="12" fill="#2ecc71">Read Hit</text>
+
+    <!-- Read Miss -->
+    <path d="M400,180 L550,180" stroke="#e74c3c" stroke-dasharray="5,5"/>
+    <text x="475" y="170" text-anchor="middle" font-family="Arial" font-size="12" fill="#e74c3c">Miss (Fetch)</text>
+
+    <!-- Write Back -->
+    <path d="M400,220 L550,220" stroke="#3498db"/>
+    <text x="475" y="240" text-anchor="middle" font-family="Arial" font-size="12" fill="#3498db">Write Back</text>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9fa"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#333">Tailscale DERP Topology</text>
+
+  <!-- User -->
+  <g transform="translate(50, 150)">
+    <circle cx="50" cy="50" r="40" fill="#34495e"/>
+    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial">User</text>
+    <text x="50" y="110" text-anchor="middle" font-family="Arial" font-size="12">Outside</text>
+  </g>
+
+  <!-- NAS -->
+  <g transform="translate(650, 150)">
+    <rect x="0" y="0" width="100" height="100" rx="10" fill="#34495e"/>
+    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial">NAS</text>
+    <text x="50" y="120" text-anchor="middle" font-family="Arial" font-size="12">Home</text>
+  </g>
+
+  <!-- P2P -->
+  <path d="M100,200 C300,300 500,300 650,200" stroke="#2ecc71" stroke-width="3" fill="none" stroke-dasharray="10,5"/>
+  <text x="375" y="280" text-anchor="middle" font-family="Arial" fill="#2ecc71" font-weight="bold">P2P Direct (Best)</text>
+
+  <!-- Official DERP -->
+  <g transform="translate(350, 20)">
+    <rect x="0" y="0" width="100" height="60" rx="5" fill="#e74c3c"/>
+    <text x="50" y="35" text-anchor="middle" fill="white" font-family="Arial">Official DERP</text>
+    <text x="50" y="75" text-anchor="middle" fill="#e74c3c" font-size="10">High Latency</text>
+  </g>
+
+  <!-- Custom DERP -->
+  <g transform="translate(350, 150)">
+    <rect x="0" y="0" width="100" height="60" rx="5" fill="#2ecc71"/>
+    <text x="50" y="35" text-anchor="middle" fill="white" font-family="Arial">Custom DERP</text>
+    <text x="50" y="75" text-anchor="middle" fill="#2ecc71" font-size="10">Low Latency</text>
+  </g>
+
+  <!-- Routes -->
+  <g stroke="#95a5a6" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <!-- To Official -->
+    <path d="M90,160 L350,50" stroke-dasharray="2,2"/>
+    <path d="M450,50 L650,160" stroke-dasharray="2,2"/>
+
+    <!-- To Custom -->
+    <path d="M90,190 L350,180" stroke="#2ecc71"/>
+    <path d="M450,180 L650,190" stroke="#2ecc71"/>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#95a5a6" />
+    </marker>
+  </defs>
+</svg>

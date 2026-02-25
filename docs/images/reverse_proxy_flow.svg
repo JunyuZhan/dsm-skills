@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <style>
+      .text { font-family: Arial, sans-serif; }
+      .title { font-size: 16px; font-weight: bold; fill: #333; }
+      .label { font-size: 12px; fill: #555; }
+    </style>
+  </defs>
+
+  <rect width="800" height="400" fill="#f8f9fa"/>
+
+  <!-- Internet -->
+  <g transform="translate(50, 150)">
+    <circle cx="50" cy="50" r="40" fill="#e74c3c"/>
+    <text x="50" y="55" text-anchor="middle" fill="white" class="text">Internet</text>
+    <text x="50" y="110" text-anchor="middle" class="label">User Request</text>
+  </g>
+
+  <!-- Router -->
+  <g transform="translate(200, 150)">
+    <rect x="0" y="10" width="80" height="80" rx="5" fill="#34495e"/>
+    <text x="40" y="55" text-anchor="middle" fill="white" class="text">Router</text>
+    <text x="40" y="110" text-anchor="middle" class="label">Port 443</text>
+  </g>
+
+  <!-- NAS Reverse Proxy -->
+  <g transform="translate(350, 100)">
+    <rect x="0" y="0" width="120" height="200" rx="10" fill="#3498db"/>
+    <text x="60" y="100" text-anchor="middle" fill="white" class="text" font-weight="bold">NAS</text>
+    <text x="60" y="120" text-anchor="middle" fill="#ecf0f1" class="label">Reverse Proxy</text>
+  </g>
+
+  <!-- Services -->
+  <g transform="translate(550, 50)">
+    <rect x="0" y="0" width="150" height="60" rx="5" fill="#2ecc71"/>
+    <text x="75" y="35" text-anchor="middle" fill="white" class="text">DSM (5000)</text>
+    
+    <rect x="0" y="100" width="150" height="60" rx="5" fill="#2ecc71"/>
+    <text x="75" y="135" text-anchor="middle" fill="white" class="text">Jellyfin (8096)</text>
+    
+    <rect x="0" y="200" width="150" height="60" rx="5" fill="#2ecc71"/>
+    <text x="75" y="235" text-anchor="middle" fill="white" class="text">HomeAssistant (8123)</text>
+  </g>
+
+  <!-- Connections -->
+  <g stroke="#2c3e50" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M100,200 L200,200" />
+    <path d="M280,200 L350,200" />
+    
+    <path d="M470,150 L550,80" />
+    <path d="M470,200 L550,130" />
+    <path d="M470,250 L550,230" />
+  </g>
+  
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2c3e50" />
+    </marker>
+  </defs>
+</svg>

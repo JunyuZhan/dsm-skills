@@ -6,21 +6,7 @@ Home Assistant (HA) 是智能家居的终极大脑。它可以打破品牌壁垒
 
 原版 HA 功能有限，HACS (Home Assistant Community Store) 是必装的第三方商店。
 
-```mermaid
-graph LR
-    HACS[HACS 社区商店]
-    Integration[集成 Integration (如 Xiaomi)]
-    Frontend[前端卡片 (如 Mushroom)]
-    HA[Home Assistant Core]
-
-    HACS -- 下载 --> Integration
-    HACS -- 下载 --> Frontend
-    Integration -- 扩展功能 --> HA
-    Frontend -- 美化界面 --> HA
-
-    style HACS fill:#f9f,stroke:#333
-    style HA fill:#bfb,stroke:#333
-```
+![Home Assistant 架构](../images/ha_flow.svg)
 
 ### 安装步骤
 1.  **下载脚本**：SSH 进入 HA 容器。

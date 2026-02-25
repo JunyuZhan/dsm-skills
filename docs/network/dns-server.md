@@ -7,23 +7,7 @@
 *   **好记**：用 `printer.home` 代替 `192.168.1.200`。
 *   **Split-DNS (内外网同名)**：这是最高级的玩法。
 
-```mermaid
-graph TD
-    User[笔记本电脑 (nas.test.com)]
-    DNS_Public[公网 DNS (8.8.8.8)]
-    DNS_Private[内网 DNS Server (192.168.1.100)]
-    Router{我在哪里?}
-
-    User -- 查询域名 --> Router
-    Router -- 在公司/咖啡厅 --> DNS_Public
-    Router -- 在家里 (DHCP 下发 DNS) --> DNS_Private
-
-    DNS_Public -- 返回公网 IP --> WAN[203.0.113.1 (DDNS)]
-    DNS_Private -- 返回内网 IP --> LAN[192.168.1.100 (直连)]
-
-    style DNS_Private fill:#bfb,stroke:#333
-    style DNS_Public fill:#f9f,stroke:#333
-```
+![Split-DNS 解析流程](../images/split_dns.svg)
 
 *   **外网**：`nas.test.com` 解析到公网 IP（通过 DDNS）。
     *   **内网**：`nas.test.com` 解析到内网 IP (`192.168.1.100`)。

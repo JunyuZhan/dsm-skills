@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f8f9fa"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#333">Migration Decision Tree</text>
+
+  <!-- Start -->
+  <g transform="translate(50, 230)">
+    <rect x="0" y="0" width="100" height="40" rx="5" fill="#34495e"/>
+    <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial">Start</text>
+  </g>
+
+  <!-- Decision 1 -->
+  <g transform="translate(200, 200)">
+    <polygon points="50,0 100,50 50,100 0,50" fill="#f1c40f"/>
+    <text x="50" y="45" text-anchor="middle" font-family="Arial" font-size="10">Both NAS</text>
+    <text x="50" y="60" text-anchor="middle" font-family="Arial" font-size="10">Power On?</text>
+  </g>
+
+  <!-- Decision 2 -->
+  <g transform="translate(400, 100)">
+    <polygon points="50,0 100,50 50,100 0,50" fill="#f1c40f"/>
+    <text x="50" y="45" text-anchor="middle" font-family="Arial" font-size="10">Change FS?</text>
+    <text x="50" y="60" text-anchor="middle" font-family="Arial" font-size="10">(ext4->Btrfs)</text>
+  </g>
+
+  <!-- Result: HDD Migration -->
+  <g transform="translate(400, 350)">
+    <rect x="0" y="0" width="150" height="80" rx="5" fill="#9b59b6"/>
+    <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">HDD Migration</text>
+    <text x="75" y="55" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="12">Fastest</text>
+  </g>
+
+  <!-- Result: Hyper Backup -->
+  <g transform="translate(600, 50)">
+    <rect x="0" y="0" width="150" height="80" rx="5" fill="#3498db"/>
+    <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">Hyper Backup</text>
+    <text x="75" y="55" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="12">Flexible</text>
+  </g>
+
+  <!-- Result: Migration Assistant -->
+  <g transform="translate(600, 200)">
+    <rect x="0" y="0" width="150" height="80" rx="5" fill="#2ecc71"/>
+    <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">Migration Asst</text>
+    <text x="75" y="55" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="12">Smooth</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M100,250 L200,250" />
+    
+    <!-- D1 No -> HDD -->
+    <path d="M250,300 L250,390 L400,390" />
+    <text x="260" y="320" font-family="Arial" font-size="12" fill="#e74c3c">No</text>
+
+    <!-- D1 Yes -> D2 -->
+    <path d="M250,200 L250,150 L400,150" />
+    <text x="260" y="180" font-family="Arial" font-size="12" fill="#2ecc71">Yes</text>
+
+    <!-- D2 Yes -> Hyper Backup -->
+    <path d="M500,150 L600,90" />
+    <text x="520" y="130" font-family="Arial" font-size="12" fill="#2ecc71">Yes</text>
+
+    <!-- D2 No -> Migration Asst -->
+    <path d="M450,200 L450,240 L600,240" />
+    <text x="460" y="230" font-family="Arial" font-size="12" fill="#e74c3c">No</text>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+</svg>

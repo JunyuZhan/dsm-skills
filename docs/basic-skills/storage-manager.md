@@ -6,41 +6,7 @@
 
 很多新手分不清这两个概念，导致后续扩容困难。
 
-```mermaid
-graph TD
-    subgraph Physical[物理层]
-        HDD1[硬盘 1]
-        HDD2[硬盘 2]
-        HDD3[硬盘 3]
-    end
-
-    subgraph Logical[逻辑层]
-        Pool[存储池 Storage Pool (RAID 5/SHR)]
-        Vol1[存储空间 Volume 1 (Btrfs)]
-        Vol2[存储空间 Volume 2 (Btrfs)]
-    end
-
-    subgraph Data[数据层]
-        Share1[共享文件夹 /photo]
-        Share2[共享文件夹 /docker]
-        Share3[共享文件夹 /video]
-    end
-
-    HDD1 --> Pool
-    HDD2 --> Pool
-    HDD3 --> Pool
-    
-    Pool --> Vol1
-    Pool --> Vol2
-    
-    Vol1 --> Share1
-    Vol1 --> Share2
-    Vol2 --> Share3
-
-    style Pool fill:#f9f,stroke:#333
-    style Vol1 fill:#bfb,stroke:#333
-    style Vol2 fill:#bfb,stroke:#333
-```
+![存储架构图](../images/storage_architecture.svg)
 
 *   **硬盘 (Drive)**：物理硬盘，最底层的砖块。
 *   **存储池 (Storage Pool)**：把几块砖头砌成一堵墙（RAID）。这里决定了数据冗余策略（如 SHR, RAID 5）。

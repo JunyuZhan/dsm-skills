@@ -7,21 +7,7 @@
 - **2**：使用 2 种不同的存储介质（如 NAS + 移动硬盘，或 NAS + 云端）。
 - **1**：至少 1 份异地备份（Off-site Backup）。
 
-```mermaid
-graph TD
-    Data[原始数据 (电脑/手机)]
-    NAS[NAS (主存储)]
-    USB[外部硬盘 (本地备份)]
-    Cloud[公有云/异地 NAS (异地备份)]
-
-    Data -- 同步/上传 --> NAS
-    NAS -- Hyper Backup (每日) --> USB
-    NAS -- Hyper Backup (每周) --> Cloud
-
-    style NAS fill:#f9f,stroke:#333
-    style USB fill:#bbf,stroke:#333
-    style Cloud fill:#bfb,stroke:#333
-```
+![3-2-1 备份策略](../images/backup_321.svg)
 
 ---
 

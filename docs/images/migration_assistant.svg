@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <rect width="800" height="600" fill="#f8f9fa"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#333">Migration Assistant Flow</text>
+
+  <!-- Actors -->
+  <g transform="translate(100, 50)">
+    <rect x="0" y="0" width="100" height="40" rx="5" fill="#3498db"/>
+    <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial">New NAS</text>
+    <path d="M50,40 L50,550" stroke="#bdc3c7" stroke-dasharray="5,5"/>
+  </g>
+
+  <g transform="translate(600, 50)">
+    <rect x="0" y="0" width="100" height="40" rx="5" fill="#95a5a6"/>
+    <text x="50" y="25" text-anchor="middle" fill="white" font-family="Arial">Old NAS</text>
+    <path d="M50,40 L50,550" stroke="#bdc3c7" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- Steps -->
+  <g font-family="Arial" font-size="12">
+    <!-- 1. Connect -->
+    <path d="M150,100 L650,100" stroke="#333" marker-end="url(#arrow)"/>
+    <text x="400" y="90" text-anchor="middle">1. Connect & Verify</text>
+
+    <!-- 2. Format -->
+    <path d="M150,150 L200,150 L200,180 L160,180" stroke="#333" fill="none" marker-end="url(#arrow)"/>
+    <text x="220" y="170" text-anchor="start" fill="#e74c3c">2. Format Disks</text>
+
+    <!-- 3. Sync -->
+    <rect x="300" y="200" width="200" height="150" fill="#ecf0f1" stroke="#bdc3c7"/>
+    <text x="400" y="220" text-anchor="middle" font-weight="bold">3. Data Sync</text>
+    <path d="M650,250 L150,250" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="400" y="240" text-anchor="middle" fill="#2ecc71">Transfer Data</text>
+    <text x="400" y="280" text-anchor="middle" fill="#7f8c8d">(Old NAS services still available)</text>
+
+    <!-- 4. Switch -->
+    <path d="M150,400 L650,400" stroke="#333" marker-end="url(#arrow)"/>
+    <text x="400" y="390" text-anchor="middle">4. Stop Services on Old NAS</text>
+
+    <!-- 5. Apply -->
+    <path d="M150,450 L200,450 L200,480 L160,480" stroke="#333" fill="none" marker-end="url(#arrow)"/>
+    <text x="220" y="470" text-anchor="start">5. Apply Config & Restart</text>
+
+    <!-- 6. Done -->
+    <text x="150" y="530" text-anchor="middle" font-weight="bold" fill="#2ecc71">Ready!</text>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+</svg>

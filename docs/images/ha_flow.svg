@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="800" height="400" fill="#f8f9fa"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#333">Home Assistant Flow</text>
+
+  <!-- Device -->
+  <g transform="translate(50, 150)">
+    <circle cx="50" cy="50" r="40" fill="#e74c3c"/>
+    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial">Device</text>
+    <text x="50" y="110" text-anchor="middle" font-family="Arial" font-size="12">Xiaomi/Tuya</text>
+  </g>
+
+  <!-- Integration -->
+  <g transform="translate(200, 150)">
+    <rect x="0" y="10" width="100" height="80" rx="5" fill="#3498db"/>
+    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial">Integration</text>
+  </g>
+
+  <!-- Core -->
+  <g transform="translate(350, 100)">
+    <rect x="0" y="0" width="120" height="200" rx="10" fill="#2c3e50"/>
+    <text x="60" y="100" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">HA Core</text>
+  </g>
+
+  <!-- Automation -->
+  <g transform="translate(550, 50)">
+    <rect x="0" y="0" width="150" height="60" rx="5" fill="#9b59b6"/>
+    <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial">Automation</text>
+  </g>
+
+  <!-- Dashboard -->
+  <g transform="translate(550, 200)">
+    <rect x="0" y="0" width="150" height="60" rx="5" fill="#e67e22"/>
+    <text x="75" y="35" text-anchor="middle" fill="white" font-family="Arial">Dashboard</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#7f8c8d" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M100,200 L200,200" />
+    <path d="M300,200 L350,200" />
+    <path d="M470,150 L550,80" />
+    <path d="M470,250 L550,230" />
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#7f8c8d" />
+    </marker>
+  </defs>
+</svg>

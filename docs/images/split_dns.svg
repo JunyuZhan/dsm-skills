@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#f8f9fa"/>
+  <text x="400" y="30" text-anchor="middle" font-family="Arial" font-size="20" font-weight="bold" fill="#333">Split-DNS Resolution</text>
+
+  <!-- Client -->
+  <g transform="translate(50, 200)">
+    <circle cx="50" cy="50" r="40" fill="#34495e"/>
+    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial">Laptop</text>
+    <text x="50" y="110" text-anchor="middle" font-family="Arial" font-size="12">nas.test.com</text>
+  </g>
+
+  <!-- Router Decision -->
+  <g transform="translate(250, 200)">
+    <polygon points="50,0 100,50 50,100 0,50" fill="#f1c40f"/>
+    <text x="50" y="55" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Where am I?</text>
+  </g>
+
+  <!-- Public DNS -->
+  <g transform="translate(500, 50)">
+    <rect x="0" y="0" width="150" height="100" rx="10" fill="#e74c3c"/>
+    <text x="75" y="45" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">Public DNS</text>
+    <text x="75" y="70" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="12">8.8.8.8</text>
+  </g>
+
+  <!-- Private DNS -->
+  <g transform="translate(500, 350)">
+    <rect x="0" y="0" width="150" height="100" rx="10" fill="#2ecc71"/>
+    <text x="75" y="45" text-anchor="middle" fill="white" font-family="Arial" font-weight="bold">Private DNS</text>
+    <text x="75" y="70" text-anchor="middle" fill="#ecf0f1" font-family="Arial" font-size="12">192.168.1.100</text>
+  </g>
+
+  <!-- Results -->
+  <g transform="translate(700, 100)">
+    <text x="0" y="0" font-family="Arial" font-size="14" fill="#e74c3c">Public IP: 203.0.113.1</text>
+  </g>
+  <g transform="translate(700, 400)">
+    <text x="0" y="0" font-family="Arial" font-size="14" fill="#2ecc71">Local IP: 192.168.1.100</text>
+  </g>
+
+  <!-- Arrows -->
+  <g stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrow)">
+    <path d="M100,250 L250,250" />
+    
+    <!-- To Public -->
+    <path d="M300,200 L500,100" stroke-dasharray="5,5"/>
+    <text x="400" y="140" text-anchor="middle" font-family="Arial" font-size="12" fill="#e74c3c">Outside (Cafe)</text>
+
+    <!-- To Private -->
+    <path d="M300,300 L500,400" />
+    <text x="400" y="360" text-anchor="middle" font-family="Arial" font-size="12" fill="#2ecc71">Inside (Home)</text>
+  </g>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+</svg>

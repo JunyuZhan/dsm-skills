@@ -6,22 +6,7 @@
 
 群晖官方提供了三种主要的迁移方式，适用于不同的场景。
 
-```mermaid
-graph TD
-    A[开始迁移] --> B{新旧 NAS 能否同时开机?}
-    B -- 是 --> C{是否需要更换文件系统?}
-    B -- 否 --> D[硬盘迁移 HDD Migration]
-    C -- 是 --> E[Hyper Backup 备份还原]
-    C -- 否 --> F[Migration Assistant]
-    
-    D --> G(速度最快, 限制较多)
-    E --> H(最灵活, 支持跨架构/文件系统)
-    F --> I(最平滑, 服务不中断)
-    
-    style D fill:#f9f,stroke:#333,stroke-width:2px
-    style E fill:#bbf,stroke:#333,stroke-width:2px
-    style F fill:#bfb,stroke:#333,stroke-width:2px
-```
+![迁移决策树](../images/migration_decision.svg)
 
 ### 1. 硬盘迁移 (HDD Migration)
 
@@ -48,24 +33,7 @@ graph TD
 
 **最平滑，服务不中断。**
 
-```mermaid
-sequenceDiagram
-    participant U as 用户
-    participant New as 新 NAS
-    participant Old as 旧 NAS
-    
-    U->>New: 安装 Migration Assistant 套件
-    New->>Old: 建立连接 (需管理员权限)
-    New->>Old: 检查系统兼容性
-    New->>New: 格式化新硬盘 (清除数据!)
-    loop 数据同步阶段
-        Old->>New: 全量数据同步 (SMB/Web 仍可用)
-    end
-    U->>New: 确认切换服务
-    New->>Old: 停止旧 NAS 服务
-    New->>New: 应用系统配置 (重启)
-    U->>New: 迁移完成，新 NAS 上线
-```
+![Migration Assistant 流程图](../images/migration_assistant.svg)
 
 *   **原理**：通过局域网，将一台 NAS 的所有数据、设置、套件“克隆”到另一台 NAS。
 *   **适用场景**：
@@ -94,21 +62,7 @@ sequenceDiagram
 
 当 NAS 彻底挂了，如何救数据？
 
-```mermaid
-flowchart TD
-    A[NAS 故障] --> B{能开机吗?}
-    B -- 是 --> C{文件找不到了?}
-    B -- 否 --> D[电源/主板故障]
-    C -- 是 --> E[回收站/快照恢复]
-    C -- 否 --> F[RAID/存储池损毁]
-    D --> G[保留硬盘, 更换新主机]
-    F --> H[Ubuntu 挂载救急]
-    H --> I[联系群晖官方支持]
-    
-    style G fill:#ff9,stroke:#333
-    style E fill:#9f9,stroke:#333
-    style H fill:#f99,stroke:#333
-```
+![灾难恢复流程图](../images/disaster_recovery.svg)
 
 ### 场景 A：NAS 主板坏了，硬盘完好
 1.  买一台新的群晖 NAS（或借一台）。
@@ -134,17 +88,7 @@ flowchart TD
 
 永远不要只依靠 RAID。RAID 不是备份！
 
-```mermaid
-graph LR
-    A[原始数据] --> B[NAS 本地快照]
-    A --> C[外部硬盘 USB]
-    A --> D[云端/异地 NAS]
-    
-    style A fill:#f9f,stroke:#333
-    style B fill:#bbf,stroke:#333
-    style C fill:#bbf,stroke:#333
-    style D fill:#bfb,stroke:#333
-```
+![3-2-1 备份策略](../images/backup_321.svg)
 
 *   **3** 份数据副本。
 *   **2** 种介质（NAS + 移动硬盘/云）。
