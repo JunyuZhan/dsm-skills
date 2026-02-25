@@ -14,6 +14,7 @@
 ## 目录索引
 
 ### 🔰 基础入门 (Basic Skills)
+- [**黑群晖安装指南 (RR 引导)**](installation/rr-loader-guide.md): 傻瓜式 Web 配置、自动驱动、SA6400/DS920+ 选型。
 - [**存储管理器深度解析 (必读)**](basic-skills/storage-manager.md): RAID 选型 (SHR vs RAID5)、Btrfs 优势、数据清洗防腐烂。
 - [**数据加密与密钥管理**](basic-skills/encryption-manager.md): 文件夹加密、物理 U 盘密钥、防盗指南。
 - [**通知中心与日志审计**](basic-skills/notifications-logs.md): 微信/邮件推送配置、Log Center 审计文件删除记录。
