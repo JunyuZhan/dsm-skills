@@ -146,6 +146,8 @@ services:
 
 ## 6. 网络去广告与 DNS (AdGuard Home)
 
+> **进阶调优**：如何设置上游 DNS？如何开启乐观缓存？请参考 [AdGuard Home 深度调优](adguard-home-tuning.md)。
+
 ```yaml
 version: "3"
 services:

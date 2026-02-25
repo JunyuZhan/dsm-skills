@@ -109,3 +109,4 @@
 - **用途**：全网去广告 DNS。
 - **推荐理由**：拦截视频广告和跟踪器，保护隐私，还能加速 DNS 解析。
 - **镜像**：`adguard/adguardhome`
+- **进阶调优**：详见 [AdGuard Home 深度调优](adguard-home-tuning.md)。
