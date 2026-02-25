@@ -86,6 +86,16 @@ services:
 3.  连接 WARP。
 4.  现在，你可以直接 ping 通 `192.168.1.100`，就像连了 VPN 一样。你可以直接挂载 SMB 共享文件夹！
 
+### 优化：分离隧道 (Split Tunneling)
+默认情况下，WARP 会代理所有流量，导致你访问国内网站变慢。你需要设置“分离隧道”，只代理公司/家庭内网的流量。
+
+1.  在 Zero Trust Dashboard > **Settings** > **WARP Client**。
+2.  找到 **Device settings** > **Profile settings**。
+3.  点击 Configure，进入 **Split Tunnels**。
+4.  选择 **Exclude IPs and domains** (排除模式 - 推荐) 或 **Include** (包含模式)。
+    *   **推荐做法**：选择 **Exclude**，列表里默认包含了所有公网 IP。
+    *   **添加例外**：确保你的内网网段 `192.168.1.0/24` **不在** Exclude 列表中（即删除它），这样内网流量才会走 WARP 隧道，而访问百度/淘宝走本地网络。
+
 ## 6. 常见问题
 
 ### Q1: 速度慢？

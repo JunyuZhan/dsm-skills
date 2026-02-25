@@ -93,11 +93,64 @@ echo "数据库备份完成：$BACKUP_DIR/pg_backup_$DATE.sql.gz"
 
 ## 4. 自动签发 SSL 证书 (acme.sh 守护)
 
-虽然 acme.sh 容器有自己的计划任务，但有时可能会因为网络原因失败。我们可以写一个脚本强制检测。
+虽然 acme.sh 容器有自己的计划任务，但有时可能会因为网络原因失败。我们可以写一个脚本强制检测，并自动部署到 DSM。
 
 ```bash
 #!/bin/bash
 # 每天运行一次
+
+# 1. 强制更新证书 (acme.sh 容器)
+docker exec acme.sh --cron
+
+# 2. 将证书复制到 DSM 证书目录 (需要 root 权限)
+# 注意：DSM 7.x 的证书路径比较复杂，建议使用 deploy 钩子
+# 这里演示的是通过 deploy hook 部署到 DSM 的命令 (需要在 acme.sh 内部配置)
+# docker exec acme.sh --deploy -d yourdomain.com --deploy-hook synology_dsm
+
+# 3. 重启 Web 服务器 (如果证书更新了)
+# /usr/syno/sbin/synoservicectl --reload nginx
+```
+
+## 5. 硬盘健康周报 (SMART Report)
+
+DSM 自带的通知很零散。这个脚本每周汇总所有硬盘的 SMART 信息发给你。
+
+```bash
+#!/bin/bash
+DRIVES=$(ls /dev/sata*) # 获取所有 SATA 硬盘
+REPORT="硬盘健康周报 \n"
+
+for drive in $DRIVES; do
+    MODEL=$(smartctl -i $drive | grep "Device Model" | awk -F: '{print $2}')
+    TEMP=$(smartctl -A $drive | grep "Temperature_Celsius" | awk '{print $10}')
+    HOURS=$(smartctl -A $drive | grep "Power_On_Hours" | awk '{print $10}')
+    REALLOC=$(smartctl -A $drive | grep "Reallocated_Sector_Ct" | awk '{print $10}')
+    
+    REPORT+="$drive ($MODEL): 温度 ${TEMP}C, 通电 ${HOURS}小时, 坏道 ${REALLOC} \n"
+done
+
+# 发送邮件 (需配置 sendmail 或使用 webhook)
+echo -e "$REPORT" | /usr/bin/ssmtp your@email.com
+```
+
+## 6. 自动修正权限 (Permissions Fixer)
+
+Docker 下载的文件有时会出现权限锁死（root 拥有），导致 SMB 无法删除。
+
+```bash
+#!/bin/bash
+# 目标目录
+TARGET_DIR="/volume1/downloads"
+
+# 将所有文件所有者改为 admin (UID 1024), 组 users (GID 100)
+# 根据你的实际用户 ID 修改
+chown -R 1024:100 "$TARGET_DIR"
+
+# 赋予读写权限 (777 虽然不安全，但对家庭下载目录最省心)
+chmod -R 777 "$TARGET_DIR"
+
+echo "权限修正完成。"
+```
 docker exec acme.sh acme.sh --cron --home /acme.sh
 
 # 检查证书是否更新

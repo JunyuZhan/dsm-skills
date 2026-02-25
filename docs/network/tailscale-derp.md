@@ -93,6 +93,23 @@ Headscale 需要客户端修改登录服务器地址。
     tailscale up --login-server http://your-headscale-ip:8080
     ```
 
+### 验证 DERP 是否生效
+
+配置完成后，如何确认你的流量真的走了自建节点，而不是绕路美国？
+
+1.  **命令行验证**:
+    在 NAS 或电脑上运行：
+    ```bash
+    tailscale netcheck
+    ```
+    查看输出中的 `DERP latency` 部分。如果你的自建节点（如 `Aliyun Shanghai`）延迟极低（<30ms），且其他官方节点延迟较高，说明配置成功。
+
+2.  **连接状态**:
+    ```bash
+    tailscale status
+    ```
+    查看连接对象的连接方式。如果是 `relay`，后面应该跟着你的 DERP 节点名称。
+
 ## 4. Exit Node (出口节点)
 
 想在星巴克用家里的宽带上网？或者在公司访问只有家里 IP 能访问的服务？
