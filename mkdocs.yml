@@ -144,6 +144,8 @@ nav:
     - Uptime Kuma 服务监控: docker-containers/uptime-kuma.md
     - AI 大模型本地部署: docker-containers/local-ai.md
     - Dify AI 应用构建: ai-deployment/dify-rag.md
+    - Stable Diffusion 绘画: ai-deployment/stable-diffusion.md
+    - Whisper 语音转写: ai-deployment/whisper-transcription.md
     - OpenClaw AI 智能体: docker-containers/openclaw.md
     - OpenClash 旁路由模式: docker-containers/openclash.md
     - 游戏服务器: docker-containers/game-servers.md
