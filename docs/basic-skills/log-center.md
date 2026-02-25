@@ -49,6 +49,7 @@
 1.  **启用**：
     *   **File Station** > 设置 > 启用 File Station 日志。
     *   **SMB**：控制面板 > 文件服务 > SMB > 启用传输日志（注意：这会轻微影响性能）。
+    *   **WebDAV / FTP**：在各自的设置里启用。
 2.  **审计**：
     *   在日志中心里，搜索 `Delete` 或 `Write`。
     *   你可以清楚地看到：`User A` 在 `2024-05-01 10:00` 删除了 `重要合同.docx`。
@@ -56,4 +57,21 @@
 ## 5. 配合 Grafana 可视化 (进阶)
 
 如果你觉得日志中心的界面太简陋，可以把日志导出给 **Loki + Grafana**。
-*   使用 Docker 部署 Promtail，挂载 NAS 的 `/var/log` 目录，将日志实时推送到 Loki，然后在 Grafana 中画出漂亮的“登录失败次数趋势图”或“文件访问热力图”。
+*   使用 Docker 部署 **Promtail**，挂载 NAS 的 `/var/log` 目录（或者让 NAS 把 Syslog 发送给 Loki）。
+*   将日志实时推送到 Loki。
+*   在 Grafana 中画出漂亮的“登录失败次数趋势图”或“文件访问热力图”。
+
+## 6. 命令行查日志 (SSH)
+
+有时候界面打不开，只能用 SSH。
+
+*   **系统日志**：`/var/log/messages` (最核心的日志，包含内核、硬盘、网络报错)。
+    ```bash
+    tail -f /var/log/messages
+    ```
+*   **Nginx 日志**：`/var/log/nginx/error.log` (Web 服务报错)。
+*   **Samba 日志**：`/var/log/samba/log.smbd`。
+*   **技巧**：使用 `grep` 过滤关键词。
+    ```bash
+    grep "I/O error" /var/log/messages
+    ```

@@ -73,24 +73,39 @@ nav:
   - 基础入门:
     - 索引: basic-skills/README.md
     - File Station 深度指南: basic-skills/file-station.md
+    - 文件服务深度调优 (SMB/NFS): basic-skills/file-services.md
+    - 共享文件夹深度管理: basic-skills/shared-folder.md
+    - 登录门户定制指南: basic-skills/login-portal.md
+    - 用户与群组深度管理: basic-skills/identity-management.md
+    - DSM 权限体系底层逻辑: basic-skills/permission-logic.md
+    - 证书管理深度指南: basic-skills/certificate-manager.md
+    - Cloud Sync 深度指南: basic-skills/cloud-sync.md
+    - USB Copy 自动化备份: basic-skills/usb-copy.md
     - 黑群晖安装指南 (RR): installation/rr-loader-guide.md
     - 其他引导方式 (ARC/TCRP): installation/other-loaders.md
     - 存储管理器深度解析: basic-skills/storage-manager.md
     - 数据加密与密钥管理: basic-skills/encryption-manager.md
-    - 通知中心与日志: basic-skills/notifications-logs.md
+    - 通知中心 (Notification Center) 深度指南: basic-skills/notification-center.md
+    - 日志中心深度指南: basic-skills/log-center.md
     - 系统设置遗珠: basic-skills/system-gems.md
-    - 用户主目录服务: basic-skills/user-home.md
-    - 系统安全性提升: basic-skills/security.md
-    - 内存检查与优化: basic-skills/memory-check.md
+    - 用户主目录 (User Home) 深度指南: basic-skills/user-home.md
+    - 回收站 (Recycle Bin) 深度策略: basic-skills/recycle-bin.md
+    - 系统安全性提升: network/security-hardening.md
+    - 安全顾问深度指南: basic-skills/security-advisor.md
+    - 资源监控深度指南: basic-skills/resource-monitor.md
+    - 内存硬核诊断与 Swap 调优: basic-skills/memory-check.md
+    - 电源管理 (UPS & WOL) 深度指南: basic-skills/power-management.md
+    - 索引服务深度解析: basic-skills/indexing-service.md
   - 硬件与维护:
     - 硬件选购与维护: hardware-maintenance/hardware-guide.md
-    - 硬件周边选购指南: hardware-maintenance/buying-guide.md
+    - 硬件选购避坑指南 (2025): hardware-maintenance/hardware-buying-guide.md
     - NVMe 存储池破解: advanced-skills/nvme-storage-pool.md
   - 多媒体与娱乐:
     - Photos 进阶技巧: multimedia/photos-tricks.md
     - Photos 深度优化与迁移: multimedia/photos-advanced.md
     - Immich AI 智能相册: multimedia/immich-photos.md
-    - Video Station 影视中心: multimedia/video-audio.md
+    - Video Station 深度指南: multimedia/video-station-guide.md
+    - Audio Station 音乐中心: multimedia/audio-station.md
     - MoviePilot 自动化追剧: multimedia/moviepilot.md
     - Tautulli 媒体监控: multimedia/tautulli-monitoring.md
     - 硬件解码与转码详解: multimedia/transcoding-guide.md
@@ -98,7 +113,8 @@ nav:
   - 视频监控:
     - Surveillance Station 指南: surveillance/guide.md
   - 网络与安全:
-    - 网络与远程访问: network/access-security.md
+    - 网络与远程访问: network/README.md
+    - DNS Server 进阶指南: network/dns-server.md
     - 内网穿透与异地组网指南: network/tunneling-guide.md
     - Tailscale 深度实战: network/tailscale-derp.md
     - Cloudflare Tunnel 深度实战: network/cloudflare-tunnel.md
@@ -106,6 +122,7 @@ nav:
     - FRP 自建内网穿透: network/frp-guide.md
     - 企业级身份认证 (AD): network/directory-server.md
     - 安全加固与防火墙: network/security-hardening.md
+    - WebDAV 远程挂载深度指南: network/webdav-guide.md
     - 反向代理与 HTTPS: network/reverse-proxy.md
     - acme.sh 泛域名证书自动化: network/acme-sh-automation.md
     - MailPlus 邮件服务器: communication/mailplus-guide.md
@@ -165,6 +182,7 @@ nav:
     - 混合云架构实战: advanced-skills/hybrid-cloud.md
     - PXE 网络启动服务器: advanced-skills/pxe-boot.md
     - 3-2-1 备份策略: advanced-skills/backup-strategy.md
+    - Hyper Backup 深度指南: advanced-skills/hyper-backup.md
     - ABB 深度指南: advanced-skills/abb-guide.md
     - 数据迁移与灾难恢复: migration/guide.md
     - 脚本与自动化: advanced-skills/automation.md
