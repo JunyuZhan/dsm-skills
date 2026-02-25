@@ -10,13 +10,6 @@
 
 ![Authelia SSO Flow](../images/authelia_flow.svg)
 
-```mermaid
-graph LR
-    User --> Nginx[反向代理 (Nginx)]
-    Nginx -- 1. 鉴权请求 --> Authelia
-    Authelia -- 2. 允许/拒绝 --> Nginx
-    Nginx -- 3. 转发 (如果允许) --> App[你的应用 (Sonarr)]
-```
 
 ## 2. 部署 Authelia (Docker Compose)
 

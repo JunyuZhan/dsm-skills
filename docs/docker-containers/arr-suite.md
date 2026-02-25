@@ -13,17 +13,7 @@
 
 ## 架构图
 
-```mermaid
-graph LR
-    User[用户搜索] --> Radarr/Sonarr
-    Radarr/Sonarr -- 请求种子 --> Prowlarr
-    Prowlarr -- 搜索站点 --> PT_Sites[PT/BT 站点]
-    Radarr/Sonarr -- 发送下载任务 --> qBittorrent
-    qBittorrent -- 下载完成 --> Radarr/Sonarr
-    Radarr/Sonarr -- 1.重命名/移动 --> Media_Folder[媒体库]
-    Radarr/Sonarr -- 2.通知 --> Plex/Jellyfin
-    Media_Folder --> Plex/Jellyfin
-```
+![Arr Suite Architecture](../images/arr_suite_architecture.svg)
 
 ## 部署 (Docker Compose)
 

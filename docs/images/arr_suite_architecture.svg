@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">Arr Suite Automation Architecture</text>
+  
+  <!-- User -->
+  <g transform="translate(50, 200)">
+    <circle cx="40" cy="40" r="30" fill="#4285f4" />
+    <text x="40" y="45" font-family="Arial" font-size="12" fill="white" text-anchor="middle">User</text>
+    <text x="40" y="85" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Search</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M130 240 L190 240" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Radarr/Sonarr -->
+  <g transform="translate(200, 180)">
+    <rect width="120" height="120" rx="10" fill="#fff" stroke="#ffc107" stroke-width="3" />
+    <text x="60" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#ffc107" text-anchor="middle">Radarr / Sonarr</text>
+    <path d="M10 50 L110 50" stroke="#ddd" stroke-width="2" />
+    <text x="60" y="70" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Manager</text>
+    <text x="60" y="90" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Organizer</text>
+  </g>
+  
+  <!-- Arrow 2 (Request) -->
+  <path d="M260 180 L260 140" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Prowlarr -->
+  <g transform="translate(200, 20)">
+    <rect width="120" height="100" rx="10" fill="#fff" stroke="#ea4335" stroke-width="3" />
+    <text x="60" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#ea4335" text-anchor="middle">Prowlarr</text>
+    <path d="M10 50 L110 50" stroke="#ddd" stroke-width="2" />
+    <text x="60" y="70" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Indexer Proxy</text>
+  </g>
+  
+  <!-- Arrow 3 (Search Sites) -->
+  <path d="M320 70 L380 70" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Sites -->
+  <g transform="translate(390, 20)">
+    <rect width="100" height="100" rx="10" fill="#fff" stroke="#333" stroke-width="2" stroke-dasharray="5,5" />
+    <text x="50" y="55" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">PT / BT Sites</text>
+  </g>
+  
+  <!-- Arrow 4 (Download Task) -->
+  <path d="M320 240 L380 240" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- qBittorrent -->
+  <g transform="translate(390, 180)">
+    <rect width="120" height="120" rx="10" fill="#fff" stroke="#34a853" stroke-width="3" />
+    <text x="60" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#34a853" text-anchor="middle">qBittorrent</text>
+    <path d="M10 50 L110 50" stroke="#ddd" stroke-width="2" />
+    <text x="60" y="70" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Downloader</text>
+    <text x="60" y="90" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Seeding</text>
+  </g>
+  
+  <!-- Arrow 5 (Completed) -->
+  <path d="M450 300 L450 340 L300 340 L300 300" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  <text x="375" y="335" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">Download Complete</text>
+  
+  <!-- Arrow 6 (Move/Rename) -->
+  <path d="M260 300 L260 400" stroke="#666" stroke-width="2" marker-end="url(#arrow)" />
+  
+  <!-- Media Folder -->
+  <g transform="translate(200, 410)">
+    <path d="M10 10 L50 10 L60 20 L110 20 L110 70 L10 70 Z" fill="#fff" stroke="#666" stroke-width="2" />
+    <text x="60" y="50" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Media Folder</text>
+    <text x="60" y="65" font-family="Arial" font-size="10" fill="#666" text-anchor="middle">/video/movies</text>
+  </g>
+  
+  <!-- Arrow 7 (Notify) -->
+  <path d="M200 240 L160 240 L160 440 L500 440" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow)" />
+  <text x="170" y="350" font-family="Arial" font-size="10" fill="#666" text-anchor="middle" transform="rotate(-90 170,350)">Notify Scan</text>
+  
+  <!-- Plex/Jellyfin -->
+  <g transform="translate(510, 400)">
+    <rect width="120" height="80" rx="10" fill="#fff" stroke="#e50914" stroke-width="3" />
+    <text x="60" y="30" font-family="Arial" font-size="14" font-weight="bold" fill="#e50914" text-anchor="middle">Plex / Jellyfin</text>
+    <text x="60" y="60" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">Player</text>
+  </g>
+  
+  <!-- Arrow 8 (Read) -->
+  <path d="M320 440 L510 440" stroke="#666" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+  
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#666" />
+    </marker>
+  </defs>
+</svg>
