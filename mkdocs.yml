@@ -87,9 +87,10 @@ nav:
   - 多媒体与娱乐:
     - Photos 进阶技巧: multimedia/photos-tricks.md
     - Photos 深度优化与迁移: multimedia/photos-advanced.md
+    - Immich AI 智能相册: multimedia/immich-photos.md
     - Video Station 影视中心: multimedia/video-audio.md
+    - MoviePilot 自动化追剧: multimedia/moviepilot.md
     - 硬件解码与转码详解: multimedia/transcoding-guide.md
-    - 私有云游戏串流 (Sunshine): multimedia/game-streaming.md
     - Download Station 下载: download-tools/download-station.md
   - 视频监控:
     - Surveillance Station 指南: surveillance/guide.md
@@ -102,6 +103,7 @@ nav:
     - MailPlus 邮件服务器: communication/mailplus-guide.md
     - Chat 机器人集成: communication/chat-integration.md
   - 生产力与办公:
+    - Homepage 导航面板: productivity/homepage.md
     - 生产力工具: productivity/drive-office.md
     - 知识管理与协同工作流: productivity/knowledge-workflow.md
     - 自托管替代方案汇总: productivity/self-hosted-alternatives.md
@@ -115,6 +117,7 @@ nav:
   - Docker 容器:
     - 必备容器推荐 Top 20: docker-containers/must-have.md
     - AI 大模型本地部署: docker-containers/local-ai.md
+    - Dify AI 应用构建: ai-deployment/dify-rag.md
     - OpenClaw AI 智能体: docker-containers/openclaw.md
     - OpenClash 旁路由模式: docker-containers/openclash.md
     - 游戏服务器 (Palworld/MC): docker-containers/game-servers.md
@@ -133,9 +136,9 @@ nav:
   - 开发者进阶:
     - 开发者指南: developer-guide/dev-tips.md
     - 自动化开发指南 (API): developer-guide/api-automation.md
-    - 自动化运维 (Ansible): developer-guide/ansible-guide.md
   - 进阶与自动化:
     - 索引: advanced-skills/README.md
+    - Kubernetes (K3s) 集群: advanced-skills/k3s-cluster.md
     - 勒索病毒防护与快照锁定: advanced-skills/ransomware-protection.md
     - 任务计划与脚本管理: advanced-skills/task-scheduler.md
     - 混合云架构实战: advanced-skills/hybrid-cloud.md

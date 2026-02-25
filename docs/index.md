@@ -29,6 +29,8 @@
 
 ### 🎬 多媒体与娱乐 (Multimedia)
 - [**私有云游戏串流 (Sunshine)**](multimedia/game-streaming.md): 4K 低延迟串流、Moonlight 客户端、异地远程唤醒 (WoL)。
+- [**Immich AI 智能相册**](multimedia/immich-photos.md): Google Photos 完美替代、AI 人脸/物体识别、地图模式。
+- [**MoviePilot 自动化追剧**](multimedia/moviepilot.md): 中文环境优化、微信/Telegram 推送、一站式媒体管理。
 - [**Photos 进阶技巧 (10技巧)**](multimedia/photos-tricks.md): 人脸识别、条件相册、权限管理。
 - [**Photos 深度优化与迁移 (10技巧)**](multimedia/photos-advanced.md): 人脸识别补丁、Google Photos 迁移、ExifTool 修复。
 - [**Video Station 与影视中心 (10技巧)**](multimedia/video-audio.md): TMDB搜刮修复、DTS解码、字幕插件。
@@ -48,6 +50,7 @@
 - [**Synology Chat 机器人集成 (10技巧)**](communication/chat-integration.md): Webhook 推送、运维机器人、Slash Command。
 
 ### 🚀 生产力与办公 (Productivity)
+- [**Homepage 导航面板**](productivity/homepage.md): 高颜值 Dashboard、Docker 容器状态监控、API 集成。
 - [**生产力工具 (10技巧)**](productivity/drive-office.md): Drive 版本回溯、Office 协作、Note Station 剪藏。
 - [**知识管理与协同工作流 (10技巧)**](productivity/knowledge-workflow.md): Obsidian 同步、Zotero 文献库、Gitea 代码托管、PXE 启动。
 - [**自托管替代方案汇总**](productivity/self-hosted-alternatives.md): 替代 Notion, Google Drive, Google Photos, Spotify。
@@ -72,6 +75,7 @@
 - [**自建密码库 Vaultwarden (10技巧)**](docker-containers/vaultwarden.md): 数据主权、HTTPS 配置、多端同步。
 - [**Docker Compose 常用堆栈模板 (10技巧)**](docker-containers/compose-templates.md): 媒体中心、HA、NPM、AdGuard Home 一键部署。
 - [**AI 大模型本地部署指南**](docker-containers/local-ai.md): Ollama + Open WebUI 打造私人 ChatGPT，RAG 知识库。
+- [**Dify AI 应用构建**](ai-deployment/dify-rag.md): 可视化编排 AI Agent、企业级 RAG 知识库、Workflow 工作流。
 - [**OpenClaw AI 智能体**](docker-containers/openclaw.md): 部署你的个人 AI 助理，自主执行任务。
 - [**OpenClash 旁路由实战**](docker-containers/openclash.md): Macvlan 网络配置、局域网透明代理。
 - [**游戏服务器搭建 (Palworld/MC)**](docker-containers/game-servers.md): 幻兽帕鲁、Minecraft 开服教程与内存优化。
@@ -83,8 +87,10 @@
 ### 📟 CLI 与终端 (CLI & Terminal)
 - [**CLI 终极指南 (10技巧)**](cli/guide.md): Root 权限、synopkg、synosystemctl、磁盘分析。
 
-### 👨‍💻 开发者进阶 (Developer)
-- [**开发者进阶指南 (10技巧)**](developer-guide/dev-tips.md): Entware 包管理、Git Server、Python 虚拟环境、交叉编译。
+### 🧑‍💻 开发者进阶 (Developer)
+- [**自动化运维 (Ansible) 入门**](developer-guide/ansible-guide.md): 批量管理设备、Playbook 编写、Docker 批量部署。
+- [**DSM 自动化开发指南 (API)**](developer-guide/api-automation.md): Python 调用群晖 Web API、抓包逆向、脚本实战。
+- [**开发者指南 (10技巧)**](developer-guide/dev-tips.md): SSH 密钥登录、Git Server、Python 环境、Crontab.
 
 ### 🛠️ 进阶与自动化 (Advanced)
 - [**任务计划与脚本管理进阶**](advanced-skills/task-scheduler.md): Shell 脚本安全规范、环境变量陷阱、自动化清理。
