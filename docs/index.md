@@ -27,6 +27,7 @@
 - [**Photos 进阶技巧 (10技巧)**](multimedia/photos-tricks.md): 人脸识别、条件相册、权限管理。
 - [**Photos 深度优化与迁移 (10技巧)**](multimedia/photos-advanced.md): 人脸识别补丁、Google Photos 迁移、ExifTool 修复。
 - [**Video Station 与影视中心 (10技巧)**](multimedia/video-audio.md): TMDB搜刮修复、DTS解码、字幕插件。
+- [**Jellyfin/Plex 硬件解码与转码详解**](multimedia/transcoding-guide.md): Intel QSV 核显直通、HDR 色调映射、转码验证。
 - [**Download Station 进阶下载 (10技巧)**](download-tools/download-station.md): RSS 自动追剧、搜索插件 DLM、eMule。
 
 ### 👁️ 视频监控 (Surveillance)
@@ -34,6 +35,7 @@
 
 ### 🌐 网络与安全 (Network)
 - [**网络与远程访问 (10技巧)**](network/access-security.md): QuickConnect vs DDNS、IPv6、端口转发、VPN Server。
+- [**内网穿透与异地组网指南**](network/tunneling-guide.md): Tailscale 子网路由、Cloudflare Tunnel、ZeroTier 配置。
 - [**NAS 安全加固与防火墙策略 (10技巧)**](network/security-hardening.md): GeoIP 阻断、SSH 密钥认证、DoS 防护。
 - [**反向代理与 HTTPS 配置 (10技巧)**](network/reverse-proxy.md): 泛域名证书、WebSocket 支持、访问控制。
 - [**MailPlus Server 邮件服务器 (10技巧)**](communication/mailplus-guide.md): 反垃圾策略、SMTP Relay、DKIM/SPF 配置。
@@ -47,6 +49,7 @@
 ### 💻 虚拟化与建站 (Virtualization & Web)
 - [**Virtual Machine Manager 实战 (10技巧)**](virtualization/vmm-guide.md): Windows LTSC 优化、OpenWrt 软路由、USB 直通。
 - [**Web Station 建站指南 (10技巧)**](web-dev/website-hosting.md): PHP 优化、WordPress 加速、Node.js 部署。
+- [**Web Station 建站进阶**](web-dev/web-station-advanced.md): 静态网站自动化、WordPress Redis 缓存、Python Web 部署。
 
 ### 🖥️ 系统深度集成 (OS Integration)
 - [**Mac/Windows 深度集成技巧 (10技巧)**](platform-specific/os-integration.md): Time Machine 优化、Spotlight 索引、iSCSI 游戏库、AD 域控。

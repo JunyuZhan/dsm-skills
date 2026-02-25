@@ -83,11 +83,13 @@ nav:
     - Photos 进阶技巧: multimedia/photos-tricks.md
     - Photos 深度优化与迁移: multimedia/photos-advanced.md
     - Video Station 影视中心: multimedia/video-audio.md
+    - 硬件解码与转码详解: multimedia/transcoding-guide.md
     - Download Station 下载: download-tools/download-station.md
   - 视频监控:
     - Surveillance Station 指南: surveillance/guide.md
   - 网络与安全:
     - 网络与远程访问: network/access-security.md
+    - 内网穿透与异地组网: network/tunneling-guide.md
     - 安全加固与防火墙: network/security-hardening.md
     - 反向代理与 HTTPS: network/reverse-proxy.md
     - MailPlus 邮件服务器: communication/mailplus-guide.md
@@ -99,6 +101,7 @@ nav:
   - 虚拟化与建站:
     - VMM 虚拟机实战: virtualization/vmm-guide.md
     - Web Station 建站: web-dev/website-hosting.md
+    - Web Station 建站进阶: web-dev/web-station-advanced.md
   - 系统深度集成:
     - Mac/Windows 集成: platform-specific/os-integration.md
   - Docker 容器:
