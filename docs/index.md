@@ -42,6 +42,7 @@
 
 ### 👁️ 视频监控 (Surveillance)
 - [**Surveillance Station 监控指南 (10技巧)**](surveillance/guide.md): 免费授权迁移、H.265 省空间、智能动作侦测、Home Mode。
+- [**Surveillance Station 进阶指南**](surveillance/advanced-guide.md): CMS 集中化管理、行动规则 (Action Rules) 自动化、I/O 模块与 Webhook 集成。
 
 ### 🌐 网络与安全 (Network)
 - [**网络与远程访问 (10技巧)**](network/access-security.md): QuickConnect vs DDNS、IPv6、端口转发、VPN Server。
@@ -63,6 +64,7 @@
 - [**Stirling-PDF 全能工具箱**](productivity/stirling-pdf.md): PDF 合并/拆分/OCR/加密/签名、Web 界面、API 调用。
 - [**Synology Drive 深度实战**](productivity/drive-deep-dive.md): 团队协作、版本控制、按需同步、Office 在线编辑。
 - [**生产力工具 (10技巧)**](productivity/drive-office.md): Drive 版本回溯、Office 协作、Note Station 剪藏。
+- [**Note Station 生产力指南**](productivity/note-station.md): Web Clipper 网页剪藏、演示模式 PPT、待办事项管理、笔记加密。
 - [**知识管理与协同工作流 (10技巧)**](productivity/knowledge-workflow.md): Obsidian 同步、Zotero 文献库、Gitea 代码托管、PXE 启动。
 - [**自托管替代方案汇总**](productivity/self-hosted-alternatives.md): 替代 Notion, Google Drive, Google Photos, Spotify。
 
@@ -117,6 +119,7 @@
 - [**混合云架构实战**](advanced-skills/hybrid-cloud.md): Cloud Sync 联动网盘、Hyper Backup + S3 冷备、Hybrid Share。
 - [**PXE 网络启动服务器 (10技巧)**](advanced-skills/pxe-boot.md): 网络重装 Windows、救砖神器 netboot.xyz。
 - [**3-2-1 备份策略详解**](advanced-skills/backup-strategy.md): Hyper Backup, Active Backup for Business, 快照防护。
+- [**Hyper Backup 深度指南**](advanced-skills/hyper-backup.md): 块级增量备份原理、Smart Recycle 循环策略、客户端加密与完整性检查。
 - [**Active Backup for Business 深度指南 (10技巧)**](advanced-skills/abb-guide.md): PC/Server/VM 整机备份、全局重删、VMM 即时还原。
 - [**数据迁移与灾难恢复指南 (10技巧)**](migration/guide.md): 硬盘迁移、Migration Assistant、Hyper Backup 异地恢复。
 - [**脚本与自动化 (10技巧)**](advanced-skills/automation.md): 开机脚本、Docker Compose、SSH 命令。
