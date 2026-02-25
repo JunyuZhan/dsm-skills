@@ -1,8 +1,11 @@
 site_name: 群晖 DSM 7.x 技巧大全
-site_url: https://github.com/JunyuZhan/dsm-skills
+site_url: https://dsmskills.albertzhan.top/
+site_description: 群晖 DSM 7.x 深度技巧大全，收录 200+ 个实用技巧，涵盖基础入门、Docker 容器、网络安全、自动化运维、多媒体中心等全方位指南。助你从小白进阶为 NAS 专家。
+site_author: Albert Zhan
 repo_url: https://github.com/JunyuZhan/dsm-skills
 repo_name: JunyuZhan/dsm-skills
 edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2024 Albert Zhan
 
 theme:
   name: material
@@ -31,6 +34,27 @@ theme:
     - search.suggest
     - search.highlight
     - content.code.copy
+    - navigation.instant
+    - navigation.indexes
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+  - git-revision-date-localized:
+      type: date
+      timezone: Asia/Shanghai
+      enable_creation_date: true
+  - social:
+      cards_layout_options:
+        background_color: "#009688"
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/JunyuZhan/dsm-skills
+      name: GitHub Repository
+  generator: false
 
 markdown_extensions:
   - admonition
