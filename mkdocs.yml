@@ -74,11 +74,16 @@ nav:
     - 必备容器推荐 Top 20: docker-containers/must-have.md
   - 家庭自动化:
     - 家庭自动化与 IoT: home-automation/iot-guide.md
+  - 社群扩展:
+    - 社群第三方套件推荐: community/packages.md
+  - CLI 与终端:
+    - CLI 终极指南: cli/guide.md
   - 开发者进阶:
     - 开发者指南: developer-guide/dev-tips.md
   - 进阶与自动化:
     - 索引: advanced-skills/README.md
     - 3-2-1 备份策略: advanced-skills/backup-strategy.md
+    - 数据迁移与灾难恢复: migration/guide.md
     - 脚本与自动化: advanced-skills/automation.md
     - SSD 缓存配置: advanced-skills/ssd-cache.md
     - Docker 与 vDSM: advanced-skills/docker-guide.md

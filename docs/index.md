@@ -51,11 +51,18 @@
 ### 🏠 家庭自动化 (Home Automation)
 - [**家庭自动化与 IoT 指南 (10技巧)**](home-automation/iot-guide.md): HA Docker vs VMM、MQTT、Homebridge、Scrypted 摄像头接入。
 
+### 📦 社群扩展 (Community Extensions)
+- [**社群第三方套件推荐 (10技巧)**](community/packages.md): SynoCommunity、Entware、ffmpeg、Zsh/Fish。
+
+### 📟 CLI 与终端 (CLI & Terminal)
+- [**CLI 终极指南 (10技巧)**](cli/guide.md): Root 权限、synopkg、synosystemctl、磁盘分析。
+
 ### 👨‍💻 开发者进阶 (Developer)
 - [**开发者进阶指南 (10技巧)**](developer-guide/dev-tips.md): Entware 包管理、Git Server、Python 虚拟环境、交叉编译。
 
 ### 🛠️ 进阶与自动化 (Advanced)
 - [**3-2-1 备份策略详解**](advanced-skills/backup-strategy.md): Hyper Backup, Active Backup for Business, 快照防护。
+- [**数据迁移与灾难恢复指南 (10技巧)**](migration/guide.md): 硬盘迁移、Migration Assistant、Hyper Backup 异地恢复。
 - [**脚本与自动化 (10技巧)**](advanced-skills/automation.md): 开机脚本、Docker Compose、SSH 命令。
 - [SSD 缓存配置](advanced-skills/ssd-cache.md): 缓存避坑指南。
 - [Docker 与 Virtual DSM](advanced-skills/docker-guide.md): 基础教程。
