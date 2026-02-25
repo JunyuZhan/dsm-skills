@@ -57,7 +57,8 @@
 - [**Web Station 建站进阶**](web-dev/web-station-advanced.md): 静态网站自动化、WordPress Redis 缓存、Python Web 部署。
 
 ### 🖥️ 系统深度集成 (OS Integration)
-- [**Mac/Windows 深度集成技巧 (10技巧)**](platform-specific/os-integration.md): Time Machine 优化、Spotlight 索引、iSCSI 游戏库、AD 域控。
+- [**Mac 极致优化指南**](platform-specific/mac-optimization.md): Time Machine 提速、Spotlight 搜索优化、禁止 .DS_Store。
+- [**Mac/Windows 集成 (10技巧)**](platform-specific/os-integration.md): 映射网络驱动器、iSCSI 挂载游戏盘、NFS 权限。
 
 ### 🐳 Docker 容器 (Docker)
 - [**必备容器推荐 Top 20**](docker-containers/must-have.md): Portainer, Jellyfin, Nastools, Home Assistant 等。
@@ -81,6 +82,7 @@
 
 ### 🛠️ 进阶与自动化 (Advanced)
 - [**任务计划与脚本管理进阶**](advanced-skills/task-scheduler.md): Shell 脚本安全规范、环境变量陷阱、自动化清理。
+- [**混合云架构实战**](advanced-skills/hybrid-cloud.md): Cloud Sync 联动网盘、Hyper Backup + S3 冷备、Hybrid Share。
 - [**PXE 网络启动服务器 (10技巧)**](advanced-skills/pxe-boot.md): 网络重装 Windows、救砖神器 netboot.xyz。
 - [**3-2-1 备份策略详解**](advanced-skills/backup-strategy.md): Hyper Backup, Active Backup for Business, 快照防护。
 - [**Active Backup for Business 深度指南 (10技巧)**](advanced-skills/abb-guide.md): PC/Server/VM 整机备份、全局重删、VMM 即时还原。

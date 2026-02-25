@@ -1,115 +1,98 @@
-# Container Manager 网络配置详解
+# Docker 网络进阶
 
-Docker 的网络配置往往是新手最头疼的部分。为什么容器无法访问 NAS？为什么 Macvlan 容器无法连接宿主机？本指南将带你彻底搞懂 Bridge、Host 和 Macvlan 三种模式的区别与实战配置。
+Docker 的网络配置是很多新手的噩梦。理解 Bridge、Host、Macvlan，能让你解锁软路由、旁路由等高级玩法。
 
-## 三种网络模式对比
+## 1. 网络模式详解
 
-| 模式 | 描述 | 优点 | 缺点 | 适用场景 |
-| :--- | :--- | :--- | :--- | :--- |
-| **Bridge (默认)** | 桥接模式，Docker 创建一个虚拟网桥，容器通过 NAT 访问外网。 | 端口隔离，安全性高，不占用局域网 IP。 | 需要端口映射，无法直接通过 IP 访问容器。 | 绝大多数应用（如 Jellyfin, Plex, Nextcloud）。 |
-| **Host** | 主机模式，容器共享宿主机的网络栈。 | 性能最好，无需端口映射，直接使用 NAS IP。 | 端口容易冲突，安全性较低。 | 需要高性能网络或复杂端口的应用（如 Home Assistant）。 |
-| **Macvlan** | 虚拟 MAC 模式，容器拥有独立的局域网 IP。 | 容器像一台独立的物理机，端口全开，无端口冲突。 | 配置复杂，**默认无法与宿主机通信**（需特殊配置）。 | 需要独立 IP 的应用（如 AdGuard Home, OpenWrt）。 |
+| 模式 | IP 地址 | 端口映射 | 适用场景 |
+| :--- | :--- | :--- | :--- |
+| **Bridge** (默认) | 172.17.0.x (内网) | 需要 (`-p 8080:80`) | 绝大多数应用。隔离性好，不占用宿主机端口。 |
+| **Host** | **与 NAS 相同** | **不需要** | 即使性能要求高、或者需要广播发现的应用（如 Home Assistant, DLNA）。 |
+| **Macvlan** | **独立局域网 IP** | **不需要** | 需要独立 IP 的应用（如 AdGuard Home, OpenWrt）。 |
 
----
+## 2. Macvlan 实战：给容器分配独立 IP
 
-## 实战 1：Bridge 模式端口映射
+**场景**：你想部署 AdGuard Home 做 DNS 服务器，但 NAS 的 53 端口已经被占用了。或者你想让容器拥有一个独立的 `192.168.1.x` IP。
 
-这是最常用的模式。在 Container Manager 中创建容器时：
-
-1.  **网络** 选择 `bridge`。
-2.  **端口设置** 中，左侧是 **本地端口**（NAS 端口），右侧是 **容器端口**（应用内部端口）。
-    *   例如安装 Nginx，容器端口是 `80`。
-    *   本地端口不能冲突，可以设为 `8080`。
-    *   访问地址：`http://NAS_IP:8080`。
-
----
-
-## 实战 2：Host 模式解决广播问题
-
-某些应用（如 Home Assistant）需要接收局域网内的广播包（用于发现智能设备），Bridge 模式会阻断广播。
-
-1.  **网络** 选择 `host`。
-2.  **端口设置** 会被禁用（因为直接使用宿主机端口）。
-3.  访问地址：`http://NAS_IP:8123`（假设 HA 默认端口是 8123）。
-
----
-
-## 实战 3：Macvlan 模式配置（高级）
-
-让容器拥有独立的局域网 IP（例如 NAS 是 192.168.1.2，容器是 192.168.1.100）。
-
-### 第一步：开启 Open vSwitch
-
-在 **控制面板** > **网络** > **网络界面** > **管理** > **Open vSwitch 设置**，勾选 **启用 Open vSwitch**。
-
-### 第二步：创建 Macvlan 网络 (CLI)
-
-SSH 登录 NAS，执行以下命令（请根据实际网络修改）：
-
+### 步骤 1：创建 Macvlan 网络
+SSH 登录 NAS，执行：
 ```bash
-# 假设你的网段是 192.168.1.x，网关是 192.168.1.1
-# ovs_eth0 是你的物理网卡名称（可以通过 ip addr 查看）
-# 192.168.1.200/29 表示预留 192.168.1.200 到 207 给 Docker 使用
-
+# 假设你的网关是 192.168.1.1，网段是 192.168.1.0/24
+# parent=ovs_eth0 是关键，如果你开了 VMM，通常网卡名是 ovs_eth0，否则是 eth0
 docker network create -d macvlan \
   --subnet=192.168.1.0/24 \
   --gateway=192.168.1.1 \
-  --ip-range=192.168.1.200/29 \
   -o parent=ovs_eth0 \
-  macvlan_net
+  macnet
 ```
 
-### 第三步：使用 Macvlan
-
-在 Container Manager 或 Docker Compose 中使用该网络：
-
+### 步骤 2：部署容器
 ```yaml
 services:
   adguard:
     image: adguard/adguardhome
+    container_name: adguard
     networks:
-      macvlan_net:
-        ipv4_address: 192.168.1.200 # 指定固定 IP
+      macnet:
+        ipv4_address: 192.168.1.5 # 指定一个未被使用的 IP
     restart: always
 
 networks:
-  macvlan_net:
-    external: true # 使用外部已创建的网络
+  macnet:
+    external: true
 ```
 
-### 第四步：解决 Macvlan 无法访问宿主机问题（必读）
-
-出于安全设计，Macvlan 网络默认无法访问父接口（即 NAS 本身）。如果你在 Macvlan 容器（如 Home Assistant）中尝试连接 NAS 的 MQTT 或数据库，会失败。
-
-**解决方案：添加从接口（Macvlan Bridge）**
-
-在 SSH 中执行（重启失效，需设为开机脚本）：
-
+### 步骤 3：解决宿主机无法访问容器的问题 (安全机制)
+Macvlan 有个特性：**宿主机 (NAS) 无法直接访问自己的 Macvlan 容器**。
+**破解**：建立一个虚接口桥接。
 ```bash
-# 创建一个名为 macvlan_bridge 的接口连接到 macvlan_net
-ip link add macvlan_bridge link ovs_eth0 type macvlan mode bridge
-
-# 给这个接口分配一个专用 IP（要在你的 ip-range 范围内）
-ip addr add 192.168.1.207/32 dev macvlan_bridge
-
-# 启用接口
-ip link set macvlan_bridge up
-
-# 添加路由：告诉系统，访问 Docker Macvlan 网段的数据包走这个接口
-ip route add 192.168.1.200/29 dev macvlan_bridge
+# 在任务计划（开机触发）中添加：
+ip link add macvlan-shim link ovs_eth0 type macvlan mode bridge
+ip addr add 192.168.1.222/32 dev macvlan-shim # 给虚接口一个专用 IP
+ip link set macvlan-shim up
+ip route add 192.168.1.5/32 dev macvlan-shim # 告诉 NAS，去往容器 IP 走这条路
 ```
 
-现在，容器可以通过 `192.168.1.207` 这个 IP 访问 NAS，而 NAS 也可以通过容器 IP 访问容器。
+## 3. Traefik：自动服务发现与反向代理
 
----
+如果你有几十个 Docker 容器，一个个配反向代理太累了。Traefik 可以自动监听 Docker 事件，容器一启动，域名就自动生效。
 
-## 常见网络问题排查
+### 核心配置 (docker-compose.yml)
+```yaml
+services:
+  traefik:
+    image: traefik:v2.9
+    command:
+      - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
+    ports:
+      - "80:80"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
 
-1.  **容器无法联网**：
-    *   检查 DNS 设置。在容器内 `cat /etc/resolv.conf`。
-    *   Bridge 模式下，尝试重启 Docker 服务。
-2.  **端口冲突**：
-    *   使用 `netstat -tunlp | grep 端口号` 检查 NAS 上谁占用了端口。
-3.  **Macvlan 创建失败**：
-    *   确保未被其他网络占用。
-    *   确保物理网卡名称正确（`ovs_eth0` 或 `eth0`）。
+  whoami:
+    image: traefik/whoami
+    labels:
+      - "traefik.http.routers.whoami.rule=Host(`whoami.localhost`)"
+```
+*   **效果**：启动 `whoami` 容器后，直接访问 `http://whoami.localhost` 即可，无需手动配置 Nginx。
+
+## 4. Docker Socket 安全代理
+
+很多面板（Portainer, Homepage）需要挂载 `/var/run/docker.sock`。但这有安全风险：一旦容器被黑，黑客就拥有了宿主机的 Root 权限。
+
+### 解决方案：Tecnativa/Docker-Socket-Proxy
+部署一个只读的 Socket 代理，其他容器连接这个代理，而不是直连 Socket。
+
+```yaml
+services:
+  dockerproxy:
+    image: tecnativa/docker-socket-proxy
+    environment:
+      - CONTAINERS=1 # 只允许列出容器，不允许创建/删除
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 2375
+```
+其他容器连接 `tcp://dockerproxy:2375`，安全无忧。

@@ -110,13 +110,14 @@ nav:
     - Web Station 建站进阶: web-dev/web-station-advanced.md
   - 系统深度集成:
     - Mac/Windows 集成: platform-specific/os-integration.md
+    - Mac 极致优化指南: platform-specific/mac-optimization.md
   - Docker 容器:
     - 必备容器推荐 Top 20: docker-containers/must-have.md
     - 监控与仪表盘: docker-containers/monitoring.md
     - 自动化追剧 (Arr Suite): docker-containers/arr-suite.md
+    - Docker 网络进阶: docker-containers/network-guide.md
     - 自建密码库 Vaultwarden: docker-containers/vaultwarden.md
     - 常用 Compose 模板: docker-containers/compose-templates.md
-    - Container 网络详解: docker-containers/network-guide.md
   - 家庭自动化:
     - 家庭自动化与 IoT: home-automation/iot-guide.md
   - 社群扩展:
@@ -129,6 +130,7 @@ nav:
   - 进阶与自动化:
     - 索引: advanced-skills/README.md
     - 任务计划与脚本管理: advanced-skills/task-scheduler.md
+    - 混合云架构实战: advanced-skills/hybrid-cloud.md
     - PXE 网络启动服务器: advanced-skills/pxe-boot.md
     - 3-2-1 备份策略: advanced-skills/backup-strategy.md
     - ABB 深度指南: advanced-skills/abb-guide.md
