@@ -19,6 +19,7 @@
 - [**存储管理器深度解析 (必读)**](basic-skills/storage-manager.md): RAID 选型 (SHR vs RAID5)、Btrfs 优势、数据清洗防腐烂。
 - [**数据加密与密钥管理**](basic-skills/encryption-manager.md): 文件夹加密、物理 U 盘密钥、防盗指南。
 - [**通知中心与日志审计**](basic-skills/notifications-logs.md): 微信/邮件推送配置、Log Center 审计文件删除记录。
+- [**Log Center 日志中心指南**](basic-skills/log-center.md): 集中收集路由器/AP 日志、关键字报警、文件传输审计。
 - [**系统设置遗珠 (10技巧)**](basic-skills/system-gems.md): 登录界面美化、LED调节、UPS联动、微信推送等。
 - [用户主目录服务](basic-skills/user-home.md): 个人空间设置。
 - [系统安全性提升](basic-skills/security.md): 2FA、防火墙、自动封锁。
@@ -37,6 +38,7 @@
 - [**Photos 进阶技巧 (10技巧)**](multimedia/photos-tricks.md): 人脸识别、条件相册、权限管理。
 - [**Photos 深度优化与迁移 (10技巧)**](multimedia/photos-advanced.md): 人脸识别补丁、Google Photos 迁移、ExifTool 修复。
 - [**Video Station 与影视中心 (10技巧)**](multimedia/video-audio.md): TMDB搜刮修复、DTS解码、字幕插件。
+- [**Audio Station 深度指南**](multimedia/audio-station.md): 歌词插件、智能播放列表、DLNA/USB DAC 推送。
 - [**Jellyfin/Plex 硬件解码与转码详解**](multimedia/transcoding-guide.md): Intel QSV 核显直通、HDR 色调映射、转码验证。
 - [**Download Station 进阶下载 (10技巧)**](download-tools/download-station.md): RSS 自动追剧、搜索插件 DLM、eMule。
 
@@ -46,6 +48,7 @@
 
 ### 🌐 网络与安全 (Network)
 - [**网络与远程访问 (10技巧)**](network/access-security.md): QuickConnect vs DDNS、IPv6、端口转发、VPN Server。
+- [**DNS Server 实战指南**](network/dns-server.md): 统一内网域名、Split-DNS (内外网同名)、AdGuard Home 联动。
 - [**内网穿透与异地组网指南**](network/tunneling-guide.md): Tailscale 子网路由、Cloudflare Tunnel、ZeroTier 配置。
 - [**Tailscale 深度实战**](network/tailscale-derp.md): 自建 DERP 中转服务器、Headscale 私有控制台、Exit Node VPN 模式。
 - [**Cloudflare Tunnel 深度实战**](network/cloudflare-tunnel.md): Zero Trust 安全防护、Private Network 内网访问、Public Hostname 暴露服务。
