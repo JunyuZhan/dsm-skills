@@ -48,18 +48,13 @@ URL 格式：
 `http://nas-ip:5000/webapi/SurveillanceStation/camera.cgi?api=SYNO.SurveillanceStation.Camera&method=GetSnapshot&version=1&cameraId=1&_sid=你的SID`
 
 ### 自动 PTZ 巡航
-通过脚本定时调用 API，让云台摄像机转动到指定预置位。
+如果你的摄像头支持 PTZ (云台)，可以通过 API 控制它定时转向不同角度。
+`http://nas-ip:5000/webapi/SurveillanceStation/ptz.cgi?api=SYNO.SurveillanceStation.PTZ&method=Move&version=1&cameraId=1&direction=home`
 
-## 5. 深度学习分析 (DVA)
+## 5. 深度视频分析 (DVA 系列独占)
 
-如果你使用的是 DVA 系列 NVR，或者拥有支持 AI 的显卡。
-*   **人脸识别**：建立 VIP/黑名单库。
-*   **车牌识别**：联动道闸系统。
-*   **人流计数**：统计店铺客流量。
-*   **入侵检测**：划定虚拟围栏，只有“人”翻越围墙才报警，猫狗经过不报警。
-
-## 6. 隐私遮罩 (Privacy Masking)
-
-如果摄像头画面拍到了邻居的窗户或公共区域（出于法律合规）。
-*   **设置**：在摄像头编辑 > 优化 > 隐私遮罩。
-*   **效果**：在画面上画几个黑框，这些区域在实时预览和录像中都会被永久遮挡。
+如果你使用的是 DVA3221 / DVA1622，你可以开启 AI 分析任务：
+*   **人脸识别**：建立 VIP 和黑名单数据库。
+*   **车牌识别**：联动道闸系统，自动抬杆。
+*   **人数统计**：统计商场客流热力图。
+*   **入侵检测**：划定虚拟围栏，只有在特定时间翻越围栏才报警（比普通移动检测更准）。

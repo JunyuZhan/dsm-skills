@@ -98,73 +98,54 @@ Paperless 不仅仅是存储，还能“自动分类”。
 2.  **场景 1：自动归档发票**
     *   **触发器**：内容包含 "增值税专用发票" 或 "Invoice"。
     *   **动作**：
-        *   自动打标签：`Finance`。
-        *   自动分配对应人：`Accountant`。
-        *   修改创建日期：从文件内容中提取日期（如 OCR 识别到的开票日期）。
-3.  **场景 2：自动重命名**
-    *   设置存储路径规则：`{created_year}/{correspondent}/{title}`。
-    *   效果：上传 `scan_001.pdf`，自动整理为 `2024/阿里云/1月服务器账单.pdf`。
+        *   分配标签：`Invoice`, `Finance`。
+        *   分配对应人：`Accountant_A`。
+        *   设置存储路径：`/2024/Invoices/{created_year}/{correspondent}`。
+3.  **场景 2：合同到期提醒**
+    *   虽然 Paperless 本身没有强提醒，但可以通过 Webhook 触发外部通知。
 
-### 2.3 物理扫描仪对接
-*   **Brother/Epson/HP 网络扫描仪**：在扫描仪后台设置 "Scan to FTP/SMB"。
-*   **目标路径**：指向 NAS 的 `/volume1/scan_input` 文件夹。
-*   **效果**：把纸质合同放入扫描仪，按一下按钮，1 分钟后，Paperless 里就能搜到这份合同的电子版。
+### 2.3 物理扫描仪联动
+*   将你的网络扫描仪（如 Brother, Epson）的 FTP/SMB 目标指向 `/volume1/scan_input`。
+*   **效果**：扫描仪按下“扫描”键 -> 文件进入 NAS -> Paperless 自动 OCR 识别 -> 自动归档。全过程无需电脑介入。
 
-## 3. 自建电子签章系统：DocuSeal
+## 3. 私有化电子签章：DocuSeal
 
-DocuSign 太贵且数据在海外？用 DocuSeal 搭建私有的电子签章平台。
+国内的电子签章服务（如 e签宝）按次收费且数据在云端。DocuSeal 是开源的 DocuSign 替代品。
 
-### 3.1 部署 DocuSeal
+### 3.1 部署
 ```yaml
 version: '3'
 services:
   docuseal:
     image: docuseal/docuseal:latest
-    container_name: docuseal
     ports:
       - "3000:3000"
     volumes:
-      - /volume1/docker/docuseal/data:/data
+      - docuseal_data:/data
     environment:
-      - DATABASE_URL=sqlite3:/data/docuseal.db # 小团队用 SQLite 足够，大并发可用 Postgres
-    restart: unless-stopped
+      - SIGNING_SECRET=your_long_secret_key
 ```
 
 ### 3.2 使用流程
 1.  上传 PDF 合同。
-2.  拖拽签名框、日期框、印章位置。
-3.  输入客户邮箱，发送签署链接。
-4.  客户在手机/电脑上手写签名或上传印章。
-5.  签署完成后，系统生成带**数字指纹**的 PDF，双方均可下载存档。
+2.  拖拽设置“签名区”、“日期区”。
+3.  输入客户邮箱发送。
+4.  客户在手机上打开链接，手写签名。
+5.  双方收到签署完成的 PDF（附带审计日志）。
 
-## 4. 审计与合规：Log Center 进阶
+## 4. 审计追踪与日志 (Log Center)
 
-仅仅记录日志不够，需要“即时报警”。
+对于合规性审查，你需要知道**谁**在**什么时间**动了**什么文件**。
 
-### 4.1 关键词报警
-1.  打开 **Log Center** > `通知设置` > `关键词通知`。
-2.  新增规则：
-    *   **关键词**：`Delete` 或 `Permission change`。
-    *   **日志来源**：`File Transfer` (SMB/File Station)。
-    *   **严重性**：`Error` 或 `Warning`。
-3.  **效果**：一旦有员工尝试删除重要合同，您的手机（DS finder）或邮箱会立即收到警报。
+### 4.1 开启文件传输日志
+1.  **File Station** > 设置 > 常规 > 启用 File Station 日志。
+2.  **SMB** > 控制面板 > 文件服务 > SMB > 启用传输日志（勾选删除、写入、重命名）。
 
-### 4.2 定期审计报告
-设置任务计划，每月导出 CSV 日志并发送给合规官。
-```bash
-# 简单的脚本示例：导出上个月的文件删除记录
-log_file="/volume1/logs/audit_$(date +%Y%m).csv"
-sqlite3 /var/log/synolog/synoconn.db "select * from logs where event like '%Delete%' and time > date('now','start of month','-1 month');" > $log_file
-# 可以结合 sendmail 发送邮件
-```
+### 4.2 集中审计
+1.  打开 **日志中心**。
+2.  **搜索**：输入文件名，查看所有操作记录。
+3.  **归档**：将日志定期归档到 WORM 文件夹，防止日志被篡改。
 
-## 5. 灾难恢复：Hyper Backup 加密策略
+## 5. 总结
 
-备份盘丢失 = 数据泄露？
-
-1.  **客户端加密**：在 Hyper Backup 创建任务时，**必须**勾选“启用客户端加密”。
-2.  **密钥保管**：下载 `.pem` 密钥文件，并将其打印出来放入物理保险箱，或者存放在 1Password/Bitwarden 的安全笔记中。
-3.  **异地备份**：建议使用 C2 Storage 或 S3 (Amazon/Aliyun) 作为异地端，这些云服务均支持服务端加密 (SSE)。
-
----
-**总结**：通过 WORM 锁定底层数据，Paperless 自动化处理文档流，DocuSeal 完成法律效力闭环，Log Center 负责全程审计，您构建的不仅仅是 NAS，而是一个符合企业内控标准的**法务金融数据中心**。
+通过 WORM 技术锁定原始证据，Paperless-ngx 自动化处理票据，DocuSeal 完成电子签约，群晖 NAS 为法律与财务人员构建了一个**闭环的、合规的、私有的**数据处理平台。

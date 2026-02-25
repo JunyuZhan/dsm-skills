@@ -98,16 +98,10 @@
 
 ## 5. 灵感收集：Wallabag
 
-类似于 Pocket/Instapaper 的稍后阅读工具，保存网页文章、设计博客到 NAS。
-*   支持抓取正文，去除广告。
-*   支持打标签、全文搜索。
-*   有 Chrome 插件和手机 APP。
+看到好的设计文章或教程，想保存下来？Wallabag 是开源的 Pocket 替代品。
 
-## 6. Mac 用户特别优化
+*   **浏览器插件**：一键保存网页内容到 NAS。
+*   **去广告阅读**：自动提取正文，去除广告干扰。
+*   **离线归档**：即使原网页 404 了，你的 NAS 里还有存档。
 
-大多数设计师使用 Mac。
-1.  **图标预览**：确保 SMB 连接速度足够快，否则 Finder 加载缩略图会很慢。
-2.  **颜色标签**：Synology Drive 支持同步 macOS 的 Finder 颜色标签 (Tags)。
-3.  **聚光灯搜索 (Spotlight)**：
-    *   在 `控制面板 > 文件服务 > SMB > 高级设置` 中启用 `VFS 模块` -> `fruit` (需通过 SSH 修改 smb.conf 深度优化，或等待 DSM 7.2+ 的官方支持)。
-    *   *简单方案*：使用 [Universal Search](../basic-skills/indexing-service.md) 在网页端搜索，或者挂载为本地磁盘后使用 Alfred/Raycast 搜索。
+**总结**：利用 NAS 的大容量和 Docker 扩展性，设计师可以构建一个**永不丢失素材、随时高速访问**的私有设计中台。
