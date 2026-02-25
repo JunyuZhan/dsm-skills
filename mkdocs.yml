@@ -9,6 +9,7 @@ copyright: Copyright &copy; 2024 Albert Zhan
 
 theme:
   name: material
+  custom_dir: overrides
   language: zh
   palette:
     # 切换到深色模式
