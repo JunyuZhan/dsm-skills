@@ -48,45 +48,64 @@ homekit:
 ```
 
 *   **name**: 在家庭 App 中显示的网关名称。
-*   **port**: 默认 51827，如果有多个 Bridge，端口不能冲突。
-*   **filter**: 核心部分。建议只 `include_domains` 主要控制类设备，传感器按需添加。
-*   **entity_config**: **这是大招**。很多米家风扇接入 HA 后是 `switch` 类型（因为是通过智能插座控制的），在 HomeKit 里显示为开关图标很丑。通过 `type: fan`，可以让它在 HomeKit 里显示为风扇图标，且支持 Siri "打开风扇" 命令。
+*   **filter**: 最关键的部分。只包含你真正想在 HomeKit 里看到的设备。
+*   **entity_config**: 修改设备类型。
+    *   *场景*：你把电风扇插在了小米智能插座上。在 HA 里它是个 `switch`（开关）。在 HomeKit 里，你想让它显示为风扇图标，而不是插座图标。
+    *   *做法*：`type: fan`。
 
-## 4. 步骤三：配对 HomeKit
+## 4. 步骤三：iOS 配对
 
-1.  重启 HA。
-2.  在 HA 通知中心（左下角）会看到一个二维码和配对码（如 `123-45-678`）。
-3.  打开 iPhone **家庭 App** > **+** > **添加配件** > 扫描二维码。
-4.  如果是“未认证配件”，点击“强制添加”。
-5.  逐个分配房间。
+1.  **重启 HA**：配置生效。
+2.  **通知中心**：HA 左下角通知中心会弹出一个 **QR Code** (二维码) 和配对码。
+3.  **家庭 App**：
+    *   打开 iPhone > 家庭 > 添加配件。
+    *   扫描屏幕上的二维码。
+    *   如果提示“未认证的配件”，点击“仍要添加”。
+4.  **分配房间**：将设备分配到对应的房间。
 
-## 5. 进阶技巧：虚拟开关与场景触发
+## 5. 进阶技巧
 
-有时候我们需要用 Siri 触发一个复杂的 HA 脚本（比如“观影模式”：关灯、放幕布、打开投影）。HomeKit 原生不支持直接运行 HA 脚本。
+### A. 多个 Bridge 分流 (解决 150 个配件限制)
+HomeKit 协议规定一个网关最多带 150 个配件。如果你家豪宅设备太多，或者为了提高响应速度，可以开多个 Bridge。
 
-**解法**：创建一个虚拟开关 (Input Boolean)。
+```yaml
+homekit:
+  - name: HA Lights
+    port: 21063
+    filter:
+      include_domains:
+        - light
 
-1.  **HA 配置**：
-    配置 > 辅助元素 > 创建 **开关 (Input Boolean)**，命名为 `input_boolean.movie_mode`。
-2.  **HA 自动化**：
-    *   触发：`input_boolean.movie_mode` 变为 `on`。
-    *   动作：运行“观影模式”脚本，然后延时 1 秒，**自动把开关设回 `off`**（这就变成了一个点动按钮）。
-3.  **暴露给 HomeKit**：
-    这个虚拟开关会自动暴露给 HomeKit。
-4.  **Apple Home**：
-    你现在可以说：“嘿 Siri，打开观影模式”。
+  - name: HA Sensors
+    port: 21064
+    filter:
+      include_domains:
+        - sensor
+```
+这样你会得到两个二维码，分别扫码添加。
 
-## 6. 常见问题 (Troubleshooting)
+### B. 重置配对
+如果 HomeKit 显示“无响应”且无法恢复：
+1.  在家庭 App 中删除该网关。
+2.  删除 HA 配置目录下的 `.homekit.state` 文件。
+3.  重启 HA。
+4.  重新扫码配对。
 
-### Q1: HomeKit 显示“无响应”？
-*   **网络组播**：HomeKit 依赖 mDNS (Bonjour)。确保你的路由器开启了 IGMP Snooping，且 NAS 和 HomePod/Apple TV 在同一个网段。
-*   **实体过多**：如果一次性暴露超过 100 个实体，HomeKit 可能会卡死。请优化 `filter` 规则，只保留核心设备。
-*   **重置配对**：如果彻底崩了，删除集成中的 HomeKit Bridge 实例，删除 `.storage/homekit_*.json` 文件，重启 HA，重新配对。
+### C. 延迟启动
+如果你的 HA 启动时米家设备还没准备好，HomeKit 可能会漏掉设备。
+```yaml
+homekit:
+  - name: HA Bridge
+    ip_address: 192.168.1.100
+    # 等待 Z-Wave/Zigbee 网络就绪后再启动 HomeKit 服务
+```
+通常不需要手动设置，HA 现在会自动处理。
 
-### Q2: 摄像头视频流卡顿？
-*   HomeKit 对视频流编码要求极其严格（H.264, AAC）。
-*   大部分米家摄像头不支持标准 RTSP。建议使用 **Scrypted** 插件（Docker 部署），它专门用于将非标摄像头转为 HomeKit Secure Video，秒开且支持人脸识别。
+## 6. 常见问题
 
-### Q3: 为什么设备在 HA 正常，HomeKit 不更新？
-*   尝试在 HA 中手动重载 HomeKit 集成。
-*   检查 HA 日志，看是否有 HomeKit 相关的报错。
+*   **Q: 为什么设备在 HomeKit 里名字乱了？**
+    *   A: 首次同步后，HomeKit 会记住名字。后续在 HA 改名不会自动同步过去。需要在家庭 App 里手动改名。
+*   **Q: 为什么一直“更新中...”？**
+    *   A: 通常是网络组播 (mDNS) 问题。
+        *   检查路由器是否开启了 IGMP Snooping（建议关闭或尝试开启）。
+        *   NAS 的防火墙是否放行了 21063 端口 (TCP) 和 5353 端口 (UDP)。

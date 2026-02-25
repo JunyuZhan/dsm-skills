@@ -46,31 +46,31 @@ Home Assistant (HA) 是智能家居的终极大脑。它可以打破品牌壁垒
 *   **条件**：市电状态为“断开”。
 *   **动作**：
     1.  发送通知给手机：“电量告急，正在关闭非核心设备”。
-    2.  调用 switch.turn_off 关闭非核心 Docker 容器。
+    2.  调用 `switch.turn_off` 关闭非核心 Docker 容器。
     3.  调用群晖 API 关机。
 
-### 案例 B：回家模式
-*   **触发**：你的手机连接到家里 Wi-Fi（基于 ASUS Router 或 Unifi 集成）。
-*   **条件**：时间是晚上。
-*   **动作**：
-    1.  打开客厅灯。
-    2.  小爱音箱播放：“欢迎主人回家”。
-    3.  NAS 开启高性能模式（解除限速）。
+### 案例 B：回家自动开灯
+*   **触发**：手机连接到家庭 Wi-Fi (device_tracker 状态变为 home)。
+*   **条件**：太阳已下山 (sun.sun 为 below_horizon)。
+*   **动作**：打开客厅灯，播放欢迎语音。
 
 ## 5. 面板美化 (Lovelace)
 
-原生面板太丑？
+原生界面太丑？用 **Mushroom Cards** 美化。
 
-*   **Mushroom Cards**：在 HACS 前端部分搜索安装。极其精美的卡片风格。
-*   **Mini Graph Card**：画出漂亮的温湿度曲线、CPU 占用曲线。
-*   **Floorplan**：上传你家的户型图，直接在图上点击开关灯。
+1.  在 HACS > 前端 (Frontend) > 搜索 **Mushroom** 并安装。
+2.  在仪表盘右上角 > 编辑仪表盘 > 添加卡片。
+3.  选择 Mushroom Light Card / Chip Card。
+4.  **效果**：打造像 Apple Home 一样优雅的控制面板，支持滑动调节亮度、颜色。
 
-## 6. 数据库优化
+## 6. 备份与恢复
 
-HA 默认使用 SQLite，记录久了会变慢。
-*   **建议**：在 Docker 中部署 **MariaDB**，并在 HA 的 `configuration.yaml` 中配置连接。
-    ```yaml
-    recorder:
-      db_url: mysql://user:password@192.168.1.x:3306/homeassistant
-      purge_keep_days: 30 # 只保留 30 天历史
-    ```
+HA 的配置非常复杂，崩了就完蛋了。
+
+*   **Docker 用户**：定期备份 `/volume1/docker/homeassistant` 整个文件夹。
+*   **自动化备份**：使用脚本每天打包 config 目录并上传到云端（参考 [自动化脚本](../advanced-skills/automation-scripts.md)）。
+
+## 7. 远程访问
+
+*   **内网穿透**：通过 Tailscale 或 Cloudflare Tunnel 访问 HA。
+*   **App 配置**：在 HA 手机 App 中，填入你的内网 IP (在家用) 和 外网域名 (在外用)。App 会自动切换。

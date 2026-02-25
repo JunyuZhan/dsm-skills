@@ -18,7 +18,7 @@ Scrypted 需要占用较多端口用于 HomeKit 配对，建议使用 `host` 网
 version: '3.5'
 services:
   scrypted:
-    image: koush/scrypted
+    image: ghcr.io/koush/scrypted
     container_name: scrypted
     restart: unless-stopped
     network_mode: host # 关键
@@ -48,40 +48,32 @@ services:
 
 ### C. 配置 HomeKit
 1.  点击左侧刚添加的摄像头。
-2.  在右侧面板点击 **Extensions**，勾选 **HomeKit**。
-3.  点击 **HomeKit** 选项卡。
-4.  **Pairing**:
-    *   选择 **Standalone Accessory** (推荐) 或 Bridge。独立配件模式性能更好。
-    *   你会看到一个二维码。
-5.  打开 iPhone **家庭 App** > **添加配件** > 扫描二维码。
-6.  添加成功！现在你可以在家庭 App 里看到直播了。
+2.  在右侧面板点击 **Extensions**。
+3.  勾选 **HomeKit**。
+4.  进入 **HomeKit** 标签页。
+    *   **Pairing**: 点击 **Pairing QR Code**。
+    *   **Standalone**: 建议勾选。这会让每个摄像头作为一个独立的 HomeKit 配件，而不是全部挂在一个网关下。这样更稳定，且如果一个坏了不影响其他。
+5.  用 iPhone 扫描二维码添加。
 
-## 4. 开启 HKSV (录像与 AI)
+## 4. 开启 HKSV (HomeKit 安全视频)
 
-要启用 iCloud 录像和人脸识别，需要额外配置。
+要使用 iCloud 录像和人脸识别，你需要：
+1.  iCloud+ 订阅（50GB 支持 1 个，200GB 支持 5 个，2TB 无限）。
+2.  HomePod 或 Apple TV 作为家庭中枢。
 
-1.  **要求**：你需要订阅 iCloud+ (50GB+)。
-2.  在 Scrypted 摄像头设置页面，点击 **HomeKit**。
-3.  **Recording**:
-    *   勾选 **HomeKit Secure Video**。
-    *   配置 **Motion Detection** (运动检测)。
-        *   Scrypted 支持使用摄像头自带的运动检测（On-Device Motion），或者使用软件算法（OpenCV）。
-        *   **推荐**：使用 **ONVIF Motion**（如果摄像头支持）。这不仅节省 NAS CPU，而且反应更快。
-        *   如果摄像头不支持，安装 **OpenCV** 插件并启用。
-4.  **家庭 App 设置**：
-    *   在 iPhone 上点开摄像头 > 设置 > **录像选项**。
-    *   选择 **流传输与允许录像**。
+**配置步骤**：
+1.  在 Scrypted 摄像头设置 > HomeKit。
+2.  **Recording Support**: 选择 **HomeKit Secure Video**。
+3.  **Motion Detection**: Scrypted 需要知道什么时候录像。
+    *   **OpenCV (推荐)**: 安装 OpenCV 插件，使用 CPU 进行移动检测（准确率高，但吃 CPU）。
+    *   **Camera Motion**: 使用摄像头自带的移动检测（省 CPU，但可能不准）。
+4.  在 iPhone 家庭 App 中，点击摄像头 > 设置 > 录制选项 > 选择“流传输与允许录制”。
 
-## 5. 进阶优化
+## 5. 常见问题
 
-### A. 编解码器 (Codec)
-HomeKit 强制要求 **H.264** 视频和 **AAC** 音频。
-*   如果你的摄像头输出 H.265，Scrypted 会自动转码（非常吃 CPU）。
-*   **最佳实践**：进入摄像头网页后台，将主码流设置为 **H.264**，音频设置为 **AAC** (或 G.711，Scrypted 转码音频很轻松)。这样可以实现 **Direct Copy**，几乎不占 CPU。
-
-### B. 快照 (Snapshot)
-*   家庭 App 的预览图是定时刷新的。
-*   确保 ONVIF 插件能正确获取 Snapshot URL。如果不行，可以在 Snapshot 插件中手动填入 JPG 地址。
-
-### C. 延迟优化
-*   如果直播卡顿，尝试在 **Stream Management** 中，将 **Rebroadcast** 启用。这会让 Scrypted 保持与摄像头的连接，当你打开 App 时，直接从缓存推流，无需等待握手。
+*   **Q: 直播卡顿或延迟高？**
+    *   A: 尝试在 Stream Management 中将 **RTSP Parser** 设置为 `FFmpeg` 或 `Scrypted`。
+    *   A: 确保摄像头的主码流编码是 H.264 (H.265 在旧设备上兼容性差)。
+*   **Q: HKSV 不录像？**
+    *   A: 检查 Motion Detection 是否正常触发（在 Scrypted 控制台看日志）。
+    *   A: 确保家庭中枢网络正常。
