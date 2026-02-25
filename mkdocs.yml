@@ -56,6 +56,32 @@ extra:
       link: https://github.com/JunyuZhan/dsm-skills
       name: GitHub Repository
   generator: false
+  # 评论系统 (Giscus) - 请替换为您自己的 Repo 信息
+  # 获取方式: https://giscus.app/zh-CN
+  comments:
+    provider: giscus
+    repo: JunyuZhan/dsm-skills
+    repo_id: R_kgDONi4qQA # 替换为您的 Repo ID
+    category: General # 替换为您的 Category
+    category_id: DIC_kwDONi4qQM4Clj_l # 替换为您的 Category ID
+    mapping: pathname
+    reactions_enabled: 1
+    emit_metadata: 0
+    input_position: bottom
+    lang: zh-CN
+    theme: preferred_color_scheme
+  # 页面反馈 (Was this page helpful?)
+  feedback:
+    title: 觉得本页内容有帮助吗？
+    ratings:
+      - icon: material/thumb-up-outline
+        name: 有帮助
+        data: 1
+        note: 感谢您的反馈！
+      - icon: material/thumb-down-outline
+        name: 没帮助
+        data: 0
+        note: 我们会继续改进！
 
 markdown_extensions:
   - admonition
