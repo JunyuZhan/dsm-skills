@@ -2,7 +2,7 @@
 
 欢迎来到群晖 DSM 7.x 技巧大全项目。本项目旨在收集和分享关于群晖 NAS 系统 DSM 7.x 版本的各种实用技巧，帮助用户更好地使用群晖设备。
 
-**当前已收录 170+ 个实用技巧！**
+**当前已收录 200+ 个实用技巧！**
 
 ## 目录索引
 
@@ -11,6 +11,9 @@
 - [用户主目录服务](basic-skills/user-home.md): 个人空间设置。
 - [系统安全性提升](basic-skills/security.md): 2FA、防火墙、自动封锁。
 - [内存检查与优化](basic-skills/memory-check.md): 资源监控与优化。
+
+### ⚙️ 硬件与维护 (Hardware & Maintenance)
+- [**硬件选购与维护 (10技巧)**](hardware-maintenance/hardware-guide.md): 硬盘避坑(CMR/SMR)、NVMe 存储池、UPS 配置、静音改造。
 
 ### 🎬 多媒体与娱乐 (Multimedia)
 - [**Photos 进阶技巧 (10技巧)**](multimedia/photos-tricks.md): 人脸识别、条件相册、权限管理。
@@ -37,6 +40,12 @@
 
 ### 🐳 Docker 容器 (Docker)
 - [**必备容器推荐 Top 20**](docker-containers/must-have.md): Portainer, Jellyfin, Nastools, Home Assistant 等。
+
+### 🏠 家庭自动化 (Home Automation)
+- [**家庭自动化与 IoT 指南 (10技巧)**](home-automation/iot-guide.md): HA Docker vs VMM、MQTT、Homebridge、Scrypted 摄像头接入。
+
+### 👨‍💻 开发者进阶 (Developer)
+- [**开发者进阶指南 (10技巧)**](developer-guide/dev-tips.md): Entware 包管理、Git Server、Python 虚拟环境、交叉编译。
 
 ### 🛠️ 进阶与自动化 (Advanced)
 - [**3-2-1 备份策略详解**](advanced-skills/backup-strategy.md): Hyper Backup, Active Backup for Business, 快照防护。
