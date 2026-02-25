@@ -81,6 +81,7 @@
 - [**开发者进阶指南 (10技巧)**](developer-guide/dev-tips.md): Entware 包管理、Git Server、Python 虚拟环境、交叉编译。
 
 ### 🛠️ 进阶与自动化 (Advanced)
+- [**勒索病毒防护与快照锁定**](advanced-skills/ransomware-protection.md): 3-2-1 备份最后防线、不可变快照 (Immutable)、WORM 技术。
 - [**任务计划与脚本管理进阶**](advanced-skills/task-scheduler.md): Shell 脚本安全规范、环境变量陷阱、自动化清理。
 - [**混合云架构实战**](advanced-skills/hybrid-cloud.md): Cloud Sync 联动网盘、Hyper Backup + S3 冷备、Hybrid Share。
 - [**PXE 网络启动服务器 (10技巧)**](advanced-skills/pxe-boot.md): 网络重装 Windows、救砖神器 netboot.xyz。

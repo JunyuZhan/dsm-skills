@@ -113,6 +113,7 @@ nav:
     - Mac 极致优化指南: platform-specific/mac-optimization.md
   - Docker 容器:
     - 必备容器推荐 Top 20: docker-containers/must-have.md
+    - AI 大模型本地部署: docker-containers/local-ai.md
     - 监控与仪表盘: docker-containers/monitoring.md
     - 自动化追剧 (Arr Suite): docker-containers/arr-suite.md
     - Docker 网络进阶: docker-containers/network-guide.md
@@ -120,6 +121,7 @@ nav:
     - 常用 Compose 模板: docker-containers/compose-templates.md
   - 家庭自动化:
     - 家庭自动化与 IoT: home-automation/iot-guide.md
+    - Home Assistant 深度实战: home-automation/ha-deep-dive.md
   - 社群扩展:
     - 社群第三方套件推荐: community/packages.md
   - CLI 与终端:
@@ -129,6 +131,7 @@ nav:
     - 自动化开发指南 (API): developer-guide/api-automation.md
   - 进阶与自动化:
     - 索引: advanced-skills/README.md
+    - 勒索病毒防护与快照锁定: advanced-skills/ransomware-protection.md
     - 任务计划与脚本管理: advanced-skills/task-scheduler.md
     - 混合云架构实战: advanced-skills/hybrid-cloud.md
     - PXE 网络启动服务器: advanced-skills/pxe-boot.md
