@@ -123,6 +123,7 @@ nav:
     - 企业级身份认证 (AD): network/directory-server.md
     - 安全加固与防火墙: network/security-hardening.md
     - WebDAV 远程挂载深度指南: network/webdav-guide.md
+    - Rclone 挂载云存储: advanced-skills/rclone-guide.md
     - 反向代理与 HTTPS: network/reverse-proxy.md
     - acme.sh 泛域名证书自动化: network/acme-sh-automation.md
     - MailPlus 邮件服务器: communication/mailplus-guide.md
@@ -176,6 +177,7 @@ nav:
     - SynoCommunity 进阶指南: community/synocommunity-guide.md
   - CLI 与终端:
     - CLI 终极指南: cli/guide.md
+    - Entware 软件包管理器: cli/entware-guide.md
   - 开发者进阶:
     - 开发者指南: developer-guide/dev-tips.md
     - 自动化开发指南 (API): developer-guide/api-automation.md
@@ -190,7 +192,7 @@ nav:
     - PXE 网络启动服务器: advanced-skills/pxe-boot.md
     - 3-2-1 备份策略: advanced-skills/backup-strategy.md
     - Hyper Backup 深度指南: advanced-skills/hyper-backup.md
-    - ABB 深度指南: advanced-skills/abb-guide.md
+    - Active Backup for Business 整机备份: advanced-skills/active-backup-business.md
     - 数据迁移与灾难恢复: migration/guide.md
     - 脚本与自动化: advanced-skills/automation.md
     - SSD 缓存配置: advanced-skills/ssd-cache.md
