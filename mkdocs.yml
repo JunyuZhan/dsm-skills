@@ -72,6 +72,7 @@ nav:
   - 首页: index.md
   - 基础入门:
     - 索引: basic-skills/README.md
+    - File Station 深度指南: basic-skills/file-station.md
     - 黑群晖安装指南 (RR): installation/rr-loader-guide.md
     - 其他引导方式 (ARC/TCRP): installation/other-loaders.md
     - 存储管理器深度解析: basic-skills/storage-manager.md
@@ -134,6 +135,8 @@ nav:
     - 监控与仪表盘: docker-containers/monitoring.md
     - 自动化追剧 (Arr Suite): docker-containers/arr-suite.md
     - Docker 网络进阶: docker-containers/network-guide.md
+    - Container Manager 进阶: docker-containers/container-manager.md
+    - Portainer 深度指南: docker-containers/portainer-advanced.md
     - Traefik 进阶与泛域名: docker-containers/traefik-advanced.md
     - Nginx Proxy Manager 可视化反代: docker-containers/nginx-proxy-manager.md
     - 自建密码库 Vaultwarden: docker-containers/vaultwarden.md

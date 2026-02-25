@@ -15,6 +15,7 @@
 
 ### 🔰 基础入门 (Basic Skills)
 - [**黑群晖安装指南 (RR 引导)**](installation/rr-loader-guide.md): 傻瓜式 Web 配置、自动驱动、SA6400/DS920+ 选型。
+- [**File Station 深度指南**](basic-skills/file-station.md): 远程挂载云盘/NAS、文件收集请求、全文搜索与 OCR、ACL 权限详解。
 - [**存储管理器深度解析 (必读)**](basic-skills/storage-manager.md): RAID 选型 (SHR vs RAID5)、Btrfs 优势、数据清洗防腐烂。
 - [**数据加密与密钥管理**](basic-skills/encryption-manager.md): 文件夹加密、物理 U 盘密钥、防盗指南。
 - [**通知中心与日志审计**](basic-skills/notifications-logs.md): 微信/邮件推送配置、Log Center 审计文件删除记录。
@@ -84,6 +85,8 @@
 - [**监控与仪表盘打造指南**](docker-containers/monitoring.md): Grafana, Prometheus, Homepage, Scrutiny。
 - [**自动化追剧全家桶 (Arr Suite)**](docker-containers/arr-suite.md): Radarr, Sonarr, Prowlarr 架构与配置。
 - [**自建密码库 Vaultwarden (10技巧)**](docker-containers/vaultwarden.md): 数据主权、HTTPS 配置、多端同步。
+- [**Container Manager 进阶**](docker-containers/container-manager.md): Project (Compose) 管理、Web Station 门户联动、Internal 网络隔离。
+- [**Portainer 深度指南**](docker-containers/portainer-advanced.md): Stacks (GitOps) 自动部署、App Templates 模板库、Edge Agent 远程管理。
 - [**Docker Compose 常用堆栈模板 (10技巧)**](docker-containers/compose-templates.md): 媒体中心、HA、NPM、AdGuard Home 一键部署。
 - [**AI 大模型本地部署指南**](docker-containers/local-ai.md): Ollama + Open WebUI 打造私人 ChatGPT，RAG 知识库。
 - [**Dify AI 应用构建**](ai-deployment/dify-rag.md): 可视化编排 AI Agent、企业级 RAG 知识库、Workflow 工作流。
