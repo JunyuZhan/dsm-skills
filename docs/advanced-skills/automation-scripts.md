@@ -100,15 +100,24 @@ echo "数据库备份完成：$BACKUP_DIR/pg_backup_$DATE.sql.gz"
 # 每天运行一次
 
 # 1. 强制更新证书 (acme.sh 容器)
-docker exec acme.sh --cron
+docker exec acme.sh acme.sh --cron --home /acme.sh
 
-# 2. 将证书复制到 DSM 证书目录 (需要 root 权限)
-# 注意：DSM 7.x 的证书路径比较复杂，建议使用 deploy 钩子
-# 这里演示的是通过 deploy hook 部署到 DSM 的命令 (需要在 acme.sh 内部配置)
-# docker exec acme.sh --deploy -d yourdomain.com --deploy-hook synology_dsm
+# 2. 检查证书是否更新 (配合 Nginx Proxy Manager)
+# 如果更新了，重启 Web 服务
+# 这里假设证书文件路径在 NPM 的 data 目录
+NPM_CERTS_DIR="/volume1/docker/npm/letsencrypt/live/npm-1"
 
-# 3. 重启 Web 服务器 (如果证书更新了)
-# /usr/syno/sbin/synoservicectl --reload nginx
+if find "$NPM_CERTS_DIR" -name "fullchain.pem" -mtime -1 | grep -q .; then
+    echo "证书已更新，重启 Nginx Proxy Manager..."
+    docker restart npm
+    
+    # 可选：发送通知
+    # curl ...
+fi
+
+# 3. (可选) 将证书部署到 DSM 系统
+# 需要在 acme.sh 内部配置好 deploy hook
+# docker exec acme.sh acme.sh --deploy -d yourdomain.com --deploy-hook synology_dsm
 ```
 
 ## 5. 硬盘健康周报 (SMART Report)
@@ -117,7 +126,8 @@ DSM 自带的通知很零散。这个脚本每周汇总所有硬盘的 SMART 信
 
 ```bash
 #!/bin/bash
-DRIVES=$(ls /dev/sata*) # 获取所有 SATA 硬盘
+# 获取所有 SATA 硬盘 (注意：不同机型设备名可能不同，如 /dev/sata1 或 /dev/sda)
+DRIVES=$(ls /dev/sata*) 
 REPORT="硬盘健康周报 \n"
 
 for drive in $DRIVES; do
@@ -130,7 +140,10 @@ for drive in $DRIVES; do
 done
 
 # 发送邮件 (需配置 sendmail 或使用 webhook)
-echo -e "$REPORT" | /usr/bin/ssmtp your@email.com
+# echo -e "$REPORT" | /usr/bin/ssmtp your@email.com
+# 或者发送到 Chat
+WEBHOOK_URL="https://your-chat-webhook-url"
+curl -X POST --data-urlencode "payload={\"text\": \"$REPORT\"}" "$WEBHOOK_URL"
 ```
 
 ## 6. 自动修正权限 (Permissions Fixer)
@@ -151,18 +164,8 @@ chmod -R 777 "$TARGET_DIR"
 
 echo "权限修正完成。"
 ```
-docker exec acme.sh acme.sh --cron --home /acme.sh
 
-# 检查证书是否更新
-# 如果更新了，重启 Web 服务 (例如 Nginx Proxy Manager)
-# 这里假设证书文件路径
-if find /volume1/docker/npm/certs -name "fullchain.pem" -mtime -1 | grep -q .; then
-    echo "证书已更新，重启 Nginx..."
-    docker restart npm
-fi
-```
-
-## 5. 公网 IP 变动通知 (DDNS 辅助)
+## 7. 公网 IP 变动通知 (DDNS 辅助)
 
 虽然 DSM 自带 DDNS，但有时我们需要第一时间知道 IP 变了（比如为了更新防火墙白名单）。
 
