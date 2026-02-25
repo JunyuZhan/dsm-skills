@@ -7,6 +7,27 @@
 *   **没有反向代理**：访问 `http://nas-ip:5000` (DSM), `http://nas-ip:8096` (Jellyfin), `http://nas-ip:8123` (HA)。
 *   **有反向代理**：访问 `https://dsm.yourdomain.com`, `https://video.yourdomain.com`, `https://ha.yourdomain.com`。所有流量都通过 443 端口进入，NAS 根据域名自动分发给不同的服务。
 
+```mermaid
+graph LR
+    User[用户 (互联网)]
+    Router[路由器 (端口映射 443)]
+    NAS[NAS (反向代理服务器)]
+    
+    DSM[DSM (localhost:5000)]
+    Jellyfin[Jellyfin (localhost:8096)]
+    HA[Home Assistant (localhost:8123)]
+
+    User -- https://video.yourdomain.com --> Router
+    Router -- 端口转发 443 --> NAS
+    NAS -- 解析域名: video --> Jellyfin
+    NAS -- 解析域名: ha --> HA
+    NAS -- 解析域名: dsm --> DSM
+
+    style NAS fill:#f9f,stroke:#333
+    style Jellyfin fill:#bfb,stroke:#333
+    style HA fill:#bfb,stroke:#333
+```
+
 ---
 
 ## 准备工作

@@ -9,12 +9,44 @@ DSM 7.x 提供两种缓存模式：
 ### 只读缓存 (Read-Only Cache)
 - **原理**：将热点数据复制到 SSD 中。读取时直接从 SSD 读取。
 - **安全性**：**高**。如果 SSD 损坏，数据不会丢失（因为 HDD 中有完整副本）。
+
+```mermaid
+graph TD
+    User[用户读取请求]
+    SSD[SSD 缓存 (只读副本)]
+    HDD[机械硬盘 (原始数据)]
+    
+    User -- 请求数据 --> SSD
+    SSD -- 命中 (Hit) --> User
+    SSD -- 未命中 (Miss) --> HDD
+    HDD -- 返回数据并缓存 --> SSD
+    HDD -- 返回数据 --> User
+    
+    style SSD fill:#bfb,stroke:#333
+    style HDD fill:#bbf,stroke:#333
+```
+
 - **适用场景**：文件服务器、Web 服务器、静态内容托管。
 - **硬盘要求**：至少 1 块 SSD。
 
 ### 读写缓存 (Read-Write Cache)
 - **原理**：数据先写入 SSD，然后再后台写入 HDD。读取时也优先从 SSD 读取。
 - **安全性**：**中**。如果 SSD 在数据未写入 HDD 前损坏，可能会导致数据丢失。**强烈建议使用 RAID 1（至少 2 块 SSD）来保证数据安全。**
+
+```mermaid
+graph TD
+    User[用户写入请求]
+    SSD[SSD 缓存 (读写)]
+    HDD[机械硬盘 (最终存储)]
+    
+    User -- 快速写入 --> SSD
+    SSD -- 确认写入完成 --> User
+    SSD -. 后台回写 (Flush) .-> HDD
+    
+    style SSD fill:#f99,stroke:#333
+    style HDD fill:#bbf,stroke:#333
+```
+
 - **适用场景**：数据库、虚拟机存储、频繁修改的小文件。
 - **硬盘要求**：至少 2 块 SSD（组成 RAID 1）。
 

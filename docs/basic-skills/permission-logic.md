@@ -27,6 +27,20 @@ DSM 基于 Linux，但它的权限管理比标准 Linux 复杂得多。它采用
 
 **黄金法则：拒绝 > 显式允许 > 继承允许**
 
+```mermaid
+flowchart TD
+    Start[权限检查开始] --> CheckDeny{是否有显式拒绝 (Deny)?}
+    CheckDeny -- 是 --> ResultDeny[禁止访问]
+    CheckDeny -- 否 --> CheckExplicit{是否有显式允许?}
+    CheckExplicit -- 是 --> ResultAllow[允许访问]
+    CheckExplicit -- 否 --> CheckInherit{父目录是否允许?}
+    CheckInherit -- 是 --> ResultAllow
+    CheckInherit -- 否 --> ResultDeny
+
+    style ResultDeny fill:#f99,stroke:#333
+    style ResultAllow fill:#9f9,stroke:#333
+```
+
 1.  **拒绝 (Deny) 最高优先级**：
     *   如果用户张三属于 Group A (允许读写) 和 Group B (拒绝访问)。
     *   **结果**：**拒绝访问**。
