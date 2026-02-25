@@ -142,6 +142,9 @@ nav:
     - Home Assistant 深度实战: home-automation/ha-deep-dive.md
   - 社群扩展:
     - 社群第三方套件推荐: community/packages.md
+    - 第三方社群套件源推荐: community/third-party-repos.md
+    - 常用社群套件推荐: community/essential-packages.md
+    - SynoCommunity 进阶指南: community/synocommunity-guide.md
   - CLI 与终端:
     - CLI 终极指南: cli/guide.md
   - 开发者进阶:

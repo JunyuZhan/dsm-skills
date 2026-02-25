@@ -93,7 +93,10 @@
 - [**Docker 网络进阶**](docker-containers/network-guide.md): Macvlan 独立 IP、Traefik 自动发现、Socket 代理安全.
 
 ### 📦 社群扩展 (Community Extensions)
-- [**社群第三方套件推荐 (10技巧)**](community/packages.md): SynoCommunity、Entware、ffmpeg、Zsh/Fish。
+- [**第三方社群套件源推荐**](community/third-party-repos.md): 我不是矿神、裙下孤魂、SynoCommunity 等优质源。
+- [**常用社群套件推荐**](community/essential-packages.md): qBittorrent, Jellyfin, Nastools, Transmission 必装列表。
+- [**SynoCommunity 进阶指南**](community/synocommunity-guide.md): 解锁 ffmpeg 解码、CLI 瑞士军刀 (mc/nano/htop)。
+- [**社群第三方套件推荐 (10技巧)**](community/packages.md): 基础入门介绍与安装方法。
 
 ### 📟 CLI 与终端 (CLI & Terminal)
 - [**CLI 终极指南 (10技巧)**](cli/guide.md): Root 权限、synopkg、synosystemctl、磁盘分析。
