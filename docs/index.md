@@ -44,15 +44,18 @@
 ### 🌐 网络与安全 (Network)
 - [**网络与远程访问 (10技巧)**](network/access-security.md): QuickConnect vs DDNS、IPv6、端口转发、VPN Server。
 - [**内网穿透与异地组网指南**](network/tunneling-guide.md): Tailscale 子网路由、Cloudflare Tunnel、ZeroTier 配置。
+- [**FRP 自建内网穿透**](network/frp-guide.md): 利用公网 VPS 自建高性能穿透、TCP/UDP/HTTP 协议支持。
 - [**企业级身份认证 (AD 域控)**](network/directory-server.md): Windows 统一登录、GPO 组策略、漫游配置文件。
 - [**NAS 安全加固与防火墙策略 (10技巧)**](network/security-hardening.md): GeoIP 阻断、SSH 密钥认证、DoS 防护。
 - [**反向代理与 HTTPS 配置 (10技巧)**](network/reverse-proxy.md): 泛域名证书、WebSocket 支持、访问控制。
+- [**acme.sh 泛域名证书自动化**](network/acme-sh-automation.md): Docker 部署、自动申请 Let's Encrypt 证书、自动部署到 DSM。
 - [**MailPlus Server 邮件服务器 (10技巧)**](communication/mailplus-guide.md): 反垃圾策略、SMTP Relay、DKIM/SPF 配置。
 - [**Synology Chat 机器人集成 (10技巧)**](communication/chat-integration.md): Webhook 推送、运维机器人、Slash Command。
 
 ### 🚀 生产力与办公 (Productivity)
 - [**Homepage 导航面板**](productivity/homepage.md): 高颜值 Dashboard、Docker 容器状态监控、API 集成。
 - [**Paperless-ngx 无纸化办公**](productivity/paperless-ngx.md): 账单/发票 OCR 自动识别、消费记录分析、全文搜索。
+- [**Stirling-PDF 全能工具箱**](productivity/stirling-pdf.md): PDF 合并/拆分/OCR/加密/签名、Web 界面、API 调用。
 - [**Synology Drive 深度实战**](productivity/drive-deep-dive.md): 团队协作、版本控制、按需同步、Office 在线编辑。
 - [**生产力工具 (10技巧)**](productivity/drive-office.md): Drive 版本回溯、Office 协作、Note Station 剪藏。
 - [**知识管理与协同工作流 (10技巧)**](productivity/knowledge-workflow.md): Obsidian 同步、Zotero 文献库、Gitea 代码托管、PXE 启动。
@@ -83,6 +86,7 @@
 - [**OpenClash 旁路由实战**](docker-containers/openclash.md): Macvlan 网络配置、局域网透明代理。
 - [**游戏服务器搭建 (Palworld/MC)**](docker-containers/game-servers.md): 幻兽帕鲁、Minecraft 开服教程与内存优化。
 - [**Traefik 进阶与泛域名**](docker-containers/traefik-advanced.md): 自动发现容器、自动申请泛域名证书、中间件安全防护。
+- [**Nginx Proxy Manager 可视化反代**](docker-containers/nginx-proxy-manager.md): Web 界面管理反向代理、自动 SSL 续期、访问控制列表。
 - [**Docker 网络进阶**](docker-containers/network-guide.md): Macvlan 独立 IP、Traefik 自动发现、Socket 代理安全.
 
 ### 📦 社群扩展 (Community Extensions)

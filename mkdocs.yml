@@ -97,15 +97,18 @@ nav:
     - Surveillance Station 指南: surveillance/guide.md
   - 网络与安全:
     - 网络与远程访问: network/access-security.md
-    - 内网穿透与异地组网: network/tunneling-guide.md
+    - 内网穿透与异地组网指南: network/tunneling-guide.md
+    - FRP 自建内网穿透: network/frp-guide.md
     - 企业级身份认证 (AD): network/directory-server.md
     - 安全加固与防火墙: network/security-hardening.md
     - 反向代理与 HTTPS: network/reverse-proxy.md
+    - acme.sh 泛域名证书自动化: network/acme-sh-automation.md
     - MailPlus 邮件服务器: communication/mailplus-guide.md
     - Chat 机器人集成: communication/chat-integration.md
   - 生产力与办公:
     - Homepage 导航面板: productivity/homepage.md
     - Paperless-ngx 无纸化办公: productivity/paperless-ngx.md
+    - Stirling-PDF 全能工具箱: productivity/stirling-pdf.md
     - Synology Drive 深度实战: productivity/drive-deep-dive.md
     - 生产力工具: productivity/drive-office.md
     - 知识管理与协同工作流: productivity/knowledge-workflow.md
@@ -128,6 +131,7 @@ nav:
     - 自动化追剧 (Arr Suite): docker-containers/arr-suite.md
     - Docker 网络进阶: docker-containers/network-guide.md
     - Traefik 进阶与泛域名: docker-containers/traefik-advanced.md
+    - Nginx Proxy Manager 可视化反代: docker-containers/nginx-proxy-manager.md
     - 自建密码库 Vaultwarden: docker-containers/vaultwarden.md
     - 常用 Compose 模板: docker-containers/compose-templates.md
   - 家庭自动化:
