@@ -14,6 +14,8 @@
 ## 目录索引
 
 ### 🔰 基础入门 (Basic Skills)
+- [**存储管理器深度解析 (必读)**](basic-skills/storage-manager.md): RAID 选型 (SHR vs RAID5)、Btrfs 优势、数据清洗防腐烂。
+- [**通知中心与日志审计**](basic-skills/notifications-logs.md): 微信/邮件推送配置、Log Center 审计文件删除记录。
 - [**系统设置遗珠 (10技巧)**](basic-skills/system-gems.md): 登录界面美化、LED调节、UPS联动、微信推送等。
 - [用户主目录服务](basic-skills/user-home.md): 个人空间设置。
 - [系统安全性提升](basic-skills/security.md): 2FA、防火墙、自动封锁。
@@ -75,6 +77,7 @@
 - [**开发者进阶指南 (10技巧)**](developer-guide/dev-tips.md): Entware 包管理、Git Server、Python 虚拟环境、交叉编译。
 
 ### 🛠️ 进阶与自动化 (Advanced)
+- [**任务计划与脚本管理进阶**](advanced-skills/task-scheduler.md): Shell 脚本安全规范、环境变量陷阱、自动化清理。
 - [**PXE 网络启动服务器 (10技巧)**](advanced-skills/pxe-boot.md): 网络重装 Windows、救砖神器 netboot.xyz。
 - [**3-2-1 备份策略详解**](advanced-skills/backup-strategy.md): Hyper Backup, Active Backup for Business, 快照防护。
 - [**Active Backup for Business 深度指南 (10技巧)**](advanced-skills/abb-guide.md): PC/Server/VM 整机备份、全局重删、VMM 即时还原。
