@@ -163,6 +163,7 @@ nav:
     - Traefik 进阶与泛域名: docker-containers/traefik-advanced.md
     - Nginx Proxy Manager 可视化反代: docker-containers/nginx-proxy-manager.md
     - 自建密码库 Vaultwarden: docker-containers/vaultwarden.md
+    - Vaultwarden 安全加固: docker-containers/vaultwarden-security.md
     - 常用 Compose 模板: docker-containers/compose-templates.md
   - 家庭自动化:
     - 家庭自动化与 IoT: home-automation/iot-guide.md

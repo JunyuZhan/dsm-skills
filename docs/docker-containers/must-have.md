@@ -64,6 +64,7 @@
 - **用途**：密码管理器。
 - **推荐理由**：基于 Rust 重写的 Bitwarden 服务端，轻量且功能完整。再也不用担心 LastPass 数据泄露了。
 - **镜像**：`vaultwarden/server`
+- **进阶调优**：详见 [Vaultwarden 安全加固](vaultwarden-security.md)。
 
 ### 12. Home Assistant
 - **用途**：智能家居中枢。
