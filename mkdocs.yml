@@ -49,6 +49,16 @@ plugins:
   - social:
       cards_layout_options:
         background_color: "#009688"
+  - rss:
+      match_path: .*
+      date_from_meta:
+        as_creation: date
+        datetime_format: "%Y-%m-%d"
+      categories:
+        - categories
+        - tags
+  - tags:
+      tags_file: tags.md
 
 extra:
   social:

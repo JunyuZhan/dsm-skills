@@ -1,5 +1,6 @@
 mkdocs-material
 mkdocs-git-revision-date-localized-plugin
 mkdocs-minify-plugin
+mkdocs-rss-plugin
 Pillow
 CairoSVG
