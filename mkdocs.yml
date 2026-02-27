@@ -5,7 +5,12 @@ site_author: Junyu Zhan
 repo_url: https://github.com/JunyuZhan/dsm-skills
 repo_name: JunyuZhan/dsm-skills
 edit_uri: edit/main/docs/
-copyright: Copyright &copy; 2024 Junyu Zhan
+copyright: >
+  Copyright &copy; 2024 Junyu Zhan
+  <br>
+  <span id="busuanzi_container_site_pv" style="display: none;">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>
+  <span id="busuanzi_container_site_uv" style="display: none;">访客数 <span id="busuanzi_value_site_uv"></span> 人</span>
+  <span id="busuanzi_container_page_pv" style="display: none;">本文阅读量 <span id="busuanzi_value_page_pv"></span> 次</span>
 
 theme:
   name: material
@@ -60,6 +65,9 @@ plugins:
   - tags:
       tags_file: tags.md
 
+extra_javascript:
+  - //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+
 extra:
   social:
     - icon: fontawesome/brands/github
@@ -101,172 +109,9 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.highlight:
-      anchor_linenums: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - tables
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
   - attr_list
-
-nav:
-  - 首页: index.md
-  - 基础入门:
-    - 索引: basic-skills/README.md
-    - File Station 深度指南: basic-skills/file-station.md
-    - 文件服务深度调优 (SMB/NFS): basic-skills/file-services.md
-    - 共享文件夹深度管理: basic-skills/shared-folder.md
-    - 登录门户定制指南: basic-skills/login-portal.md
-    - 用户与群组深度管理: basic-skills/identity-management.md
-    - DSM 权限体系底层逻辑: basic-skills/permission-logic.md
-    - 证书管理深度指南: basic-skills/certificate-manager.md
-    - Cloud Sync 深度指南: basic-skills/cloud-sync.md
-    - USB Copy 自动化备份: basic-skills/usb-copy.md
-    - 黑群晖安装指南 (RR): installation/rr-loader-guide.md
-    - 其他引导方式 (ARC/TCRP): installation/other-loaders.md
-    - 存储管理器深度解析: basic-skills/storage-manager.md
-    - 数据加密与密钥管理: basic-skills/encryption-manager.md
-    - 通知中心深度指南: basic-skills/notification-center.md
-    - 日志中心深度指南: basic-skills/log-center.md
-    - 系统设置遗珠: basic-skills/system-gems.md
-    - 用户主目录深度指南: basic-skills/user-home.md
-    - 回收站深度策略: basic-skills/recycle-bin.md
-    - 安全顾问深度指南: basic-skills/security-advisor.md
-    - 资源监控深度指南: basic-skills/resource-monitor.md
-    - 内存硬核诊断与 Swap 调优: basic-skills/memory-check.md
-    - 电源管理 (UPS & WOL): basic-skills/power-management.md
-    - 索引服务深度解析: basic-skills/indexing-service.md
-    - Mac/Windows 集成: platform-specific/os-integration.md
-    - Mac 极致优化指南: platform-specific/mac-optimization.md
-  - 网络与安全:
-    - 网络与远程访问: network/README.md
-    - DNS Server 进阶指南: network/dns-server.md
-    - 内网穿透与异地组网: network/tunneling-guide.md
-    - Tailscale 深度实战: network/tailscale-derp.md
-    - Cloudflare Tunnel 实战: network/cloudflare-tunnel.md
-    - ZeroTier 深度实战: network/zerotier-moon.md
-    - FRP 自建内网穿透: network/frp-guide.md
-    - WebDAV 远程挂载指南: network/webdav-guide.md
-    - 反向代理与 HTTPS: network/reverse-proxy.md
-    - acme.sh 泛域名证书: network/acme-sh-automation.md
-    - 企业级身份认证 (AD): network/directory-server.md
-    - Authelia 统一认证 (SSO): network/authelia-sso.md
-    - CrowdSec 安全防御 (WAF): network/crowdsec.md
-    - 安全加固与防火墙: network/security-hardening.md
-  - 存储与备份:
-    - 3-2-1 备份策略: advanced-skills/backup-strategy.md
-    - Hyper Backup 深度指南: advanced-skills/hyper-backup.md
-    - Active Backup for Business: advanced-skills/active-backup-business.md
-    - Snapshot Replication 异地容灾: advanced-skills/disaster-recovery.md
-    - SHA 高可用集群 (零宕机): advanced-skills/sha-guide.md
-    - 勒索病毒防护与快照: advanced-skills/ransomware-protection.md
-    - 跨 NAS 同步: advanced-skills/cross-nas-sync.md
-    - 混合云架构实战: advanced-skills/hybrid-cloud.md
-    - Rclone 挂载云存储: advanced-skills/rclone-guide.md
-    - SSD 缓存配置: advanced-skills/ssd-cache.md
-    - NVMe 存储池破解: advanced-skills/nvme-storage-pool.md
-    - 数据迁移与灾难恢复: migration/guide.md
-  - Docker 容器:
-    - 必备容器推荐 Top 20: docker-containers/must-have.md
-    - Container Manager 进阶: docker-containers/container-manager.md
-    - Docker 网络进阶: docker-containers/network-guide.md
-    - Docker 权限管理终极指南: docker-containers/docker-permissions.md
-    - Docker Compose 最佳实践: docker-containers/compose-best-practices.md
-    - 常用 Compose 模板: docker-containers/compose-templates.md
-    - 媒体服务器深度调优: docker-containers/media-server-tuning.md
-    - 下载工具深度调优: docker-containers/download-tuning.md
-    - 数据库容器深度调优: docker-containers/database-tuning.md
-    - Nextcloud 深度调优: docker-containers/nextcloud-tuning.md
-    - AdGuard Home 深度调优: docker-containers/adguard-home-tuning.md
-    - 自建密码库 Vaultwarden: docker-containers/vaultwarden.md
-    - Vaultwarden 安全加固: docker-containers/vaultwarden-security.md
-    - 自动化追剧 (Arr Suite): docker-containers/arr-suite.md
-    - 监控与仪表盘: docker-containers/monitoring.md
-    - Uptime Kuma 服务监控: docker-containers/uptime-kuma.md
-    - AI 大模型本地部署: docker-containers/local-ai.md
-    - Dify AI 应用构建: ai-deployment/dify-rag.md
-    - Stable Diffusion 绘画: ai-deployment/stable-diffusion.md
-    - Whisper 语音转写: ai-deployment/whisper-transcription.md
-    - OpenClaw AI 智能体: docker-containers/openclaw.md
-    - OpenClash 旁路由模式: docker-containers/openclash.md
-    - 游戏服务器: docker-containers/game-servers.md
-    - Portainer 深度指南: docker-containers/portainer-advanced.md
-    - Traefik 进阶与泛域名: docker-containers/traefik-advanced.md
-    - Nginx Proxy Manager: docker-containers/nginx-proxy-manager.md
-  - 多媒体与娱乐:
-    - Photos 进阶技巧: multimedia/photos-tricks.md
-    - Photos 深度优化与迁移: multimedia/photos-advanced.md
-    - Immich AI 智能相册: multimedia/immich-photos.md
-    - Video Station 深度指南: multimedia/video-station-guide.md
-    - Audio Station 音乐中心: multimedia/audio-station.md
-    - MoviePilot 自动化追剧: multimedia/moviepilot.md
-    - Tautulli 媒体监控: multimedia/tautulli-monitoring.md
-    - 硬件解码与转码详解: multimedia/transcoding-guide.md
-    - Download Station 下载: download-tools/download-station.md
-  - 生产力与办公:
-    - Synology Drive 深度实战: productivity/drive-deep-dive.md
-    - 生产力工具 (Office): productivity/drive-office.md
-    - Obsidian + Drive 知识库: productivity/obsidian-sync.md
-    - 日历与通讯录私有化: productivity/calendar-contacts.md
-    - MailPlus 邮件服务器: communication/mailplus-guide.md
-    - Chat 进阶与 Webhook: communication/chat-webhook.md
-    - Chat 机器人集成: communication/chat-integration.md
-    - Note Station 笔记: productivity/note-station.md
-    - Homepage 导航面板: productivity/homepage.md
-    - Paperless-ngx 无纸化: productivity/paperless-ngx.md
-    - Stirling-PDF 工具箱: productivity/stirling-pdf.md
-    - 知识管理与工作流: productivity/knowledge-workflow.md
-    - 自托管替代方案汇总: productivity/self-hosted-alternatives.md
-  - 视频监控:
-    - Surveillance Station: surveillance/guide.md
-    - 视频监控进阶: surveillance/advanced-guide.md
-  - 虚拟化与软路由:
-    - VMM 虚拟机实战: virtualization/vmm-guide.md
-    - Kubernetes (K3s) 集群: advanced-skills/k3s-cluster.md
-    - Docker 与 vDSM: advanced-skills/docker-guide.md
-    - PXE 网络启动服务器: advanced-skills/pxe-boot.md
-  - 家庭自动化:
-    - 家庭自动化与 IoT: home-automation/iot-guide.md
-    - Home Assistant 实战: home-automation/ha-deep-dive.md
-    - Scrypted 接入 HomeKit: home-automation/scrypted.md
-    - 米家接入 HomeKit: home-automation/homekit-bridge.md
-  - Web 建站与开发:
-    - Web Station 建站: web-dev/website-hosting.md
-    - Web Station 静态托管: web-dev/static-site-hosting.md
-    - Web Station 建站进阶: web-dev/web-station-advanced.md
-  - CLI 与开发者:
-    - CLI 终极指南: cli/guide.md
-    - Entware 软件包管理器: cli/entware-guide.md
-    - 任务计划与脚本管理: advanced-skills/task-scheduler.md
-    - 自动化运维脚本合集: advanced-skills/automation-scripts.md
-    - 脚本与自动化: advanced-skills/automation.md
-    - 开发者指南: developer-guide/dev-tips.md
-    - VS Code Server 开发: developer-guide/code-server.md
-    - API 自动化开发: developer-guide/api-automation.md
-    - Ansible NAS 自动化: developer-guide/ansible-nas-automation.md
-    - Ansible 入门: developer-guide/ansible-guide.md
-  - 行业解决方案:
-    - 摄影与影视后期: industry-solutions/photographer-videographer.md
-    - 程序员与 DevOps: industry-solutions/programmer-devops.md
-    - 中小企业 (SMB): industry-solutions/small-business.md
-    - 学生与科研人员: industry-solutions/student-researcher.md
-    - 设计师与创意工作者: industry-solutions/designer.md
-    - 极客与 Home Lab: industry-solutions/home-lab.md
-    - 律师与财务人员: industry-solutions/legal-finance.md
-    - 自由职业者与数字游民: industry-solutions/freelancer-nomad.md
-    - 医生与医疗诊所: industry-solutions/healthcare.md
-    - 建筑师与工程师 (CAD/BIM): industry-solutions/architects-engineers.md
-    - 音乐人与音频制作人: industry-solutions/musicians-producers.md
-    - 教育工作者与教师: industry-solutions/educators.md
-  - 社群扩展:
-    - 常用社群套件推荐: community/essential-packages.md
-    - 社群第三方套件推荐: community/packages.md
-    - 第三方社群套件源: community/third-party-repos.md
-    - SynoCommunity 指南: community/synocommunity-guide.md
-  - 硬件与维护:
-    - 硬件选购与维护: hardware-maintenance/hardware-guide.md
-    - 硬件选购避坑指南: hardware-maintenance/hardware-buying-guide.md
-  - 故障排除:
-    - 常见故障排除: troubleshooting/common-issues.md
-    - 常见故障排查案例: troubleshooting/advanced-cases.md
-  - 其他:
-    - 冷知识与隐藏功能: misc/hidden-features.md
+  - md_in_html
