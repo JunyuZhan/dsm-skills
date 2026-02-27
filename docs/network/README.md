@@ -6,7 +6,7 @@
 
 ### 1. 基础连接
 *   [**DDNS 动态域名解析**](ddns-guide.md): 告别 QuickConnect 的龟速，利用公网 IPv4/IPv6 实现满速直连。
-*   [**端口转发与 UPnP**](port-forwarding.md): 路由器设置指南，如何正确开放端口而不暴露风险。
+*   [**端口转发与 UPnP**](ddns-guide.md): 路由器设置指南，如何正确开放端口而不暴露风险。
 
 ### 2. 内网穿透 (无公网 IP)
 *   [**内网穿透终极指南**](tunneling-guide.md): Tailscale, ZeroTier, Cloudflare Tunnel 三大方案横向评测。
