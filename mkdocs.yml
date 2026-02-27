@@ -14,7 +14,6 @@ copyright: >
 
 theme:
   name: material
-  custom_dir: overrides
   language: zh
   palette:
     # 切换到深色模式
