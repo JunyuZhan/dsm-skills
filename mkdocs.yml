@@ -61,8 +61,8 @@ plugins:
       categories:
         - categories
         - tags
-  - tags:
-      tags_file: tags.md
+  - tags
+
 
 extra_javascript:
   - //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
